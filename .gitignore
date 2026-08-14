@@ -7,6 +7,7 @@ data/interim/
 *.gff3
 *.faa
 *.tsv.gz
+*.csv.gz
 
 # bakta database
 db/
