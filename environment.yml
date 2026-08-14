@@ -1,0 +1,15 @@
+name: bpdp
+channels: [conda-forge, bioconda, defaults]
+dependencies:
+  - python=3.11
+  - bakta
+  - prokka
+  - ncbi-datasets-cli
+  - biopython
+  - pandas
+  - pyarrow
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pip

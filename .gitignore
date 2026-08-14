@@ -1,0 +1,23 @@
+# genomes and annotation output are large and reproducible — never commit
+data/genomes/
+data/annotations/
+data/interim/
+*.fna
+*.gbff
+*.gff3
+*.faa
+*.tsv.gz
+
+# bakta database
+db/
+*.db
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+env/
+
+# os
+.DS_Store
