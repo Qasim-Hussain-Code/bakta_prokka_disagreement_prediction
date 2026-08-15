@@ -1,6 +1,6 @@
 # bakta_prokka_disagreement_prediction
 
-Machine Learning for Biology, Chapter 3.
+Machine Learning for Biology | Chapter 3.
 
 ## The question
 
