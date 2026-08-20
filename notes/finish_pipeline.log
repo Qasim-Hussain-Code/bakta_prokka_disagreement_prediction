@@ -1,0 +1,73 @@
+
+############ waiting for bakta db download ############
+2026-08-20T17:11:50+08:00
+-rw-rw-r-- 1 qasim qasim 1344199496 Aug 20 17:10 db/db-light.tar.xz
+
+############ extracting db-light ############
+2026-08-20T17:11:50+08:00
+{
+  "date": "2025-02-24",
+  "major": 6,
+  "minor": 0,
+  "type": "light",
+  "doi": "10.5281/zenodo.14916843",
+  "software-min": {
+      "major": 1,
+      "minor": 11
+  },
+  "dependencies": [
+    {
+      "name": "AMRFinderPlus",
+      "release": "2024-12-18.1"
+    },
+    {
+      "name": "COG",
+      "release": "2024"
+    },
+    {
+      "name": "DoriC",
+      "release": "12"
+    },
+    {
+      "name": "ISFinder",
+      "release": "2019-09-25"
+    },
+    {
+      "name": "Mob-suite",
+      "release": "3"
+    },
+    {
+      "name": "Pfam",
+      "release": "37.2"
+    },
+    {
+      "name": "RefSeq",
+      "release": "228"
+    },
+    {
+      "name": "Rfam",
+      "release": "15"
+    },
+    {
+      "name": "UniProtKB/Swiss-Prot",
+      "release": "2025_01"
+    },
+    {
+      "name": "VFDB",
+      "release": "2025-02-14"
+    }
+  ]
+}
+
+
+############ freeing the tarball (disk is tight) ############
+2026-08-20T17:12:04+08:00
+/dev/nvme0n1p5  196G  180G  6.6G  97% /
+
+############ amrfinderplus db check ############
+2026-08-20T17:12:04+08:00
+amrfinderplus-db present in the release
+
+############ recording database provenance ############
+2026-08-20T17:12:04+08:00
+FATAL: 7G free, need at least 8G for the light database.
