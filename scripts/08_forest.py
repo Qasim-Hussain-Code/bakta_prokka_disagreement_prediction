@@ -20,12 +20,14 @@ import json
 from pathlib import Path
 
 import joblib
+import numpy as np
 
 import lib_model
 
 ROOT = Path(__file__).resolve().parent.parent
 MODEL_OUT = ROOT / "data" / "interim" / "forest.joblib"
 METRICS = ROOT / "results" / "metrics" / "08_forest.json"
+PRED_OUT = ROOT / "data" / "interim" / "preds_forest.npz"
 
 
 def main():
@@ -47,8 +49,10 @@ def main():
     MODEL_OUT.parent.mkdir(parents=True, exist_ok=True)
     joblib.dump({"model": model, "names": data["names"]}, MODEL_OUT)
 
-    overall, per_genome, _proba = lib_model.evaluate(
+    overall, per_genome, proba = lib_model.evaluate(
         model, data["X_test"], data["y_test"], data["genomes_test"])
+    np.savez(PRED_OUT, proba=proba, y=data["y_test"],
+             genomes=data["genomes_test"])
 
     payload = {
         "step": "08_forest",
