@@ -16,21 +16,25 @@ cd "$BPDP_ROOT"
 DB_TYPE="light"
 DB_PARENT="$BPDP_ROOT/db"
 
-need_gb=8
-avail_gb=$(df -BG --output=avail "$BPDP_ROOT" | tail -1 | tr -dc '0-9')
-if (( avail_gb < need_gb )); then
-  echo "FATAL: ${avail_gb}G free, need at least ${need_gb}G for the ${DB_TYPE} database." >&2
-  exit 1
-fi
-
 mkdir -p "$DB_PARENT" provenance
 
-echo "=== available database versions ==="
-run_bakta_db list | tee provenance/bakta_db_available.txt
-
 if [[ -f "$BAKTA_DB/version.json" ]]; then
+  # Already downloaded. The free-space precondition below guards the download
+  # only -- applying it here would refuse to record provenance for a database
+  # that is already sitting on disk, which is exactly the state the download
+  # leaves the machine in once the space has been spent.
   echo "database already present at $BAKTA_DB — not re-downloading"
 else
+  need_gb=8
+  avail_gb=$(df -BG --output=avail "$BPDP_ROOT" | tail -1 | tr -dc '0-9')
+  if (( avail_gb < need_gb )); then
+    echo "FATAL: ${avail_gb}G free, need at least ${need_gb}G for the ${DB_TYPE} database." >&2
+    exit 1
+  fi
+
+  echo "=== available database versions ==="
+  run_bakta_db list | tee provenance/bakta_db_available.txt
+
   echo "=== downloading db-${DB_TYPE} into $DB_PARENT ==="
   run_bakta_db download --output "$DB_PARENT" --type "$DB_TYPE"
 fi
