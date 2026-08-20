@@ -1,73 +1,42 @@
 
-############ waiting for bakta db download ############
-2026-08-20T17:11:50+08:00
--rw-rw-r-- 1 qasim qasim 1344199496 Aug 20 17:10 db/db-light.tar.xz
+############ waiting for prokka to finish ############
+2026-08-20T17:16:58+08:00
+prokka genome dirs: 25
 
-############ extracting db-light ############
-2026-08-20T17:11:50+08:00
-{
-  "date": "2025-02-24",
-  "major": 6,
-  "minor": 0,
-  "type": "light",
-  "doi": "10.5281/zenodo.14916843",
-  "software-min": {
-      "major": 1,
-      "minor": 11
-  },
-  "dependencies": [
-    {
-      "name": "AMRFinderPlus",
-      "release": "2024-12-18.1"
-    },
-    {
-      "name": "COG",
-      "release": "2024"
-    },
-    {
-      "name": "DoriC",
-      "release": "12"
-    },
-    {
-      "name": "ISFinder",
-      "release": "2019-09-25"
-    },
-    {
-      "name": "Mob-suite",
-      "release": "3"
-    },
-    {
-      "name": "Pfam",
-      "release": "37.2"
-    },
-    {
-      "name": "RefSeq",
-      "release": "228"
-    },
-    {
-      "name": "Rfam",
-      "release": "15"
-    },
-    {
-      "name": "UniProtKB/Swiss-Prot",
-      "release": "2025_01"
-    },
-    {
-      "name": "VFDB",
-      "release": "2025-02-14"
-    }
-  ]
-}
+############ database provenance ############
+2026-08-20T17:22:38+08:00
+=== recording database provenance ===
+recorded: 2026-08-20T17:22:38+08:00
+db_path: /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
+db_type: light
+db_type_reason: full database does not fit in available disk on this machine
+version_json: {"date":"2025-02-24","major":6,"minor":0,"type":"light","doi":"10.5281/zenodo.14916843","software-min":{"major":1,"minor":11},"dependencies":[{"name":"AMRFinderPlus","release":"2024-12-18.1"},{"name":"COG","release":"2024"},{"name":"DoriC","release":"12"},{"name":"ISFinder","release":"2019-09-25"},{"name":"Mob-suite","release":"3"},{"name":"Pfam","release":"37.2"},{"name":"RefSeq","release":"228"},{"name":"Rfam","release":"15"},{"name":"UniProtKB/Swiss-Prot","release":"2025_01"},{"name":"VFDB","release":"2025-02-14"}]}
+db_size_bytes: 3994889852
+db_file_count: 47
 
-
-############ freeing the tarball (disk is tight) ############
-2026-08-20T17:12:04+08:00
-/dev/nvme0n1p5  196G  180G  6.6G  97% /
-
-############ amrfinderplus db check ############
-2026-08-20T17:12:04+08:00
-amrfinderplus-db present in the release
-
-############ recording database provenance ############
-2026-08-20T17:12:04+08:00
-FATAL: 7G free, need at least 8G for the light database.
+############ 02 annotate bakta ############
+2026-08-20T17:22:38+08:00
+bakta 8 threads over 25 genomes, db /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
+  GCF_000006765.1 annotating
+FATAL: bakta failed on GCF_000006765.1; see data/annotations/bakta/GCF_000006765.1.log
+predict CRISPR arrays...
+	found: 0
+predict & annotate CDSs...
+	predicted: 5681 
+	discarded length: 0
+	discarded spurious: 0
+	revised translational exceptions: 1
+	skip UPS/IPS detection with light db version
+	found PSCCs: 5353
+	lookup annotations...
+	conduct expert systems...
+Traceback (most recent call last):
+  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/bin/bakta", line 10, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/lib/python3.13/site-packages/bakta/main.py", line 301, in main
+    expert_amr_found = exp_amr.search(cdss, cds_aa_path)
+  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/lib/python3.13/site-packages/bakta/expert/amrfinder.py", line 47, in search
+    raise Exception(f"amrfinder error! error code: {proc.returncode}. Please, try 'amrfinder_update --force_update --database {amrfinderplus_db_path}' to update AMRFinderPlus's internal database.")
+Exception: amrfinder error! error code: 1. Please, try 'amrfinder_update --force_update --database /home/qasim/bakta_prokka_disagreement_prediction/db/db-light/amrfinderplus-db' to update AMRFinderPlus's internal database.
+FATAL: bakta annotation failed; see data/annotations/bakta/*.log

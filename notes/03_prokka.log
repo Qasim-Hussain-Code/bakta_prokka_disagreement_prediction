@@ -36,3 +36,18 @@ prokka 8 threads over 25 genomes
   GCF_008931305.1 annotating
     7709 CDS
   GCF_013388375.1 annotating
+    4102 CDS
+  GCF_018885085.1 annotating
+    3604 CDS
+  GCF_020546685.1 annotating
+    3133 CDS
+  GCF_020736045.1 annotating
+    1792 CDS
+  GCF_022869645.1 annotating
+    2058 CDS
+  GCF_025998455.1 annotating
+    1583 CDS
+  GCF_037023865.1 annotating
+    6432 CDS
+=== recording prokka run provenance ===
+wrote results/metrics/03_prokka_runs.json: 25 genomes, 87,860 CDS

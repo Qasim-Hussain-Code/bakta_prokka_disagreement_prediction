@@ -1,0 +1,8 @@
+Running: amrfinder_update --force_update --database db/db-light/amrfinderplus-db
+Looking up the published databases at https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/
+Looking for the target directory: db/db-light/amrfinderplus-db/2026-08-07.1/
+Downloading AMRFinder database version 2026-08-07.1 into: db/db-light/amrfinderplus-db/2026-08-07.1/
+Running: /home/qasim/.bactopia/conda/bioconda--ncbi-amrfinderplus-4.2.7/bin/amrfinder_index db/db-light/amrfinderplus-db/2026-08-07.1/
+Indexing
+amrfinder_index took 2 seconds to complete
+amrfinder_update took 209 seconds to complete

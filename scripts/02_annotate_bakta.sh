@@ -127,6 +127,27 @@ def tool_version(fn):
 
 
 db_files = sorted(p for p in bakta_db.rglob("*") if p.is_file())
+
+db_version = json.loads((bakta_db / "version.json").read_text())
+
+# AMRFinderPlus is versioned separately from the Bakta database that ships it.
+# AMRFinderPlus 4.x refuses to run against a database older than a version it
+# hardcodes, and the release bundled in bakta db-light v6.0 is older than the
+# binary available here demands, so it had to be updated in place. The result
+# is that the AMR annotations come from a newer reference set than the Bakta
+# release declares. That affects annotation *content* -- which CDS get an AMR
+# gene name -- and not which regions are called as CDS, so it does not move
+# the label. Recorded rather than reconciled, because a reader comparing this
+# run against a stock db-light v6.0 needs to know.
+amr_latest = bakta_db / "amrfinderplus-db" / "latest"
+amr_used = None
+if (amr_latest / "version.txt").exists():
+    amr_used = (amr_latest / "version.txt").read_text().strip()
+amr_bundled = next(
+    (d.get("release") for d in db_version.get("dependencies", [])
+     if d.get("name") == "AMRFinderPlus"),
+    None,
+)
 versions_json.write_text(json.dumps({
     "step": "02_annotation_versions",
     "note": (
@@ -144,7 +165,17 @@ versions_json.write_text(json.dumps({
             "would name are left hypothetical. This affects annotation "
             "content; it does not change which regions are called as CDS."
         ),
-        "db_version": json.loads((bakta_db / "version.json").read_text()),
+        "db_version": db_version,
+        "amrfinderplus_db_version_used": amr_used,
+        "amrfinderplus_db_version_bundled": amr_bundled,
+        "amrfinderplus_db_note": (
+            "AMRFinderPlus 4.2.7 refuses any database older than a version it "
+            "hardcodes, and the release bundled in bakta db-light v6.0 was "
+            "older, so it was updated in place. AMR annotation content "
+            "therefore comes from a newer reference set than the Bakta "
+            "release declares. It does not change which regions are called "
+            "as CDS, so the label is unaffected."
+        ),
         "db_bytes": sum(p.stat().st_size for p in db_files),
         "db_file_count": len(db_files),
     },
