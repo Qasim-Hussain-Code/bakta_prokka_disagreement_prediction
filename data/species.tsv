@@ -1,0 +1,42 @@
+# Curated genome panel for the Bakta/Prokka disagreement experiment.
+#
+# Chosen to spread GC content (~28-72%) across several phyla, one genome per
+# species. GC and phylum breadth matter because GC is a candidate feature: a
+# panel drawn from one clade would confound "GC" with "this lineage".
+#
+# Mollicutes (Mycoplasma, Ureaplasma) are deliberately excluded. They use
+# genetic code 4, not 11, which would require per-genome translation-table
+# handling in both annotators and turn a uniform comparison into a
+# conditional one. That is a real omission, recorded rather than hidden.
+#
+# expected_gc is approximate, from literature, and is NOT used by the
+# pipeline. Observed GC is computed from the downloaded sequence in
+# results/metrics/01_genomes.json. The column exists so the panel's spread
+# can be reviewed before several hours of annotation are spent on it.
+#
+# species	phylum	expected_gc
+Borreliella burgdorferi	Spirochaetota	28
+Clostridioides difficile	Bacillota	29
+Campylobacter jejuni	Campylobacterota	30
+Staphylococcus aureus	Bacillota	33
+Enterococcus faecalis	Bacillota	37
+Listeria monocytogenes	Bacillota	38
+Haemophilus influenzae	Pseudomonadota	38
+Helicobacter pylori	Campylobacterota	39
+Streptococcus pneumoniae	Bacillota	40
+Bacteroides fragilis	Bacteroidota	43
+Bacillus subtilis	Bacillota	44
+Synechocystis sp. PCC 6803	Cyanobacteriota	47
+Vibrio cholerae	Pseudomonadota	47
+Escherichia coli	Pseudomonadota	51
+Neisseria meningitidis	Pseudomonadota	52
+Salmonella enterica	Pseudomonadota	52
+Corynebacterium glutamicum	Actinomycetota	54
+Sinorhizobium meliloti	Pseudomonadota	62
+Xanthomonas campestris	Pseudomonadota	65
+Pseudomonas aeruginosa	Pseudomonadota	66
+Mycobacterium tuberculosis	Actinomycetota	66
+Caulobacter vibrioides	Pseudomonadota	67
+Deinococcus radiodurans	Deinococcota	67
+Thermus thermophilus	Deinococcota	69
+Streptomyces coelicolor	Actinomycetota	72

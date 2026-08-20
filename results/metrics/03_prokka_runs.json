@@ -1,0 +1,326 @@
+{
+  "step": "03_annotate_prokka",
+  "tool": "prokka 1.15.6",
+  "threads": 8,
+  "organism_hints": null,
+  "organism_hints_note": "No --genus/--species given, matching Bakta. Organism hints change both tools' output; supplying them would make disagreement partly a function of the hint rather than of the sequence.",
+  "kingdom": "Bacteria",
+  "translation_table": 11,
+  "n_genomes": 25,
+  "total_cds": 87901,
+  "runs": [
+    {
+      "accession": "GCF_000006765.1",
+      "gff": "data/annotations/prokka/GCF_000006765.1/GCF_000006765.1.gff",
+      "sha256": "f1525c003e8b9eba31c530ecec317a01fcae812df9fcb6b6e2891fcb1e6503e1",
+      "feature_counts": {
+        "CDS": 5671,
+        "tRNA": 73,
+        "tmRNA": 1
+      },
+      "cds": 5671,
+      "seconds": 153
+    },
+    {
+      "accession": "GCF_000006945.2",
+      "gff": "data/annotations/prokka/GCF_000006945.2/GCF_000006945.2.gff",
+      "sha256": "3a170a18de8844d61a127ac1bec19118d0ab9c6b566b20389db47f5e07bdf76a",
+      "feature_counts": {
+        "CDS": 4627,
+        "repeat_region": 3,
+        "tRNA": 86,
+        "tmRNA": 1
+      },
+      "cds": 4627,
+      "seconds": 107
+    },
+    {
+      "accession": "GCF_000008865.2",
+      "gff": "data/annotations/prokka/GCF_000008865.2/GCF_000008865.2.gff",
+      "sha256": "d3ed4c27d9ff40efe67e9fc30d110dba1c0063090a6d31043c11839393004dcc",
+      "feature_counts": {
+        "CDS": 5380,
+        "repeat_region": 1,
+        "tRNA": 105,
+        "tmRNA": 1
+      },
+      "cds": 5380,
+      "seconds": 125
+    },
+    {
+      "accession": "GCF_000009045.1",
+      "gff": "data/annotations/prokka/GCF_000009045.1/GCF_000009045.1.gff",
+      "sha256": "afb9e2a7a09cca0c76f26b3930fc32336ee002497c16c61c2f78df823d814864",
+      "feature_counts": {
+        "CDS": 4225,
+        "tRNA": 87,
+        "tmRNA": 1
+      },
+      "cds": 4225,
+      "seconds": 99
+    },
+    {
+      "accession": "GCF_000009085.1",
+      "gff": "data/annotations/prokka/GCF_000009085.1/GCF_000009085.1.gff",
+      "sha256": "a8dd85514c43e62a7a9d9aae6a683479bc825032f42a7c752fce710fb98b5a60",
+      "feature_counts": {
+        "CDS": 1658,
+        "repeat_region": 1,
+        "tRNA": 44,
+        "tmRNA": 1
+      },
+      "cds": 1658,
+      "seconds": 41
+    },
+    {
+      "accession": "GCF_000011325.1",
+      "gff": "data/annotations/prokka/GCF_000011325.1/GCF_000011325.1.gff",
+      "sha256": "9ffbc0c4397bf58b67948d898818b720645fbea968bca85b17fb661fc050ab81",
+      "feature_counts": {
+        "CDS": 3070,
+        "tRNA": 60,
+        "tmRNA": 1
+      },
+      "cds": 3070,
+      "seconds": 84
+    },
+    {
+      "accession": "GCF_000013425.1",
+      "gff": "data/annotations/prokka/GCF_000013425.1/GCF_000013425.1.gff",
+      "sha256": "9fce6ad5f1631f9ba0bab145723920942595aebd377510803e40a416281ef017",
+      "feature_counts": {
+        "CDS": 2630,
+        "repeat_region": 3,
+        "tRNA": 62,
+        "tmRNA": 1
+      },
+      "cds": 2630,
+      "seconds": 65
+    },
+    {
+      "accession": "GCF_000022005.1",
+      "gff": "data/annotations/prokka/GCF_000022005.1/GCF_000022005.1.gff",
+      "sha256": "5aa16f478a16e44bbd636d95e206a36fc0d4658c0159fcdc400fb72f94183406",
+      "feature_counts": {
+        "CDS": 3711,
+        "tRNA": 61,
+        "tmRNA": 1
+      },
+      "cds": 3711,
+      "seconds": 104
+    },
+    {
+      "accession": "GCF_000025985.1",
+      "gff": "data/annotations/prokka/GCF_000025985.1/GCF_000025985.1.gff",
+      "sha256": "ce5775cf28bab5733b657997d74deddc16dd6cbe120affde50eaf96e3705364b",
+      "feature_counts": {
+        "CDS": 4346,
+        "repeat_region": 2,
+        "tRNA": 73,
+        "tmRNA": 1
+      },
+      "cds": 4346,
+      "seconds": 135
+    },
+    {
+      "accession": "GCF_000091545.1",
+      "gff": "data/annotations/prokka/GCF_000091545.1/GCF_000091545.1.gff",
+      "sha256": "f7a836537b912fc1e6e1e115f71887d47acc00968332add449fe20597c48519e",
+      "feature_counts": {
+        "CDS": 2212,
+        "repeat_region": 10,
+        "tRNA": 54,
+        "tmRNA": 1
+      },
+      "cds": 2212,
+      "seconds": 62
+    },
+    {
+      "accession": "GCF_000195955.2",
+      "gff": "data/annotations/prokka/GCF_000195955.2/GCF_000195955.2.gff",
+      "sha256": "26895ad5dff13bd5eb99516270de428c6b5af20f665c691271ba08dda46a0768",
+      "feature_counts": {
+        "CDS": 4070,
+        "repeat_region": 4,
+        "tRNA": 53,
+        "tmRNA": 1
+      },
+      "cds": 4070,
+      "seconds": 115
+    },
+    {
+      "accession": "GCF_000196035.1",
+      "gff": "data/annotations/prokka/GCF_000196035.1/GCF_000196035.1.gff",
+      "sha256": "cb3826c687cf44f562d0b29d5bfe71ac02638517bbf426ae9ba8b166c29b5225",
+      "feature_counts": {
+        "CDS": 2875,
+        "repeat_region": 1,
+        "tRNA": 67,
+        "tmRNA": 1
+      },
+      "cds": 2875,
+      "seconds": 70
+    },
+    {
+      "accession": "GCF_000270265.1",
+      "gff": "data/annotations/prokka/GCF_000270265.1/GCF_000270265.1.gff",
+      "sha256": "742a3ea72d72cb193d131f25cdb846c7a6d5eab7786a5efafef8c117fef9bd87",
+      "feature_counts": {
+        "CDS": 3294,
+        "tRNA": 41,
+        "tmRNA": 1
+      },
+      "cds": 3294,
+      "seconds": 91
+    },
+    {
+      "accession": "GCF_001457635.1",
+      "gff": "data/annotations/prokka/GCF_001457635.1/GCF_001457635.1.gff",
+      "sha256": "2c030a59edb0b9555a05a472a068b68072bfd15d7334af15f95eebcc68cecce5",
+      "feature_counts": {
+        "CDS": 2091,
+        "tRNA": 58,
+        "tmRNA": 1
+      },
+      "cds": 2091,
+      "seconds": 49
+    },
+    {
+      "accession": "GCF_001598635.1",
+      "gff": "data/annotations/prokka/GCF_001598635.1/GCF_001598635.1.gff",
+      "sha256": "ccc923e6622ec30739ade10cd904e49b38d201494e682b9a0519cf7c81480f3d",
+      "feature_counts": {
+        "CDS": 2651,
+        "repeat_region": 1,
+        "tRNA": 61,
+        "tmRNA": 1
+      },
+      "cds": 2651,
+      "seconds": 67
+    },
+    {
+      "accession": "GCF_002151505.1",
+      "gff": "data/annotations/prokka/GCF_002151505.1/GCF_002151505.1.gff",
+      "sha256": "bda62df674300d929a77d2680cd6aaad0728ab155eeb5529597b4a9b55dee391",
+      "feature_counts": {
+        "CDS": 1341,
+        "tRNA": 33,
+        "tmRNA": 1
+      },
+      "cds": 1341,
+      "seconds": 35
+    },
+    {
+      "accession": "GCF_008369605.1",
+      "gff": "data/annotations/prokka/GCF_008369605.1/GCF_008369605.1.gff",
+      "sha256": "7f49f4c78e077977d9c51cfef91be1b12e9f8dec6c6dedbb44366e7c7a8239bf",
+      "feature_counts": {
+        "CDS": 3632,
+        "tRNA": 102,
+        "tmRNA": 1
+      },
+      "cds": 3632,
+      "seconds": 91
+    },
+    {
+      "accession": "GCF_008931305.1",
+      "gff": "data/annotations/prokka/GCF_008931305.1/GCF_008931305.1.gff",
+      "sha256": "ad233b8c41eb431b272673a923c67cb5937bc661fdec0ab6938b39a0e17f0c4a",
+      "feature_counts": {
+        "CDS": 7709,
+        "tRNA": 88,
+        "tmRNA": 1
+      },
+      "cds": 7709,
+      "seconds": 235
+    },
+    {
+      "accession": "GCF_013388375.1",
+      "gff": "data/annotations/prokka/GCF_013388375.1/GCF_013388375.1.gff",
+      "sha256": "41455b6404c2e2b46edea8c9dedb52a540771356f17464e05f80f6e96cf81bd5",
+      "feature_counts": {
+        "CDS": 4102,
+        "repeat_region": 1,
+        "tRNA": 56,
+        "tmRNA": 1
+      },
+      "cds": 4102,
+      "seconds": 121
+    },
+    {
+      "accession": "GCF_018885085.1",
+      "gff": "data/annotations/prokka/GCF_018885085.1/GCF_018885085.1.gff",
+      "sha256": "7449f8754ec2800ed18727df21ca7801c30cf3aecce1d32f65a0dfbe813472e2",
+      "feature_counts": {
+        "CDS": 3604,
+        "repeat_region": 6,
+        "tRNA": 90,
+        "tmRNA": 1
+      },
+      "cds": 3604,
+      "seconds": 93
+    },
+    {
+      "accession": "GCF_020546685.1",
+      "gff": "data/annotations/prokka/GCF_020546685.1/GCF_020546685.1.gff",
+      "sha256": "7a3b65dbac50c4d5700073ff368a3be8fcd4a828a2497727a31521630c374691",
+      "feature_counts": {
+        "CDS": 3133,
+        "tRNA": 50,
+        "tmRNA": 1
+      },
+      "cds": 3133,
+      "seconds": 87
+    },
+    {
+      "accession": "GCF_020736045.1",
+      "gff": "data/annotations/prokka/GCF_020736045.1/GCF_020736045.1.gff",
+      "sha256": "96b594e5503cdadbfcffc55e7d487c9884d7e49c4d89d5a863979641f551c59a",
+      "feature_counts": {
+        "CDS": 1792,
+        "tRNA": 59,
+        "tmRNA": 1
+      },
+      "cds": 1792,
+      "seconds": 41
+    },
+    {
+      "accession": "GCF_022869645.1",
+      "gff": "data/annotations/prokka/GCF_022869645.1/GCF_022869645.1.gff",
+      "sha256": "bf22715cf18137b36a0a2ec2b63c0fc1624089f03b116585623b8c77860a8656",
+      "feature_counts": {
+        "CDS": 2062,
+        "repeat_region": 1,
+        "tRNA": 60,
+        "tmRNA": 1
+      },
+      "cds": 2062,
+      "seconds": 47
+    },
+    {
+      "accession": "GCF_025998455.1",
+      "gff": "data/annotations/prokka/GCF_025998455.1/GCF_025998455.1.gff",
+      "sha256": "55a40288789ce27816bf062a02c4d6be032528971a03c17382593650b61f5614",
+      "feature_counts": {
+        "CDS": 1583,
+        "repeat_region": 1,
+        "tRNA": 36,
+        "tmRNA": 1
+      },
+      "cds": 1583,
+      "seconds": 42
+    },
+    {
+      "accession": "GCF_037023865.1",
+      "gff": "data/annotations/prokka/GCF_037023865.1/GCF_037023865.1.gff",
+      "sha256": "25724812234c0cb5c08b62ddd0c730a92ee48764b4226603f65e0d10f8f9b8b9",
+      "feature_counts": {
+        "CDS": 6432,
+        "tRNA": 62,
+        "tmRNA": 1
+      },
+      "cds": 6432,
+      "seconds": 164
+    }
+  ]
+}

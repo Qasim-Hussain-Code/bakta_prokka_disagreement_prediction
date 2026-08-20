@@ -1,0 +1,10 @@
+Bakta software version: 1.12.0
+Required database schema version: 6
+
+Available DB versions:
+6.0	2025-02-24	10.5281/zenodo.14916843
+
+Run 'bakta_db download --type <TYPE>' to download the most recent version either as type 'full' (default) or 'light'.
+Run 'bakta_db download --minor <MINOR>' to download a specific minor version (either as type 'full' or 'light').
+
+Type 'bakta_db download --help' for further details

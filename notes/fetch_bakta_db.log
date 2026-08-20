@@ -1,0 +1,22 @@
+=== available database versions ===
+Bakta software version: 1.12.0
+Required database schema version: 6
+
+Available DB versions:
+6.0	2025-02-24	10.5281/zenodo.14916843
+
+Run 'bakta_db download --type <TYPE>' to download the most recent version either as type 'full' (default) or 'light'.
+Run 'bakta_db download --minor <MINOR>' to download a specific minor version (either as type 'full' or 'light').
+
+Type 'bakta_db download --help' for further details
+=== downloading db-light into /home/qasim/bakta_prokka_disagreement_prediction/db ===
+Bakta software version: 1.12.0
+Required database schema version: 6
+
+Selected DB type: light
+
+Fetch DB versions...
+	... compatible DB versions: 1
+Download database: v6.0, type=light, 2025-02-24, DOI: 10.5281/zenodo.14916843, URL: https://zenodo.org/record/14916843/files/db-light.tar.xz...
+|███████████████████▍⚠︎                   | (!) 649.1M/1.34G [48%] in 37:40.5 (287.14k/s) 
+ERROR: Could not download file from Zenodo! url=https://zenodo.org/record/14916843/files/db-light.tar.xz, path=/home/qasim/bakta_prokka_disagreement_prediction/db/db-light.tar.xz

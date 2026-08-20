@@ -1,0 +1,1626 @@
+
+08/20 16:44:28 [[1;32mNOTICE[0m] Downloading 1 item(s)
+[#470647 0B/0B CN:1 DL:0B]
+[#470647 0B/0B CN:1 DL:0B]
+
+08/20 16:44:31 [[1;32mNOTICE[0m] CUID#7 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 0B/0B CN:1 DL:0B]
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#10 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:33 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 619MiB/1.2GiB(48%) CN:8 DL:0B]
+
+08/20 16:44:34 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:34 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:34 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+
+08/20 16:44:34 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 619MiB/1.2GiB(48%) CN:8 DL:52KiB ETA:3h36m55s]
+[#470647 619MiB/1.2GiB(48%) CN:8 DL:160KiB ETA:1h10m22s]
+[#470647 620MiB/1.2GiB(48%) CN:8 DL:271KiB ETA:41m35s]
+[#470647 620MiB/1.2GiB(48%) CN:8 DL:343KiB ETA:32m51s]
+[#470647 621MiB/1.2GiB(48%) CN:8 DL:354KiB ETA:31m46s]
+[#470647 621MiB/1.2GiB(48%) CN:8 DL:364KiB ETA:30m54s]
+[#470647 621MiB/1.2GiB(48%) CN:8 DL:343KiB ETA:32m49s]
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:333KiB ETA:33m45s]
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:318KiB ETA:35m19s]
+ *** Download Progress Summary as of Thu Aug 20 16:44:44 2026 *** 
+===============================================================================
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:323KiB ETA:34m48s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:323KiB ETA:34m48s]
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:297KiB ETA:37m46s]
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:256KiB ETA:43m53s]
+[#470647 622MiB/1.2GiB(48%) CN:8 DL:219KiB ETA:51m21s]
+[#470647 623MiB/1.2GiB(48%) CN:8 DL:204KiB ETA:54m52s]
+[#470647 623MiB/1.2GiB(48%) CN:8 DL:203KiB ETA:55m11s]
+[#470647 623MiB/1.2GiB(48%) CN:8 DL:227KiB ETA:49m15s]
+[#470647 624MiB/1.2GiB(48%) CN:8 DL:252KiB ETA:44m21s]
+[#470647 624MiB/1.2GiB(48%) CN:8 DL:263KiB ETA:42m37s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:309KiB ETA:36m12s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:328KiB ETA:34m6s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:351KiB ETA:31m52s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:333KiB ETA:33m32s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:294KiB ETA:37m59s]
+[#470647 625MiB/1.2GiB(48%) CN:8 DL:260KiB ETA:43m1s]
+ *** Download Progress Summary as of Thu Aug 20 16:44:59 2026 *** 
+===============================================================================
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:222KiB ETA:50m11s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:222KiB ETA:50m11s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:153KiB ETA:1h12m44s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:99KiB ETA:1h52m59s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:77KiB ETA:2h23m46s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:41KiB ETA:4h30m2s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:38KiB ETA:4h52m14s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:36KiB ETA:5h8m10s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:27KiB ETA:6h43m29s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:15KiB ETA:11h48m7s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:12KiB ETA:14h36m21s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:11KiB ETA:16h16m34s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:8.4KiB ETA:22h2m53s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:77KiB ETA:2h24m44s]
+ *** Download Progress Summary as of Thu Aug 20 16:45:15 2026 *** 
+===============================================================================
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:58KiB ETA:3h11m11s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:58KiB ETA:3h11m11s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:33KiB ETA:5h32m9s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:24KiB ETA:7h29m4s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:19KiB ETA:9h25m59s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:16KiB ETA:11h22m54s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:32KiB ETA:5h48m41s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:30KiB ETA:6h1m43s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:27KiB ETA:6h42m56s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:19KiB ETA:9h28m59s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:17KiB ETA:10h32m43s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:26KiB ETA:6h54m55s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:23KiB ETA:7h53m16s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:21KiB ETA:8h51m42s]
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:3.8KiB ETA:48h31m7s]
+ *** Download Progress Summary as of Thu Aug 20 16:45:30 2026 *** 
+===============================================================================
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:42KiB ETA:4h23m13s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 626MiB/1.2GiB(48%) CN:8 DL:42KiB ETA:4h23m13s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:100KiB ETA:1h50m57s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:99KiB ETA:1h51m54s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:95KiB ETA:1h57m7s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:85KiB ETA:2h10m35s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:120KiB ETA:1h32m26s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:107KiB ETA:1h44m21s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:95KiB ETA:1h56m51s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:53KiB ETA:3h30m46s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:27KiB ETA:6h47m6s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:16KiB ETA:11h49s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:14KiB ETA:12h40m57s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:12KiB ETA:14h21m4s]
+ *** Download Progress Summary as of Thu Aug 20 16:45:45 2026 *** 
+===============================================================================
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:11KiB ETA:16h1m12s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:11KiB ETA:16h1m12s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:6.3KiB ETA:29h15m35s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:5.3KiB ETA:35h6m19s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:4.5KiB ETA:40h56m55s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:3.9KiB ETA:46h47m54s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:3.5KiB ETA:52h39m11s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+
+08/20 16:45:57 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:0B]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:14KiB ETA:12h54m3s]
+
+08/20 16:46:00 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+ *** Download Progress Summary as of Thu Aug 20 16:46:00 2026 *** 
+===============================================================================
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:5.7KiB ETA:32h17m31s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:5.7KiB ETA:32h17m31s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:12KiB ETA:14h45m36s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:48KiB ETA:3h51m32s]
+
+08/20 16:46:03 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:44KiB ETA:4h12m37s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:48KiB ETA:3h51m9s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:45KiB ETA:4h7m56s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:49KiB ETA:3h46m30s]
+[#470647 627MiB/1.2GiB(48%) CN:8 DL:56KiB ETA:3h18m23s]
+[#470647 628MiB/1.2GiB(48%) CN:8 DL:76KiB ETA:2h25m13s]
+[#470647 628MiB/1.2GiB(48%) CN:8 DL:73KiB ETA:2h31m43s]
+[#470647 628MiB/1.2GiB(48%) CN:8 DL:79KiB ETA:2h21m14s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:69KiB ETA:2h40m59s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:80KiB ETA:2h18m18s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:81KiB ETA:2h16m9s]
+ *** Download Progress Summary as of Thu Aug 20 16:46:16 2026 *** 
+===============================================================================
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:77KiB ETA:2h23m29s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:77KiB ETA:2h23m29s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:69KiB ETA:2h40m43s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:53KiB ETA:3h29m25s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:58KiB ETA:3h11m52s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:59KiB ETA:3h7m58s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h23m36s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:32KiB ETA:5h43m50s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:31KiB ETA:5h53m]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:23KiB ETA:7h54m43s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:21KiB ETA:8h38m41s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:18KiB ETA:9h58m37s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:9.8KiB ETA:18h56m25s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:8.7KiB ETA:21h16m17s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:3.1KiB ETA:59h13m13s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:2.6KiB ETA:70h58m17s]
+ *** Download Progress Summary as of Thu Aug 20 16:46:33 2026 *** 
+===============================================================================
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:2.1KiB ETA:85h49m31s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:2.1KiB ETA:85h49m31s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:15KiB ETA:11h59m33s]
+
+08/20 16:46:34 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:18KiB ETA:10h12m21s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:43KiB ETA:4h13m44s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:32KiB ETA:5h41m51s]
+[#470647 628MiB/1.2GiB(49%) CN:8 DL:27KiB ETA:6h47m20s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:45KiB ETA:4h3m2s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:53KiB ETA:3h27m14s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:45KiB ETA:4h5m55s]
+
+08/20 16:46:43 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:40KiB ETA:4h35m12s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:55KiB ETA:3h20m27s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:47KiB ETA:3h53m7s]
+ *** Download Progress Summary as of Thu Aug 20 16:46:48 2026 *** 
+===============================================================================
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h25m2s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h25m2s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:35KiB ETA:5h11m5s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:33KiB ETA:5h35m30s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:27KiB ETA:6h50m58s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:26KiB ETA:6h54m31s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:28KiB ETA:6h29m18s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:39KiB ETA:4h40m52s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:29KiB ETA:6h12m6s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:24KiB ETA:7h31m32s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:22KiB ETA:8h23m11s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:22KiB ETA:8h15m28s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:18KiB ETA:9h46m13s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:17KiB ETA:10h34m13s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:15KiB ETA:11h44m47s]
+ *** Download Progress Summary as of Thu Aug 20 16:47:04 2026 *** 
+===============================================================================
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:7.9KiB ETA:23h13m8s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:7.9KiB ETA:23h13m8s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+
+08/20 16:47:19 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+ *** Download Progress Summary as of Thu Aug 20 16:47:20 2026 *** 
+===============================================================================
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+
+08/20 16:47:21 [[1;32mNOTICE[0m] CUID#10 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:15h43m40s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:21KiB ETA:8h41m33s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:48KiB ETA:3h51m5s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:60KiB ETA:3h4m42s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:52KiB ETA:3h32m58s]
+[#470647 629MiB/1.2GiB(49%) CN:8 DL:69KiB ETA:2h40m55s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:64KiB ETA:2h52m40s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:57KiB ETA:3h12m33s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:64KiB ETA:2h52m32s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:52KiB ETA:3h30m23s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:40KiB ETA:4h36m8s]
+ *** Download Progress Summary as of Thu Aug 20 16:47:36 2026 *** 
+===============================================================================
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:37KiB ETA:4h55m53s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:37KiB ETA:4h55m53s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:18KiB ETA:9h46m22s]
+
+08/20 16:47:37 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:12KiB ETA:15h18m14s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:10KiB ETA:17h37m38s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:10KiB ETA:17h24m8s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:4.0KiB ETA:45h20m23s]
+
+08/20 16:47:42 [[1;32mNOTICE[0m] CUID#8 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h37m16s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:50KiB ETA:3h39m21s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:69KiB ETA:2h40m56s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:59KiB ETA:3h8m1s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h35m7s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h35m37s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:50KiB ETA:3h40m35s]
+
+08/20 16:47:50 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+ *** Download Progress Summary as of Thu Aug 20 16:47:51 2026 *** 
+===============================================================================
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:41KiB ETA:4h29m39s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:41KiB ETA:4h29m39s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:53KiB ETA:3h26m46s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h34m29s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:46KiB ETA:3h57m2s]
+[#470647 630MiB/1.2GiB(49%) CN:8 DL:47KiB ETA:3h54m16s]
+
+08/20 16:47:58 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 631MiB/1.2GiB(49%) CN:8 DL:59KiB ETA:3h5m40s]
+[#470647 631MiB/1.2GiB(49%) CN:8 DL:106KiB ETA:1h44m25s]
+[#470647 631MiB/1.2GiB(49%) CN:8 DL:113KiB ETA:1h37m42s]
+[#470647 631MiB/1.2GiB(49%) CN:8 DL:130KiB ETA:1h25m12s]
+[#470647 631MiB/1.2GiB(49%) CN:8 DL:119KiB ETA:1h32m34s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:127KiB ETA:1h26m50s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:135KiB ETA:1h22m7s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:141KiB ETA:1h18m31s]
+ *** Download Progress Summary as of Thu Aug 20 16:48:07 2026 *** 
+===============================================================================
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:134KiB ETA:1h22m42s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:134KiB ETA:1h22m42s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:129KiB ETA:1h25m32s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:91KiB ETA:2h41s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:116KiB ETA:1h34m59s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:98KiB ETA:1h52m6s]
+[#470647 632MiB/1.2GiB(49%) CN:8 DL:107KiB ETA:1h43m1s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:112KiB ETA:1h38m24s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:135KiB ETA:1h21m50s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:158KiB ETA:1h9m55s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:144KiB ETA:1h16m30s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:131KiB ETA:1h24m19s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:122KiB ETA:1h30m29s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:112KiB ETA:1h38m41s]
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:99KiB ETA:1h51m33s]
+ *** Download Progress Summary as of Thu Aug 20 16:48:23 2026 *** 
+===============================================================================
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:97KiB ETA:1h52m58s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 633MiB/1.2GiB(49%) CN:8 DL:97KiB ETA:1h52m58s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:68KiB ETA:2h42m29s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:65KiB ETA:2h49m46s]
+
+08/20 16:48:26 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:61KiB ETA:3h1m10s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:84KiB ETA:2h11m25s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:82KiB ETA:2h14m6s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:72KiB ETA:2h32m14s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:91KiB ETA:2h38s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:102KiB ETA:1h47m38s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:97KiB ETA:1h52m51s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:115KiB ETA:1h35m52s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:97KiB ETA:1h53m48s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:60KiB ETA:3h2m29s]
+ *** Download Progress Summary as of Thu Aug 20 16:48:39 2026 *** 
+===============================================================================
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h21m29s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h21m29s]
+[#470647 634MiB/1.2GiB(49%) CN:8 DL:57KiB ETA:3h12m10s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:33KiB ETA:5h26m32s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:13KiB ETA:14h2m38s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:15h37m45s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:15h25m27s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:10KiB ETA:17h31m57s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:9.8KiB ETA:18h42m33s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:8.9KiB ETA:20h29m12s]
+
+08/20 16:48:49 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:6.9KiB ETA:26h30m28s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:20KiB ETA:8h53m56s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:27KiB ETA:6h46m40s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:37KiB ETA:4h51m20s]
+ *** Download Progress Summary as of Thu Aug 20 16:48:54 2026 *** 
+===============================================================================
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:42KiB ETA:4h19m20s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:42KiB ETA:4h19m20s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:44KiB ETA:4h10m27s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:55KiB ETA:3h17m28s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:61KiB ETA:3h3s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:61KiB ETA:3h38s]
+[#470647 635MiB/1.2GiB(49%) CN:8 DL:81KiB ETA:2h15m16s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:89KiB ETA:2h2m46s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:89KiB ETA:2h3m13s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:105KiB ETA:1h44m49s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:102KiB ETA:1h47m12s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:104KiB ETA:1h45m12s]
+
+08/20 16:49:07 [[1;32mNOTICE[0m] CUID#10 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:123KiB ETA:1h29m22s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:146KiB ETA:1h15m9s]
+[#470647 636MiB/1.2GiB(49%) CN:8 DL:128KiB ETA:1h25m38s]
+ *** Download Progress Summary as of Thu Aug 20 16:49:10 2026 *** 
+===============================================================================
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:121KiB ETA:1h30m14s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:121KiB ETA:1h30m14s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:113KiB ETA:1h37m18s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:89KiB ETA:2h2m21s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:79KiB ETA:2h18m50s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:90KiB ETA:2h1m35s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:59KiB ETA:3h3m30s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h32m12s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:52KiB ETA:3h29m58s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:43KiB ETA:4h10m8s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:41KiB ETA:4h25m51s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:42KiB ETA:4h19m52s]
+
+08/20 16:49:22 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:40KiB ETA:4h29m51s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:22KiB ETA:8h5m25s]
+ *** Download Progress Summary as of Thu Aug 20 16:49:25 2026 *** 
+===============================================================================
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:23KiB ETA:7h45m19s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:23KiB ETA:7h45m19s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:26KiB ETA:7h4s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:29KiB ETA:6h9m53s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:23KiB ETA:7h49m14s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:21KiB ETA:8h22m18s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:26KiB ETA:6h47m29s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:25KiB ETA:7h17m30s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:21KiB ETA:8h28m38s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:23KiB ETA:7h42m44s]
+[#470647 637MiB/1.2GiB(49%) CN:8 DL:27KiB ETA:6h33m26s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:44KiB ETA:4h5m30s]
+
+08/20 16:49:39 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:57KiB ETA:3h10m13s]
+ *** Download Progress Summary as of Thu Aug 20 16:49:40 2026 *** 
+===============================================================================
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:68KiB ETA:2h40m19s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:68KiB ETA:2h40m19s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:65KiB ETA:2h47m55s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:64KiB ETA:2h51m27s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:61KiB ETA:2h58m32s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:52KiB ETA:3h28m45s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:48KiB ETA:3h47m16s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:44KiB ETA:4h5m44s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:34KiB ETA:5h17m20s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:32KiB ETA:5h41m9s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:43KiB ETA:4h10m22s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:66KiB ETA:2h44m2s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:57KiB ETA:3h9m51s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:56KiB ETA:3h15m3s]
+ *** Download Progress Summary as of Thu Aug 20 16:49:56 2026 *** 
+===============================================================================
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:47KiB ETA:3h53m19s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:47KiB ETA:3h53m19s]
+[#470647 638MiB/1.2GiB(49%) CN:8 DL:62KiB ETA:2h55m14s]
+
+08/20 16:49:58 [[1;32mNOTICE[0m] CUID#8 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:75KiB ETA:2h24m47s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:74KiB ETA:2h27m46s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:84KiB ETA:2h10m18s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:89KiB ETA:2h1m54s]
+
+08/20 16:50:02 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:94KiB ETA:1h56m20s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:99KiB ETA:1h50m2s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:93KiB ETA:1h56m50s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:84KiB ETA:2h10m5s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:54KiB ETA:3h19m41s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:51KiB ETA:3h32m19s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:44KiB ETA:4h8m32s]
+ *** Download Progress Summary as of Thu Aug 20 16:50:11 2026 *** 
+===============================================================================
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:39KiB ETA:4h37m28s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:39KiB ETA:4h37m28s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:30KiB ETA:5h59m12s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:25KiB ETA:7h18m12s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:22KiB ETA:8h7m15s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:17KiB ETA:10h19m21s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:21KiB ETA:8h37m15s]
+[#470647 639MiB/1.2GiB(49%) CN:8 DL:18KiB ETA:9h39m41s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:19KiB ETA:9h25m4s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:10KiB ETA:17h11m46s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:15KiB ETA:11h43m42s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:13KiB ETA:13h51m48s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:15h46m18s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:10KiB ETA:17h40m39s]
+ *** Download Progress Summary as of Thu Aug 20 16:50:27 2026 *** 
+===============================================================================
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:16h31m33s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:11KiB ETA:16h31m33s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:9.7KiB ETA:18h48m57s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:8.6KiB ETA:21h6m3s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:2.4KiB ETA:75h32m37s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:2.0KiB ETA:86h57m47s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:1.7KiB ETA:104h23m40s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:3.5KiB ETA:51h40m40s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:2.8KiB ETA:63h7m23s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:2.4KiB ETA:74h31m12s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:2.1KiB ETA:85h57m48s]
+ *** Download Progress Summary as of Thu Aug 20 16:50:43 2026 *** 
+===============================================================================
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:1.8KiB ETA:97h22m50s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:1.8KiB ETA:97h22m50s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:1.6KiB ETA:108h49m49s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+
+08/20 16:50:48 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:0B]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:20KiB ETA:9h7m5s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:49KiB ETA:3h42m47s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:49KiB ETA:3h39m36s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:48KiB ETA:3h47m57s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:42KiB ETA:4h18m43s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:37KiB ETA:4h49m30s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:48KiB ETA:3h43m57s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:42KiB ETA:4h14m52s]
+ *** Download Progress Summary as of Thu Aug 20 16:50:58 2026 *** 
+===============================================================================
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:38KiB ETA:4h45m40s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:38KiB ETA:4h45m40s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:29KiB ETA:6h15m30s]
+
+08/20 16:51:00 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:9.7KiB ETA:18h48m42s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:7.8KiB ETA:23h9m30s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:46KiB ETA:3h54m39s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:68KiB ETA:2h39m26s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:86KiB ETA:2h6m54s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:88KiB ETA:2h3m33s]
+[#470647 640MiB/1.2GiB(49%) CN:8 DL:83KiB ETA:2h11m46s]
+
+08/20 16:51:08 [[1;32mNOTICE[0m] CUID#10 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:79KiB ETA:2h18m19s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:82KiB ETA:2h12m36s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:112KiB ETA:1h36m47s]
+
+08/20 16:51:11 [[1;32mNOTICE[0m] CUID#8 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:110KiB ETA:1h38m36s]
+ *** Download Progress Summary as of Thu Aug 20 16:51:13 2026 *** 
+===============================================================================
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:98KiB ETA:1h50m44s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:98KiB ETA:1h50m44s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:85KiB ETA:2h7m13s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:70KiB ETA:2h34m25s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:60KiB ETA:2h59m26s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:56KiB ETA:3h13m]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:68KiB ETA:2h39m48s]
+[#470647 641MiB/1.2GiB(50%) CN:8 DL:74KiB ETA:2h26m21s]
+[#470647 642MiB/1.2GiB(50%) CN:8 DL:73KiB ETA:2h27m52s]
+[#470647 642MiB/1.2GiB(50%) CN:8 DL:116KiB ETA:1h33m57s]
+[#470647 642MiB/1.2GiB(50%) CN:8 DL:237KiB ETA:45m53s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:247KiB ETA:43m58s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:226KiB ETA:48m13s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:251KiB ETA:43m20s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:232KiB ETA:46m47s]
+ *** Download Progress Summary as of Thu Aug 20 16:51:29 2026 *** 
+===============================================================================
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:218KiB ETA:49m45s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:218KiB ETA:49m45s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:200KiB ETA:54m16s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:170KiB ETA:1h3m55s]
+[#470647 643MiB/1.2GiB(50%) CN:8 DL:140KiB ETA:1h17m39s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:126KiB ETA:1h26m22s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:99KiB ETA:1h49m20s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:107KiB ETA:1h41m30s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:65KiB ETA:2h45m42s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:72KiB ETA:2h29m30s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:70KiB ETA:2h34m18s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:88KiB ETA:2h2m23s]
+
+08/20 16:51:41 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:75KiB ETA:2h23m28s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:64KiB ETA:2h47m22s]
+ *** Download Progress Summary as of Thu Aug 20 16:51:44 2026 *** 
+===============================================================================
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:42KiB ETA:4h17m22s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:42KiB ETA:4h17m22s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:43KiB ETA:4h8m58s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:39KiB ETA:4h32m41s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:51KiB ETA:3h31m34s]
+[#470647 644MiB/1.2GiB(50%) CN:8 DL:50KiB ETA:3h36m19s]
+[#470647 645MiB/1.2GiB(50%) CN:8 DL:71KiB ETA:2h31m34s]
+[#470647 645MiB/1.2GiB(50%) CN:8 DL:79KiB ETA:2h17m19s]
+[#470647 645MiB/1.2GiB(50%) CN:8 DL:111KiB ETA:1h37m40s]
+[#470647 645MiB/1.2GiB(50%) CN:8 DL:131KiB ETA:1h22m35s]
+[#470647 646MiB/1.2GiB(50%) CN:8 DL:170KiB ETA:1h3m44s]
+[#470647 646MiB/1.2GiB(50%) CN:8 DL:198KiB ETA:54m33s]
+[#470647 646MiB/1.2GiB(50%) CN:8 DL:242KiB ETA:44m39s]
+[#470647 647MiB/1.2GiB(50%) CN:8 DL:265KiB ETA:40m46s]
+[#470647 647MiB/1.2GiB(50%) CN:8 DL:271KiB ETA:39m55s]
+ *** Download Progress Summary as of Thu Aug 20 16:51:59 2026 *** 
+===============================================================================
+[#470647 647MiB/1.2GiB(50%) CN:8 DL:276KiB ETA:39m6s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 647MiB/1.2GiB(50%) CN:8 DL:276KiB ETA:39m6s]
+[#470647 648MiB/1.2GiB(50%) CN:8 DL:318KiB ETA:33m56s]
+[#470647 648MiB/1.2GiB(50%) CN:8 DL:343KiB ETA:31m26s]
+[#470647 648MiB/1.2GiB(50%) CN:8 DL:302KiB ETA:35m41s]
+[#470647 648MiB/1.2GiB(50%) CN:8 DL:270KiB ETA:39m52s]
+[#470647 649MiB/1.2GiB(50%) CN:8 DL:240KiB ETA:44m56s]
+[#470647 649MiB/1.2GiB(50%) CN:8 DL:255KiB ETA:42m18s]
+[#470647 650MiB/1.2GiB(50%) CN:8 DL:316KiB ETA:34m4s]
+[#470647 650MiB/1.2GiB(50%) CN:8 DL:330KiB ETA:32m35s]
+[#470647 650MiB/1.2GiB(50%) CN:8 DL:288KiB ETA:37m24s]
+
+08/20 16:52:09 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 650MiB/1.2GiB(50%) CN:8 DL:252KiB ETA:42m44s]
+[#470647 650MiB/1.2GiB(50%) CN:8 DL:217KiB ETA:49m36s]
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:256KiB ETA:41m57s]
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:294KiB ETA:36m31s]
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:290KiB ETA:37m4s]
+ *** Download Progress Summary as of Thu Aug 20 16:52:16 2026 *** 
+===============================================================================
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:218KiB ETA:49m17s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:218KiB ETA:49m17s]
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:176KiB ETA:1h59s]
+[#470647 651MiB/1.2GiB(50%) CN:8 DL:161KiB ETA:1h6m28s]
+[#470647 652MiB/1.2GiB(50%) CN:8 DL:177KiB ETA:1h26s]
+[#470647 652MiB/1.2GiB(50%) CN:8 DL:207KiB ETA:51m47s]
+[#470647 653MiB/1.2GiB(50%) CN:8 DL:202KiB ETA:53m5s]
+[#470647 653MiB/1.2GiB(50%) CN:8 DL:209KiB ETA:51m13s]
+[#470647 653MiB/1.2GiB(51%) CN:8 DL:230KiB ETA:46m26s]
+[#470647 654MiB/1.2GiB(51%) CN:8 DL:300KiB ETA:35m36s]
+[#470647 654MiB/1.2GiB(51%) CN:8 DL:316KiB ETA:33m51s]
+[#470647 654MiB/1.2GiB(51%) CN:8 DL:319KiB ETA:33m31s]
+[#470647 655MiB/1.2GiB(51%) CN:8 DL:315KiB ETA:33m57s]
+[#470647 655MiB/1.2GiB(51%) CN:8 DL:283KiB ETA:37m45s]
+[#470647 655MiB/1.2GiB(51%) CN:8 DL:270KiB ETA:39m35s]
+ *** Download Progress Summary as of Thu Aug 20 16:52:31 2026 *** 
+===============================================================================
+[#470647 655MiB/1.2GiB(51%) CN:8 DL:273KiB ETA:39m1s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 655MiB/1.2GiB(51%) CN:8 DL:273KiB ETA:39m1s]
+[#470647 656MiB/1.2GiB(51%) CN:8 DL:287KiB ETA:37m9s]
+[#470647 656MiB/1.2GiB(51%) CN:8 DL:306KiB ETA:34m51s]
+[#470647 657MiB/1.2GiB(51%) CN:8 DL:313KiB ETA:34m2s]
+[#470647 657MiB/1.2GiB(51%) CN:8 DL:326KiB ETA:32m36s]
+[#470647 658MiB/1.2GiB(51%) CN:8 DL:387KiB ETA:27m26s]
+[#470647 658MiB/1.2GiB(51%) CN:8 DL:437KiB ETA:24m18s]
+[#470647 659MiB/1.2GiB(51%) CN:8 DL:479KiB ETA:22m8s]
+[#470647 660MiB/1.2GiB(51%) CN:8 DL:483KiB ETA:21m55s]
+
+08/20 16:52:41 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 660MiB/1.2GiB(51%) CN:8 DL:496KiB ETA:21m21s]
+[#470647 661MiB/1.2GiB(51%) CN:8 DL:562KiB ETA:18m49s]
+[#470647 662MiB/1.2GiB(51%) CN:8 DL:536KiB ETA:19m43s]
+[#470647 663MiB/1.2GiB(51%) CN:8 DL:580KiB ETA:18m10s]
+[#470647 664MiB/1.2GiB(51%) CN:8 DL:644KiB ETA:16m21s]
+ *** Download Progress Summary as of Thu Aug 20 16:52:47 2026 *** 
+===============================================================================
+[#470647 664MiB/1.2GiB(51%) CN:8 DL:654KiB ETA:16m5s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 664MiB/1.2GiB(51%) CN:8 DL:654KiB ETA:16m5s]
+
+08/20 16:52:47 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 665MiB/1.2GiB(51%) CN:8 DL:672KiB ETA:15m39s]
+[#470647 665MiB/1.2GiB(51%) CN:8 DL:629KiB ETA:16m41s]
+[#470647 665MiB/1.2GiB(51%) CN:8 DL:637KiB ETA:16m29s]
+[#470647 666MiB/1.2GiB(51%) CN:8 DL:656KiB ETA:16m]
+[#470647 667MiB/1.2GiB(52%) CN:8 DL:667KiB ETA:15m41s]
+[#470647 669MiB/1.2GiB(52%) CN:8 DL:781KiB ETA:13m23s]
+[#470647 669MiB/1.2GiB(52%) CN:8 DL:700KiB ETA:14m54s]
+[#470647 669MiB/1.2GiB(52%) CN:8 DL:585KiB ETA:17m50s]
+[#470647 669MiB/1.2GiB(52%) CN:8 DL:537KiB ETA:19m26s]
+[#470647 670MiB/1.2GiB(52%) CN:8 DL:537KiB ETA:19m25s]
+[#470647 671MiB/1.2GiB(52%) CN:8 DL:633KiB ETA:16m27s]
+[#470647 672MiB/1.2GiB(52%) CN:8 DL:721KiB ETA:14m24s]
+[#470647 673MiB/1.2GiB(52%) CN:8 DL:707KiB ETA:14m40s]
+[#470647 673MiB/1.2GiB(52%) CN:8 DL:631KiB ETA:16m26s]
+ *** Download Progress Summary as of Thu Aug 20 16:53:02 2026 *** 
+===============================================================================
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:536KiB ETA:19m19s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:536KiB ETA:19m19s]
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:526KiB ETA:19m41s]
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:547KiB ETA:18m55s]
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:478KiB ETA:21m39s]
+
+08/20 16:53:07 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 674MiB/1.2GiB(52%) CN:8 DL:448KiB ETA:23m6s]
+[#470647 675MiB/1.2GiB(52%) CN:8 DL:385KiB ETA:26m50s]
+[#470647 675MiB/1.2GiB(52%) CN:8 DL:294KiB ETA:35m8s]
+[#470647 676MiB/1.2GiB(52%) CN:8 DL:283KiB ETA:36m25s]
+[#470647 676MiB/1.2GiB(52%) CN:8 DL:290KiB ETA:35m36s]
+[#470647 676MiB/1.2GiB(52%) CN:8 DL:285KiB ETA:36m12s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:265KiB ETA:38m51s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:292KiB ETA:35m15s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:253KiB ETA:40m40s]
+ *** Download Progress Summary as of Thu Aug 20 16:53:18 2026 *** 
+===============================================================================
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:219KiB ETA:47m7s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:219KiB ETA:47m7s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:175KiB ETA:58m53s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:137KiB ETA:1h15m17s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:72KiB ETA:2h21m48s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:68KiB ETA:2h30m25s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:63KiB ETA:2h43m21s]
+[#470647 677MiB/1.2GiB(52%) CN:8 DL:77KiB ETA:2h13m32s]
+[#470647 678MiB/1.2GiB(52%) CN:8 DL:105KiB ETA:1h37m40s]
+[#470647 678MiB/1.2GiB(52%) CN:8 DL:115KiB ETA:1h29m3s]
+[#470647 678MiB/1.2GiB(52%) CN:8 DL:127KiB ETA:1h20m28s]
+[#470647 678MiB/1.2GiB(52%) CN:8 DL:130KiB ETA:1h18m48s]
+[#470647 678MiB/1.2GiB(52%) CN:8 DL:150KiB ETA:1h8m29s]
+[#470647 679MiB/1.2GiB(52%) CN:8 DL:170KiB ETA:1h22s]
+[#470647 679MiB/1.2GiB(52%) CN:8 DL:214KiB ETA:47m50s]
+ *** Download Progress Summary as of Thu Aug 20 16:53:34 2026 *** 
+===============================================================================
+[#470647 679MiB/1.2GiB(53%) CN:8 DL:218KiB ETA:47m5s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 679MiB/1.2GiB(53%) CN:8 DL:218KiB ETA:47m5s]
+[#470647 679MiB/1.2GiB(53%) CN:8 DL:223KiB ETA:46m1s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:208KiB ETA:49m8s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:217KiB ETA:47m6s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:213KiB ETA:48m1s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:214KiB ETA:47m46s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:213KiB ETA:48m7s]
+[#470647 680MiB/1.2GiB(53%) CN:8 DL:198KiB ETA:51m46s]
+[#470647 681MiB/1.2GiB(53%) CN:8 DL:191KiB ETA:53m28s]
+[#470647 681MiB/1.2GiB(53%) CN:8 DL:192KiB ETA:53m13s]
+[#470647 681MiB/1.2GiB(53%) CN:8 DL:186KiB ETA:55m4s]
+[#470647 681MiB/1.2GiB(53%) CN:8 DL:187KiB ETA:54m44s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:173KiB ETA:58m54s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:161KiB ETA:1h3m33s]
+ *** Download Progress Summary as of Thu Aug 20 16:53:49 2026 *** 
+===============================================================================
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:152KiB ETA:1h7m13s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:152KiB ETA:1h7m13s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:159KiB ETA:1h4m10s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:141KiB ETA:1h12m16s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:133KiB ETA:1h16m50s]
+[#470647 682MiB/1.2GiB(53%) CN:8 DL:133KiB ETA:1h16m44s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:125KiB ETA:1h21m8s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:124KiB ETA:1h21m56s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:118KiB ETA:1h26m7s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:141KiB ETA:1h12m24s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:128KiB ETA:1h19m34s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:113KiB ETA:1h29m55s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:117KiB ETA:1h27m12s]
+[#470647 683MiB/1.2GiB(53%) CN:8 DL:101KiB ETA:1h40m17s]
+ *** Download Progress Summary as of Thu Aug 20 16:54:05 2026 *** 
+===============================================================================
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:114KiB ETA:1h28m49s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:114KiB ETA:1h28m49s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:119KiB ETA:1h25m18s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:87KiB ETA:1h56m13s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:114KiB ETA:1h28m46s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:118KiB ETA:1h25m58s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:107KiB ETA:1h34m34s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:90KiB ETA:1h53m14s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:84KiB ETA:2h29s]
+
+08/20 16:54:14 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:83KiB ETA:2h2m4s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:71KiB ETA:2h23m2s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:63KiB ETA:2h40m]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:37KiB ETA:4h30m22s]
+[#470647 684MiB/1.2GiB(53%) CN:8 DL:34KiB ETA:4h59m14s]
+ *** Download Progress Summary as of Thu Aug 20 16:54:20 2026 *** 
+===============================================================================
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h17m4s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h17m4s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:47KiB ETA:3h35m20s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:39KiB ETA:4h16m23s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:48KiB ETA:3h31m17s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:64KiB ETA:2h38m21s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:53KiB ETA:3h9m42s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:53KiB ETA:3h10m17s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:58KiB ETA:2h53m6s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h18m12s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:54KiB ETA:3h5m51s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h18m7s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:42KiB ETA:3h59m53s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:39KiB ETA:4h16m38s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:35KiB ETA:4h48m34s]
+ *** Download Progress Summary as of Thu Aug 20 16:54:36 2026 *** 
+===============================================================================
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:48KiB ETA:3h27m54s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:48KiB ETA:3h27m54s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:47KiB ETA:3h35m43s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:56KiB ETA:3h1m25s]
+[#470647 685MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h17m59s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:51KiB ETA:3h18m53s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:49KiB ETA:3h25m59s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:43KiB ETA:3h53m19s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:47KiB ETA:3h32m40s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:62KiB ETA:2h43m29s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:82KiB ETA:2h3m31s]
+[#470647 686MiB/1.2GiB(53%) CN:8 DL:97KiB ETA:1h43m45s]
+[#470647 687MiB/1.2GiB(53%) CN:8 DL:121KiB ETA:1h23m53s]
+[#470647 687MiB/1.2GiB(53%) CN:8 DL:132KiB ETA:1h16m29s]
+[#470647 687MiB/1.2GiB(53%) CN:8 DL:185KiB ETA:54m46s]
+ *** Download Progress Summary as of Thu Aug 20 16:54:52 2026 *** 
+===============================================================================
+[#470647 687MiB/1.2GiB(53%) CN:8 DL:194KiB ETA:52m8s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 687MiB/1.2GiB(53%) CN:8 DL:194KiB ETA:52m8s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:219KiB ETA:46m4s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:227KiB ETA:44m29s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:210KiB ETA:48m12s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:181KiB ETA:55m48s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:168KiB ETA:59m55s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:164KiB ETA:1h1m36s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:146KiB ETA:1h9m13s]
+[#470647 688MiB/1.2GiB(53%) CN:8 DL:138KiB ETA:1h13m3s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:105KiB ETA:1h35m59s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:95KiB ETA:1h46m5s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:92KiB ETA:1h48m49s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:82KiB ETA:2h2m18s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:71KiB ETA:2h22m22s]
+ *** Download Progress Summary as of Thu Aug 20 16:55:07 2026 *** 
+===============================================================================
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:67KiB ETA:2h30m50s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:67KiB ETA:2h30m50s]
+
+08/20 16:55:08 [[1;32mNOTICE[0m] CUID#11 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:63KiB ETA:2h40m3s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:62KiB ETA:2h40m51s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:45KiB ETA:3h43m43s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:55KiB ETA:3h3m14s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:61KiB ETA:2h45m13s]
+[#470647 689MiB/1.2GiB(53%) CN:8 DL:119KiB ETA:1h24m42s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:116KiB ETA:1h26m50s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:111KiB ETA:1h30m47s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:103KiB ETA:1h37m29s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:100KiB ETA:1h40m40s]
+
+08/20 16:55:19 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:94KiB ETA:1h46m50s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:100KiB ETA:1h40m52s]
+
+08/20 16:55:21 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:89KiB ETA:1h53m9s]
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:92KiB ETA:1h48m56s]
+ *** Download Progress Summary as of Thu Aug 20 16:55:23 2026 *** 
+===============================================================================
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:76KiB ETA:2h12m44s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:76KiB ETA:2h12m44s]
+
+08/20 16:55:24 [[1;32mNOTICE[0m] CUID#8 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 690MiB/1.2GiB(53%) CN:8 DL:91KiB ETA:1h50m17s]
+[#470647 691MiB/1.2GiB(53%) CN:8 DL:114KiB ETA:1h27m56s]
+[#470647 691MiB/1.2GiB(53%) CN:8 DL:172KiB ETA:58m23s]
+[#470647 692MiB/1.2GiB(54%) CN:8 DL:232KiB ETA:43m21s]
+[#470647 692MiB/1.2GiB(54%) CN:8 DL:256KiB ETA:39m13s]
+[#470647 692MiB/1.2GiB(54%) CN:8 DL:262KiB ETA:38m15s]
+[#470647 692MiB/1.2GiB(54%) CN:8 DL:281KiB ETA:35m45s]
+[#470647 693MiB/1.2GiB(54%) CN:8 DL:297KiB ETA:33m44s]
+[#470647 693MiB/1.2GiB(54%) CN:8 DL:308KiB ETA:32m33s]
+[#470647 693MiB/1.2GiB(54%) CN:8 DL:301KiB ETA:33m17s]
+[#470647 693MiB/1.2GiB(54%) CN:8 DL:282KiB ETA:35m34s]
+[#470647 693MiB/1.2GiB(54%) CN:8 DL:230KiB ETA:43m37s]
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:184KiB ETA:54m15s]
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:176KiB ETA:56m46s]
+ *** Download Progress Summary as of Thu Aug 20 16:55:39 2026 *** 
+===============================================================================
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:173KiB ETA:57m51s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:173KiB ETA:57m51s]
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:158KiB ETA:1h3m4s]
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:148KiB ETA:1h7m20s]
+
+08/20 16:55:42 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 694MiB/1.2GiB(54%) CN:8 DL:161KiB ETA:1h2m8s]
+[#470647 695MiB/1.2GiB(54%) CN:8 DL:165KiB ETA:1h31s]
+[#470647 695MiB/1.2GiB(54%) CN:8 DL:153KiB ETA:1h5m5s]
+[#470647 695MiB/1.2GiB(54%) CN:8 DL:188KiB ETA:53m11s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:207KiB ETA:48m12s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:216KiB ETA:46m12s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:208KiB ETA:47m49s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:191KiB ETA:52m17s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:165KiB ETA:1h24s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:162KiB ETA:1h1m25s]
+[#470647 696MiB/1.2GiB(54%) CN:8 DL:170KiB ETA:58m27s]
+ *** Download Progress Summary as of Thu Aug 20 16:55:55 2026 *** 
+===============================================================================
+[#470647 697MiB/1.2GiB(54%) CN:8 DL:165KiB ETA:1h27s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 697MiB/1.2GiB(54%) CN:8 DL:165KiB ETA:1h27s]
+[#470647 697MiB/1.2GiB(54%) CN:8 DL:171KiB ETA:58m18s]
+[#470647 697MiB/1.2GiB(54%) CN:8 DL:167KiB ETA:59m24s]
+[#470647 697MiB/1.2GiB(54%) CN:8 DL:177KiB ETA:56m]
+[#470647 698MiB/1.2GiB(54%) CN:8 DL:213KiB ETA:46m46s]
+[#470647 698MiB/1.2GiB(54%) CN:8 DL:226KiB ETA:43m55s]
+[#470647 698MiB/1.2GiB(54%) CN:8 DL:254KiB ETA:39m6s]
+[#470647 699MiB/1.2GiB(54%) CN:8 DL:267KiB ETA:37m9s]
+[#470647 699MiB/1.2GiB(54%) CN:8 DL:275KiB ETA:36m3s]
+[#470647 699MiB/1.2GiB(54%) CN:8 DL:235KiB ETA:42m13s]
+[#470647 699MiB/1.2GiB(54%) CN:8 DL:224KiB ETA:44m12s]
+[#470647 699MiB/1.2GiB(54%) CN:8 DL:222KiB ETA:44m35s]
+[#470647 700MiB/1.2GiB(54%) CN:8 DL:224KiB ETA:44m19s]
+[#470647 700MiB/1.2GiB(54%) CN:8 DL:247KiB ETA:40m9s]
+[#470647 700MiB/1.2GiB(54%) CN:8 DL:243KiB ETA:40m39s]
+ *** Download Progress Summary as of Thu Aug 20 16:56:11 2026 *** 
+===============================================================================
+[#470647 700MiB/1.2GiB(54%) CN:8 DL:232KiB ETA:42m33s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 700MiB/1.2GiB(54%) CN:8 DL:232KiB ETA:42m33s]
+[#470647 701MiB/1.2GiB(54%) CN:8 DL:255KiB ETA:38m47s]
+[#470647 701MiB/1.2GiB(54%) CN:8 DL:275KiB ETA:35m57s]
+
+08/20 16:56:13 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 702MiB/1.2GiB(54%) CN:8 DL:302KiB ETA:32m40s]
+[#470647 702MiB/1.2GiB(54%) CN:8 DL:336KiB ETA:29m23s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:370KiB ETA:26m37s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:363KiB ETA:27m7s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:337KiB ETA:29m14s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:310KiB ETA:31m45s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:314KiB ETA:31m23s]
+[#470647 703MiB/1.2GiB(54%) CN:8 DL:290KiB ETA:34m]
+[#470647 704MiB/1.2GiB(54%) CN:8 DL:254KiB ETA:38m42s]
+[#470647 704MiB/1.2GiB(54%) CN:8 DL:242KiB ETA:40m40s]
+[#470647 704MiB/1.2GiB(54%) CN:8 DL:205KiB ETA:47m50s]
+[#470647 704MiB/1.2GiB(54%) CN:8 DL:208KiB ETA:47m20s]
+ *** Download Progress Summary as of Thu Aug 20 16:56:26 2026 *** 
+===============================================================================
+[#470647 705MiB/1.2GiB(55%) CN:8 DL:209KiB ETA:46m55s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 705MiB/1.2GiB(55%) CN:8 DL:209KiB ETA:46m55s]
+[#470647 705MiB/1.2GiB(55%) CN:8 DL:231KiB ETA:42m30s]
+[#470647 705MiB/1.2GiB(55%) CN:8 DL:276KiB ETA:35m35s]
+[#470647 706MiB/1.2GiB(55%) CN:8 DL:278KiB ETA:35m19s]
+[#470647 706MiB/1.2GiB(55%) CN:8 DL:309KiB ETA:31m40s]
+[#470647 707MiB/1.2GiB(55%) CN:8 DL:322KiB ETA:30m24s]
+[#470647 707MiB/1.2GiB(55%) CN:8 DL:341KiB ETA:28m45s]
+[#470647 707MiB/1.2GiB(55%) CN:8 DL:366KiB ETA:26m43s]
+[#470647 708MiB/1.2GiB(55%) CN:8 DL:406KiB ETA:24m5s]
+[#470647 709MiB/1.2GiB(55%) CN:8 DL:431KiB ETA:22m41s]
+[#470647 709MiB/1.2GiB(55%) CN:8 DL:459KiB ETA:21m15s]
+[#470647 710MiB/1.2GiB(55%) CN:8 DL:453KiB ETA:21m30s]
+[#470647 710MiB/1.2GiB(55%) CN:8 DL:476KiB ETA:20m28s]
+[#470647 711MiB/1.2GiB(55%) CN:8 DL:551KiB ETA:17m39s]
+[#470647 713MiB/1.2GiB(55%) CN:8 DL:679KiB ETA:14m16s]
+ *** Download Progress Summary as of Thu Aug 20 16:56:42 2026 *** 
+===============================================================================
+[#470647 714MiB/1.2GiB(55%) CN:8 DL:749KiB ETA:12m55s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 714MiB/1.2GiB(55%) CN:8 DL:749KiB ETA:12m55s]
+[#470647 715MiB/1.2GiB(55%) CN:8 DL:778KiB ETA:12m25s]
+[#470647 715MiB/1.2GiB(55%) CN:8 DL:766KiB ETA:12m36s]
+[#470647 716MiB/1.2GiB(55%) CN:8 DL:781KiB ETA:12m20s]
+[#470647 716MiB/1.2GiB(55%) CN:8 DL:775KiB ETA:12m25s]
+[#470647 717MiB/1.2GiB(55%) CN:8 DL:824KiB ETA:11m40s]
+[#470647 718MiB/1.2GiB(56%) CN:8 DL:859KiB ETA:11m11s]
+[#470647 719MiB/1.2GiB(56%) CN:8 DL:827KiB ETA:11m36s]
+[#470647 720MiB/1.2GiB(56%) CN:8 DL:750KiB ETA:12m46s]
+[#470647 720MiB/1.2GiB(56%) CN:8 DL:727KiB ETA:13m10s]
+
+08/20 16:56:51 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 721MiB/1.2GiB(56%) CN:8 DL:734KiB ETA:13m1s]
+[#470647 722MiB/1.2GiB(56%) CN:8 DL:743KiB ETA:12m50s]
+[#470647 722MiB/1.2GiB(56%) CN:8 DL:691KiB ETA:13m48s]
+[#470647 722MiB/1.2GiB(56%) CN:8 DL:685KiB ETA:13m55s]
+[#470647 723MiB/1.2GiB(56%) CN:8 DL:628KiB ETA:15m9s]
+ *** Download Progress Summary as of Thu Aug 20 16:56:57 2026 *** 
+===============================================================================
+[#470647 723MiB/1.2GiB(56%) CN:8 DL:594KiB ETA:16m1s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 723MiB/1.2GiB(56%) CN:8 DL:594KiB ETA:16m1s]
+[#470647 724MiB/1.2GiB(56%) CN:8 DL:551KiB ETA:17m15s]
+[#470647 724MiB/1.2GiB(56%) CN:8 DL:509KiB ETA:18m40s]
+[#470647 724MiB/1.2GiB(56%) CN:8 DL:438KiB ETA:21m40s]
+
+08/20 16:57:00 [[1;32mNOTICE[0m] CUID#13 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 724MiB/1.2GiB(56%) CN:8 DL:362KiB ETA:26m13s]
+[#470647 725MiB/1.2GiB(56%) CN:8 DL:329KiB ETA:28m48s]
+[#470647 725MiB/1.2GiB(56%) CN:8 DL:337KiB ETA:28m10s]
+[#470647 725MiB/1.2GiB(56%) CN:8 DL:325KiB ETA:29m11s]
+[#470647 726MiB/1.2GiB(56%) CN:8 DL:315KiB ETA:30m2s]
+[#470647 726MiB/1.2GiB(56%) CN:8 DL:290KiB ETA:32m35s]
+[#470647 726MiB/1.2GiB(56%) CN:8 DL:267KiB ETA:35m26s]
+[#470647 726MiB/1.2GiB(56%) CN:8 DL:250KiB ETA:37m51s]
+[#470647 727MiB/1.2GiB(56%) CN:8 DL:288KiB ETA:32m47s]
+[#470647 727MiB/1.2GiB(56%) CN:8 DL:306KiB ETA:30m51s]
+[#470647 728MiB/1.2GiB(56%) CN:8 DL:386KiB ETA:24m23s]
+ *** Download Progress Summary as of Thu Aug 20 16:57:13 2026 *** 
+===============================================================================
+[#470647 729MiB/1.2GiB(56%) CN:8 DL:389KiB ETA:24m13s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 729MiB/1.2GiB(56%) CN:8 DL:389KiB ETA:24m13s]
+[#470647 729MiB/1.2GiB(56%) CN:8 DL:399KiB ETA:23m36s]
+[#470647 729MiB/1.2GiB(56%) CN:8 DL:386KiB ETA:24m24s]
+[#470647 729MiB/1.2GiB(56%) CN:8 DL:372KiB ETA:25m17s]
+[#470647 730MiB/1.2GiB(56%) CN:8 DL:363KiB ETA:25m55s]
+[#470647 730MiB/1.2GiB(56%) CN:8 DL:362KiB ETA:25m59s]
+[#470647 730MiB/1.2GiB(56%) CN:8 DL:317KiB ETA:29m38s]
+[#470647 730MiB/1.2GiB(57%) CN:8 DL:317KiB ETA:29m35s]
+[#470647 731MiB/1.2GiB(57%) CN:8 DL:259KiB ETA:36m14s]
+[#470647 731MiB/1.2GiB(57%) CN:8 DL:286KiB ETA:32m48s]
+[#470647 732MiB/1.2GiB(57%) CN:8 DL:328KiB ETA:28m32s]
+[#470647 733MiB/1.2GiB(57%) CN:8 DL:360KiB ETA:25m59s]
+[#470647 733MiB/1.2GiB(57%) CN:8 DL:451KiB ETA:20m42s]
+[#470647 734MiB/1.2GiB(57%) CN:8 DL:491KiB ETA:19m]
+ *** Download Progress Summary as of Thu Aug 20 16:57:28 2026 *** 
+===============================================================================
+[#470647 734MiB/1.2GiB(57%) CN:8 DL:489KiB ETA:19m5s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 734MiB/1.2GiB(57%) CN:8 DL:489KiB ETA:19m5s]
+[#470647 734MiB/1.2GiB(57%) CN:8 DL:485KiB ETA:19m13s]
+[#470647 735MiB/1.2GiB(57%) CN:8 DL:497KiB ETA:18m45s]
+[#470647 735MiB/1.2GiB(57%) CN:8 DL:480KiB ETA:19m24s]
+[#470647 736MiB/1.2GiB(57%) CN:8 DL:488KiB ETA:19m3s]
+[#470647 737MiB/1.2GiB(57%) CN:8 DL:555KiB ETA:16m44s]
+[#470647 738MiB/1.2GiB(57%) CN:8 DL:634KiB ETA:14m36s]
+[#470647 740MiB/1.2GiB(57%) CN:8 DL:703KiB ETA:13m9s]
+[#470647 740MiB/1.2GiB(57%) CN:8 DL:696KiB ETA:13m15s]
+[#470647 741MiB/1.2GiB(57%) CN:8 DL:743KiB ETA:12m24s]
+[#470647 741MiB/1.2GiB(57%) CN:8 DL:687KiB ETA:13m24s]
+[#470647 741MiB/1.2GiB(57%) CN:8 DL:713KiB ETA:12m55s]
+[#470647 742MiB/1.2GiB(57%) CN:8 DL:738KiB ETA:12m28s]
+[#470647 742MiB/1.2GiB(57%) CN:8 DL:724KiB ETA:12m42s]
+[#470647 743MiB/1.2GiB(57%) CN:8 DL:695KiB ETA:13m13s]
+[#470647 743MiB/1.2GiB(58%) CN:8 DL:603KiB ETA:15m13s]
+ *** Download Progress Summary as of Thu Aug 20 16:57:44 2026 *** 
+===============================================================================
+[#470647 744MiB/1.2GiB(58%) CN:8 DL:494KiB ETA:18m32s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 744MiB/1.2GiB(58%) CN:8 DL:494KiB ETA:18m32s]
+[#470647 744MiB/1.2GiB(58%) CN:8 DL:394KiB ETA:23m13s]
+[#470647 744MiB/1.2GiB(58%) CN:8 DL:404KiB ETA:22m39s]
+[#470647 745MiB/1.2GiB(58%) CN:8 DL:430KiB ETA:21m17s]
+[#470647 745MiB/1.2GiB(58%) CN:8 DL:445KiB ETA:20m31s]
+[#470647 746MiB/1.2GiB(58%) CN:8 DL:466KiB ETA:19m33s]
+[#470647 747MiB/1.2GiB(58%) CN:8 DL:532KiB ETA:17m7s]
+
+08/20 16:57:51 [[1;32mNOTICE[0m] CUID#10 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 748MiB/1.2GiB(58%) CN:8 DL:617KiB ETA:14m43s]
+[#470647 750MiB/1.2GiB(58%) CN:8 DL:738KiB ETA:12m17s]
+[#470647 751MiB/1.2GiB(58%) CN:8 DL:826KiB ETA:10m57s]
+[#470647 751MiB/1.2GiB(58%) CN:8 DL:867KiB ETA:10m25s]
+[#470647 752MiB/1.2GiB(58%) CN:8 DL:837KiB ETA:10m47s]
+[#470647 753MiB/1.2GiB(58%) CN:8 DL:884KiB ETA:10m12s]
+[#470647 753MiB/1.2GiB(58%) CN:8 DL:903KiB ETA:9m58s]
+[#470647 754MiB/1.2GiB(58%) CN:8 DL:864KiB ETA:10m24s]
+ *** Download Progress Summary as of Thu Aug 20 16:57:59 2026 *** 
+===============================================================================
+[#470647 754MiB/1.2GiB(58%) CN:8 DL:812KiB ETA:11m4s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 754MiB/1.2GiB(58%) CN:8 DL:812KiB ETA:11m4s]
+[#470647 755MiB/1.2GiB(58%) CN:8 DL:698KiB ETA:12m52s]
+[#470647 755MiB/1.2GiB(58%) CN:8 DL:580KiB ETA:15m29s]
+[#470647 755MiB/1.2GiB(58%) CN:8 DL:508KiB ETA:17m39s]
+[#470647 756MiB/1.2GiB(59%) CN:8 DL:499KiB ETA:17m56s]
+[#470647 757MiB/1.2GiB(59%) CN:8 DL:528KiB ETA:16m55s]
+[#470647 757MiB/1.2GiB(59%) CN:8 DL:490KiB ETA:18m14s]
+[#470647 758MiB/1.2GiB(59%) CN:8 DL:527KiB ETA:16m55s]
+[#470647 758MiB/1.2GiB(59%) CN:8 DL:494KiB ETA:18m2s]
+[#470647 759MiB/1.2GiB(59%) CN:8 DL:464KiB ETA:19m14s]
+[#470647 759MiB/1.2GiB(59%) CN:8 DL:449KiB ETA:19m49s]
+[#470647 759MiB/1.2GiB(59%) CN:8 DL:422KiB ETA:21m6s]
+[#470647 759MiB/1.2GiB(59%) CN:8 DL:424KiB ETA:20m58s]
+[#470647 760MiB/1.2GiB(59%) CN:8 DL:413KiB ETA:21m30s]
+[#470647 760MiB/1.2GiB(59%) CN:8 DL:376KiB ETA:23m36s]
+ *** Download Progress Summary as of Thu Aug 20 16:58:15 2026 *** 
+===============================================================================
+[#470647 761MiB/1.2GiB(59%) CN:8 DL:372KiB ETA:23m51s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 761MiB/1.2GiB(59%) CN:8 DL:372KiB ETA:23m51s]
+[#470647 762MiB/1.2GiB(59%) CN:8 DL:375KiB ETA:23m35s]
+[#470647 762MiB/1.2GiB(59%) CN:8 DL:441KiB ETA:20m3s]
+[#470647 763MiB/1.2GiB(59%) CN:8 DL:530KiB ETA:16m39s]
+[#470647 764MiB/1.2GiB(59%) CN:8 DL:552KiB ETA:16m]
+[#470647 764MiB/1.2GiB(59%) CN:8 DL:559KiB ETA:15m46s]
+[#470647 765MiB/1.2GiB(59%) CN:8 DL:644KiB ETA:13m40s]
+[#470647 767MiB/1.2GiB(59%) CN:8 DL:744KiB ETA:11m48s]
+[#470647 768MiB/1.2GiB(59%) CN:8 DL:823KiB ETA:10m38s]
+[#470647 769MiB/1.2GiB(60%) CN:8 DL:863KiB ETA:10m8s]
+[#470647 769MiB/1.2GiB(60%) CN:8 DL:884KiB ETA:9m52s]
+[#470647 770MiB/1.2GiB(60%) CN:8 DL:832KiB ETA:10m29s]
+[#470647 770MiB/1.2GiB(60%) CN:8 DL:825KiB ETA:10m33s]
+[#470647 771MiB/1.2GiB(60%) CN:8 DL:838KiB ETA:10m23s]
+[#470647 772MiB/1.2GiB(60%) CN:8 DL:848KiB ETA:10m15s]
+
+08/20 16:58:29 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+ *** Download Progress Summary as of Thu Aug 20 16:58:30 2026 *** 
+===============================================================================
+[#470647 772MiB/1.2GiB(60%) CN:8 DL:795KiB ETA:10m55s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 772MiB/1.2GiB(60%) CN:8 DL:795KiB ETA:10m55s]
+[#470647 773MiB/1.2GiB(60%) CN:8 DL:805KiB ETA:10m45s]
+[#470647 775MiB/1.2GiB(60%) CN:8 DL:800KiB ETA:10m48s]
+[#470647 776MiB/1.2GiB(60%) CN:8 DL:824KiB ETA:10m27s]
+[#470647 777MiB/1.2GiB(60%) CN:8 DL:815KiB ETA:10m33s]
+[#470647 778MiB/1.2GiB(60%) CN:8 DL:915KiB ETA:9m23s]
+[#470647 779MiB/1.2GiB(60%) CN:8 DL:0.9MiB ETA:8m28s]
+[#470647 781MiB/1.2GiB(60%) CN:8 DL:1.0MiB ETA:7m40s]
+[#470647 783MiB/1.2GiB(61%) CN:8 DL:1.1MiB ETA:7m10s]
+[#470647 784MiB/1.2GiB(61%) CN:8 DL:1.2MiB ETA:6m26s]
+[#470647 786MiB/1.2GiB(61%) CN:8 DL:1.3MiB ETA:6m5s]
+[#470647 787MiB/1.2GiB(61%) CN:8 DL:1.3MiB ETA:5m57s]
+[#470647 788MiB/1.2GiB(61%) CN:8 DL:1.3MiB ETA:6m14s]
+[#470647 788MiB/1.2GiB(61%) CN:8 DL:1.1MiB ETA:6m52s]
+[#470647 788MiB/1.2GiB(61%) CN:8 DL:1.0MiB ETA:7m35s]
+ *** Download Progress Summary as of Thu Aug 20 16:58:45 2026 *** 
+===============================================================================
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:0.9MiB ETA:8m53s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:0.9MiB ETA:8m53s]
+
+08/20 16:58:46 [[1;32mNOTICE[0m] CUID#15 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:727KiB ETA:11m33s]
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:588KiB ETA:14m17s]
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:283KiB ETA:29m36s]
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:166KiB ETA:50m28s]
+[#470647 789MiB/1.2GiB(61%) CN:8 DL:129KiB ETA:1h4m55s]
+[#470647 790MiB/1.2GiB(61%) CN:8 DL:153KiB ETA:54m37s]
+[#470647 790MiB/1.2GiB(61%) CN:8 DL:168KiB ETA:49m55s]
+[#470647 790MiB/1.2GiB(61%) CN:8 DL:169KiB ETA:49m20s]
+[#470647 790MiB/1.2GiB(61%) CN:8 DL:180KiB ETA:46m24s]
+[#470647 790MiB/1.2GiB(61%) CN:8 DL:181KiB ETA:46m14s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:176KiB ETA:47m23s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:182KiB ETA:45m47s]
+ *** Download Progress Summary as of Thu Aug 20 16:59:00 2026 *** 
+===============================================================================
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:180KiB ETA:46m25s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:180KiB ETA:46m25s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:140KiB ETA:59m48s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:122KiB ETA:1h8m21s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:121KiB ETA:1h9m2s]
+[#470647 791MiB/1.2GiB(61%) CN:8 DL:136KiB ETA:1h1m15s]
+[#470647 792MiB/1.2GiB(61%) CN:8 DL:124KiB ETA:1h7m24s]
+[#470647 792MiB/1.2GiB(61%) CN:8 DL:170KiB ETA:48m54s]
+[#470647 793MiB/1.2GiB(61%) CN:8 DL:201KiB ETA:41m28s]
+[#470647 793MiB/1.2GiB(61%) CN:8 DL:244KiB ETA:34m2s]
+[#470647 794MiB/1.2GiB(61%) CN:8 DL:296KiB ETA:28m2s]
+[#470647 794MiB/1.2GiB(62%) CN:8 DL:384KiB ETA:21m36s]
+[#470647 795MiB/1.2GiB(62%) CN:8 DL:458KiB ETA:18m4s]
+[#470647 796MiB/1.2GiB(62%) CN:8 DL:513KiB ETA:16m8s]
+[#470647 797MiB/1.2GiB(62%) CN:8 DL:553KiB ETA:14m56s]
+[#470647 797MiB/1.2GiB(62%) CN:8 DL:599KiB ETA:13m46s]
+ *** Download Progress Summary as of Thu Aug 20 16:59:16 2026 *** 
+===============================================================================
+[#470647 798MiB/1.2GiB(62%) CN:8 DL:624KiB ETA:13m12s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 798MiB/1.2GiB(62%) CN:8 DL:624KiB ETA:13m12s]
+[#470647 799MiB/1.2GiB(62%) CN:8 DL:661KiB ETA:12m27s]
+[#470647 799MiB/1.2GiB(62%) CN:8 DL:681KiB ETA:12m4s]
+[#470647 800MiB/1.2GiB(62%) CN:8 DL:673KiB ETA:12m12s]
+[#470647 800MiB/1.2GiB(62%) CN:8 DL:645KiB ETA:12m43s]
+[#470647 801MiB/1.2GiB(62%) CN:8 DL:646KiB ETA:12m41s]
+[#470647 802MiB/1.2GiB(62%) CN:8 DL:642KiB ETA:12m44s]
+[#470647 802MiB/1.2GiB(62%) CN:8 DL:616KiB ETA:13m16s]
+[#470647 803MiB/1.2GiB(62%) CN:8 DL:640KiB ETA:12m44s]
+[#470647 803MiB/1.2GiB(62%) CN:8 DL:561KiB ETA:14m32s]
+[#470647 803MiB/1.2GiB(62%) CN:8 DL:525KiB ETA:15m31s]
+[#470647 804MiB/1.2GiB(62%) CN:8 DL:508KiB ETA:16m2s]
+[#470647 804MiB/1.2GiB(62%) CN:8 DL:516KiB ETA:15m45s]
+[#470647 805MiB/1.2GiB(62%) CN:8 DL:526KiB ETA:15m25s]
+[#470647 806MiB/1.2GiB(62%) CN:8 DL:497KiB ETA:16m19s]
+ *** Download Progress Summary as of Thu Aug 20 16:59:32 2026 *** 
+===============================================================================
+[#470647 806MiB/1.2GiB(62%) CN:8 DL:489KiB ETA:16m33s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 806MiB/1.2GiB(62%) CN:8 DL:489KiB ETA:16m33s]
+[#470647 807MiB/1.2GiB(62%) CN:8 DL:455KiB ETA:17m46s]
+[#470647 807MiB/1.2GiB(62%) CN:8 DL:410KiB ETA:19m44s]
+[#470647 807MiB/1.2GiB(63%) CN:8 DL:448KiB ETA:18m2s]
+[#470647 808MiB/1.2GiB(63%) CN:8 DL:456KiB ETA:17m42s]
+[#470647 808MiB/1.2GiB(63%) CN:8 DL:469KiB ETA:17m13s]
+[#470647 809MiB/1.2GiB(63%) CN:8 DL:430KiB ETA:18m44s]
+[#470647 809MiB/1.2GiB(63%) CN:8 DL:415KiB ETA:19m23s]
+[#470647 809MiB/1.2GiB(63%) CN:8 DL:397KiB ETA:20m14s]
+[#470647 810MiB/1.2GiB(63%) CN:8 DL:377KiB ETA:21m20s]
+[#470647 810MiB/1.2GiB(63%) CN:8 DL:382KiB ETA:21m1s]
+[#470647 811MiB/1.2GiB(63%) CN:8 DL:413KiB ETA:19m26s]
+[#470647 811MiB/1.2GiB(63%) CN:8 DL:396KiB ETA:20m13s]
+[#470647 811MiB/1.2GiB(63%) CN:8 DL:389KiB ETA:20m36s]
+[#470647 812MiB/1.2GiB(63%) CN:8 DL:369KiB ETA:21m42s]
+ *** Download Progress Summary as of Thu Aug 20 16:59:48 2026 *** 
+===============================================================================
+[#470647 812MiB/1.2GiB(63%) CN:8 DL:426KiB ETA:18m45s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 812MiB/1.2GiB(63%) CN:8 DL:426KiB ETA:18m45s]
+[#470647 813MiB/1.2GiB(63%) CN:8 DL:437KiB ETA:18m15s]
+[#470647 814MiB/1.2GiB(63%) CN:8 DL:471KiB ETA:16m54s]
+[#470647 814MiB/1.2GiB(63%) CN:8 DL:505KiB ETA:15m45s]
+[#470647 815MiB/1.2GiB(63%) CN:8 DL:544KiB ETA:14m36s]
+[#470647 816MiB/1.2GiB(63%) CN:8 DL:563KiB ETA:14m6s]
+[#470647 817MiB/1.2GiB(63%) CN:8 DL:638KiB ETA:12m25s]
+[#470647 817MiB/1.2GiB(63%) CN:8 DL:661KiB ETA:11m58s]
+[#470647 818MiB/1.2GiB(63%) CN:8 DL:730KiB ETA:10m48s]
+[#470647 819MiB/1.2GiB(63%) CN:8 DL:759KiB ETA:10m23s]
+[#470647 820MiB/1.2GiB(63%) CN:8 DL:745KiB ETA:10m33s]
+
+08/20 16:59:59 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 821MiB/1.2GiB(64%) CN:8 DL:768KiB ETA:10m14s]
+[#470647 822MiB/1.2GiB(64%) CN:8 DL:795KiB ETA:9m51s]
+[#470647 822MiB/1.2GiB(64%) CN:8 DL:820KiB ETA:9m33s]
+[#470647 823MiB/1.2GiB(64%) CN:8 DL:821KiB ETA:9m31s]
+ *** Download Progress Summary as of Thu Aug 20 17:00:03 2026 *** 
+===============================================================================
+[#470647 824MiB/1.2GiB(64%) CN:8 DL:885KiB ETA:8m48s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 824MiB/1.2GiB(64%) CN:8 DL:885KiB ETA:8m48s]
+[#470647 825MiB/1.2GiB(64%) CN:8 DL:890KiB ETA:8m44s]
+[#470647 827MiB/1.2GiB(64%) CN:8 DL:0.9MiB ETA:8m6s]
+[#470647 828MiB/1.2GiB(64%) CN:8 DL:0.9MiB ETA:7m58s]
+[#470647 830MiB/1.2GiB(64%) CN:8 DL:1.0MiB ETA:7m19s]
+[#470647 831MiB/1.2GiB(64%) CN:8 DL:1.0MiB ETA:6m49s]
+[#470647 832MiB/1.2GiB(64%) CN:8 DL:1.0MiB ETA:6m51s]
+[#470647 832MiB/1.2GiB(64%) CN:8 DL:1.0MiB ETA:7m18s]
+[#470647 832MiB/1.2GiB(64%) CN:8 DL:1.0MiB ETA:7m21s]
+[#470647 833MiB/1.2GiB(65%) CN:8 DL:0.9MiB ETA:8m]
+[#470647 834MiB/1.2GiB(65%) CN:8 DL:0.9MiB ETA:8m9s]
+[#470647 834MiB/1.2GiB(65%) CN:8 DL:828KiB ETA:9m12s]
+[#470647 835MiB/1.2GiB(65%) CN:8 DL:795KiB ETA:9m34s]
+[#470647 836MiB/1.2GiB(65%) CN:8 DL:677KiB ETA:11m13s]
+[#470647 837MiB/1.2GiB(65%) CN:8 DL:631KiB ETA:12m]
+ *** Download Progress Summary as of Thu Aug 20 17:00:19 2026 *** 
+===============================================================================
+[#470647 838MiB/1.2GiB(65%) CN:8 DL:658KiB ETA:11m29s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 838MiB/1.2GiB(65%) CN:8 DL:658KiB ETA:11m29s]
+[#470647 838MiB/1.2GiB(65%) CN:8 DL:689KiB ETA:10m58s]
+[#470647 839MiB/1.2GiB(65%) CN:8 DL:736KiB ETA:10m14s]
+[#470647 840MiB/1.2GiB(65%) CN:8 DL:783KiB ETA:9m36s]
+[#470647 841MiB/1.2GiB(65%) CN:8 DL:877KiB ETA:8m33s]
+[#470647 843MiB/1.2GiB(65%) CN:8 DL:906KiB ETA:8m15s]
+[#470647 843MiB/1.2GiB(65%) CN:8 DL:851KiB ETA:8m47s]
+[#470647 844MiB/1.2GiB(65%) CN:8 DL:865KiB ETA:8m37s]
+[#470647 844MiB/1.2GiB(65%) CN:8 DL:767KiB ETA:9m43s]
+[#470647 844MiB/1.2GiB(65%) CN:8 DL:683KiB ETA:10m55s]
+[#470647 845MiB/1.2GiB(65%) CN:8 DL:681KiB ETA:10m56s]
+[#470647 845MiB/1.2GiB(65%) CN:8 DL:616KiB ETA:12m4s]
+[#470647 846MiB/1.2GiB(65%) CN:8 DL:555KiB ETA:13m23s]
+[#470647 846MiB/1.2GiB(66%) CN:8 DL:470KiB ETA:15m47s]
+[#470647 846MiB/1.2GiB(66%) CN:8 DL:401KiB ETA:18m30s]
+ *** Download Progress Summary as of Thu Aug 20 17:00:34 2026 *** 
+===============================================================================
+[#470647 847MiB/1.2GiB(66%) CN:8 DL:382KiB ETA:19m24s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 847MiB/1.2GiB(66%) CN:8 DL:382KiB ETA:19m24s]
+[#470647 847MiB/1.2GiB(66%) CN:8 DL:354KiB ETA:20m55s]
+[#470647 847MiB/1.2GiB(66%) CN:8 DL:370KiB ETA:19m58s]
+[#470647 848MiB/1.2GiB(66%) CN:8 DL:407KiB ETA:18m8s]
+[#470647 848MiB/1.2GiB(66%) CN:8 DL:400KiB ETA:18m27s]
+[#470647 849MiB/1.2GiB(66%) CN:8 DL:387KiB ETA:19m2s]
+[#470647 850MiB/1.2GiB(66%) CN:8 DL:481KiB ETA:15m18s]
+[#470647 851MiB/1.2GiB(66%) CN:8 DL:552KiB ETA:13m16s]
+[#470647 852MiB/1.2GiB(66%) CN:8 DL:573KiB ETA:12m47s]
+[#470647 853MiB/1.2GiB(66%) CN:8 DL:638KiB ETA:11m27s]
+[#470647 854MiB/1.2GiB(66%) CN:8 DL:709KiB ETA:10m17s]
+[#470647 854MiB/1.2GiB(66%) CN:8 DL:749KiB ETA:9m43s]
+
+08/20 17:00:47 [[1;32mNOTICE[0m] CUID#12 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 856MiB/1.2GiB(66%) CN:8 DL:867KiB ETA:8m22s]
+[#470647 857MiB/1.2GiB(66%) CN:8 DL:0.9MiB ETA:7m31s]
+[#470647 858MiB/1.2GiB(66%) CN:8 DL:1.0MiB ETA:6m57s]
+ *** Download Progress Summary as of Thu Aug 20 17:00:50 2026 *** 
+===============================================================================
+[#470647 859MiB/1.2GiB(67%) CN:8 DL:0.9MiB ETA:7m11s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 859MiB/1.2GiB(67%) CN:8 DL:0.9MiB ETA:7m11s]
+[#470647 860MiB/1.2GiB(67%) CN:8 DL:0.9MiB ETA:7m39s]
+[#470647 860MiB/1.2GiB(67%) CN:8 DL:0.9MiB ETA:7m23s]
+[#470647 861MiB/1.2GiB(67%) CN:8 DL:0.9MiB ETA:7m27s]
+[#470647 862MiB/1.2GiB(67%) CN:8 DL:899KiB ETA:7m58s]
+[#470647 862MiB/1.2GiB(67%) CN:8 DL:857KiB ETA:8m20s]
+[#470647 863MiB/1.2GiB(67%) CN:8 DL:750KiB ETA:9m31s]
+[#470647 863MiB/1.2GiB(67%) CN:8 DL:676KiB ETA:10m33s]
+[#470647 863MiB/1.2GiB(67%) CN:8 DL:592KiB ETA:12m2s]
+[#470647 864MiB/1.2GiB(67%) CN:8 DL:526KiB ETA:13m32s]
+[#470647 864MiB/1.2GiB(67%) CN:8 DL:511KiB ETA:13m56s]
+[#470647 865MiB/1.2GiB(67%) CN:8 DL:464KiB ETA:15m19s]
+[#470647 865MiB/1.2GiB(67%) CN:8 DL:432KiB ETA:16m24s]
+[#470647 866MiB/1.2GiB(67%) CN:8 DL:425KiB ETA:16m40s]
+[#470647 866MiB/1.2GiB(67%) CN:8 DL:397KiB ETA:17m51s]
+ *** Download Progress Summary as of Thu Aug 20 17:01:06 2026 *** 
+===============================================================================
+[#470647 866MiB/1.2GiB(67%) CN:8 DL:398KiB ETA:17m48s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 866MiB/1.2GiB(67%) CN:8 DL:398KiB ETA:17m48s]
+[#470647 867MiB/1.2GiB(67%) CN:8 DL:390KiB ETA:18m7s]
+[#470647 867MiB/1.2GiB(67%) CN:8 DL:415KiB ETA:17m]
+[#470647 868MiB/1.2GiB(67%) CN:8 DL:428KiB ETA:16m29s]
+[#470647 868MiB/1.2GiB(67%) CN:8 DL:466KiB ETA:15m7s]
+[#470647 869MiB/1.2GiB(67%) CN:8 DL:513KiB ETA:13m41s]
+[#470647 871MiB/1.2GiB(67%) CN:8 DL:615KiB ETA:11m23s]
+[#470647 872MiB/1.2GiB(68%) CN:8 DL:727KiB ETA:9m36s]
+[#470647 873MiB/1.2GiB(68%) CN:8 DL:775KiB ETA:8m59s]
+[#470647 874MiB/1.2GiB(68%) CN:8 DL:844KiB ETA:8m13s]
+[#470647 875MiB/1.2GiB(68%) CN:8 DL:878KiB ETA:7m53s]
+[#470647 875MiB/1.2GiB(68%) CN:8 DL:899KiB ETA:7m42s]
+[#470647 876MiB/1.2GiB(68%) CN:8 DL:897KiB ETA:7m42s]
+[#470647 877MiB/1.2GiB(68%) CN:8 DL:0.9MiB ETA:7m19s]
+[#470647 877MiB/1.2GiB(68%) CN:8 DL:919KiB ETA:7m30s]
+ *** Download Progress Summary as of Thu Aug 20 17:01:21 2026 *** 
+===============================================================================
+[#470647 878MiB/1.2GiB(68%) CN:8 DL:0.9MiB ETA:7m23s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 878MiB/1.2GiB(68%) CN:8 DL:0.9MiB ETA:7m23s]
+[#470647 879MiB/1.2GiB(68%) CN:8 DL:840KiB ETA:8m9s]
+[#470647 880MiB/1.2GiB(68%) CN:8 DL:843KiB ETA:8m6s]
+[#470647 882MiB/1.2GiB(68%) CN:8 DL:861KiB ETA:7m55s]
+[#470647 883MiB/1.2GiB(68%) CN:8 DL:892KiB ETA:7m37s]
+[#470647 883MiB/1.2GiB(68%) CN:8 DL:894KiB ETA:7m35s]
+[#470647 884MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:7m15s]
+[#470647 885MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m51s]
+[#470647 887MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m37s]
+[#470647 888MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m19s]
+[#470647 889MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m17s]
+[#470647 889MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m28s]
+[#470647 891MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m34s]
+[#470647 892MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m40s]
+[#470647 893MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m35s]
+ *** Download Progress Summary as of Thu Aug 20 17:01:36 2026 *** 
+===============================================================================
+[#470647 894MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m8s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 894MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m8s]
+[#470647 895MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m8s]
+[#470647 896MiB/1.2GiB(69%) CN:8 DL:1.0MiB ETA:6m22s]
+[#470647 897MiB/1.2GiB(69%) CN:8 DL:0.9MiB ETA:6m36s]
+[#470647 897MiB/1.2GiB(70%) CN:8 DL:0.9MiB ETA:6m49s]
+[#470647 898MiB/1.2GiB(70%) CN:8 DL:885KiB ETA:7m23s]
+[#470647 898MiB/1.2GiB(70%) CN:8 DL:805KiB ETA:8m8s]
+[#470647 898MiB/1.2GiB(70%) CN:8 DL:699KiB ETA:9m21s]
+[#470647 898MiB/1.2GiB(70%) CN:8 DL:645KiB ETA:10m8s]
+[#470647 899MiB/1.2GiB(70%) CN:8 DL:578KiB ETA:11m17s]
+[#470647 899MiB/1.2GiB(70%) CN:8 DL:536KiB ETA:12m9s]
+[#470647 900MiB/1.2GiB(70%) CN:8 DL:526KiB ETA:12m21s]
+[#470647 902MiB/1.2GiB(70%) CN:8 DL:600KiB ETA:10m46s]
+[#470647 903MiB/1.2GiB(70%) CN:8 DL:690KiB ETA:9m20s]
+[#470647 905MiB/1.2GiB(70%) CN:8 DL:752KiB ETA:8m32s]
+ *** Download Progress Summary as of Thu Aug 20 17:01:51 2026 *** 
+===============================================================================
+[#470647 906MiB/1.2GiB(70%) CN:8 DL:868KiB ETA:7m22s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 906MiB/1.2GiB(70%) CN:8 DL:868KiB ETA:7m22s]
+[#470647 908MiB/1.2GiB(70%) CN:8 DL:1.0MiB ETA:5m56s]
+[#470647 910MiB/1.2GiB(71%) CN:8 DL:1.2MiB ETA:5m7s]
+[#470647 911MiB/1.2GiB(71%) CN:8 DL:1.2MiB ETA:4m44s]
+[#470647 912MiB/1.2GiB(71%) CN:8 DL:1.3MiB ETA:4m31s]
+[#470647 913MiB/1.2GiB(71%) CN:8 DL:1.3MiB ETA:4m28s]
+[#470647 915MiB/1.2GiB(71%) CN:8 DL:1.4MiB ETA:4m12s]
+[#470647 917MiB/1.2GiB(71%) CN:8 DL:1.4MiB ETA:4m12s]
+[#470647 919MiB/1.2GiB(71%) CN:8 DL:1.5MiB ETA:3m55s]
+[#470647 920MiB/1.2GiB(71%) CN:8 DL:1.4MiB ETA:4m7s]
+[#470647 920MiB/1.2GiB(71%) CN:8 DL:1.3MiB ETA:4m18s]
+[#470647 921MiB/1.2GiB(71%) CN:8 DL:1.3MiB ETA:4m36s]
+[#470647 0.9GiB/1.2GiB(71%) CN:8 DL:1.1MiB ETA:5m]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.1MiB ETA:5m9s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.1MiB ETA:5m8s]
+ *** Download Progress Summary as of Thu Aug 20 17:02:07 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.1MiB ETA:5m22s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.1MiB ETA:5m22s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m51s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:0.9MiB ETA:6m13s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:0.9MiB ETA:6m16s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m48s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:0.9MiB ETA:5m54s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m29s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m33s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m39s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:1.0MiB ETA:5m46s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:896KiB ETA:6m36s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:762KiB ETA:7m45s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:670KiB ETA:8m49s]
+[#470647 0.9GiB/1.2GiB(72%) CN:8 DL:555KiB ETA:10m38s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:536KiB ETA:10m59s]
+ *** Download Progress Summary as of Thu Aug 20 17:02:23 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:388KiB ETA:15m10s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:388KiB ETA:15m10s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:377KiB ETA:15m34s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:371KiB ETA:15m50s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:342KiB ETA:17m7s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:378KiB ETA:15m30s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:378KiB ETA:15m28s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:395KiB ETA:14m47s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:393KiB ETA:14m51s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:368KiB ETA:15m51s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:365KiB ETA:15m59s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:352KiB ETA:16m32s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:355KiB ETA:16m24s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:336KiB ETA:17m17s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:346KiB ETA:16m47s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:329KiB ETA:17m39s]
+ *** Download Progress Summary as of Thu Aug 20 17:02:38 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:324KiB ETA:17m53s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:324KiB ETA:17m53s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:318KiB ETA:18m12s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:311KiB ETA:18m35s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:307KiB ETA:18m50s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:293KiB ETA:19m41s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:286KiB ETA:20m10s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:295KiB ETA:19m33s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:306KiB ETA:18m48s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:321KiB ETA:17m54s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:323KiB ETA:17m47s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:335KiB ETA:17m8s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:326KiB ETA:17m36s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:306KiB ETA:18m43s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:282KiB ETA:20m18s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:262KiB ETA:21m52s]
+ *** Download Progress Summary as of Thu Aug 20 17:02:53 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:230KiB ETA:24m54s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:230KiB ETA:24m54s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:209KiB ETA:27m24s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:171KiB ETA:33m25s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:166KiB ETA:34m24s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:151KiB ETA:37m46s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:151KiB ETA:37m54s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:154KiB ETA:36m59s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:167KiB ETA:34m7s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:182KiB ETA:31m15s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:209KiB ETA:27m13s]
+[#470647 0.9GiB/1.2GiB(73%) CN:8 DL:261KiB ETA:21m46s]
+
+08/20 17:03:04 [[1;32mNOTICE[0m] CUID#9 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:307KiB ETA:18m30s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:336KiB ETA:16m51s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:352KiB ETA:16m4s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:381KiB ETA:14m49s]
+ *** Download Progress Summary as of Thu Aug 20 17:03:09 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:419KiB ETA:13m28s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:419KiB ETA:13m28s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:469KiB ETA:12m]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:488KiB ETA:11m32s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:477KiB ETA:11m47s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:465KiB ETA:12m3s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:492KiB ETA:11m23s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:519KiB ETA:10m46s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:575KiB ETA:9m41s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:635KiB ETA:8m45s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:672KiB ETA:8m15s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:749KiB ETA:7m22s]
+[#470647 0.9GiB/1.2GiB(74%) CN:8 DL:0.9MiB ETA:5m55s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.0MiB ETA:5m]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.2MiB ETA:4m12s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.2MiB ETA:4m23s]
+ *** Download Progress Summary as of Thu Aug 20 17:03:24 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.1MiB ETA:4m27s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.1MiB ETA:4m27s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.1MiB ETA:4m26s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.1MiB ETA:4m39s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.0MiB ETA:4m48s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:1.0MiB ETA:5m3s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:904KiB ETA:5m55s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:784KiB ETA:6m48s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:610KiB ETA:8m43s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:602KiB ETA:8m50s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:634KiB ETA:8m22s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:722KiB ETA:7m19s]
+[#470647 0.9GiB/1.2GiB(75%) CN:8 DL:796KiB ETA:6m37s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:882KiB ETA:5m56s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m36s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:909KiB ETA:5m43s]
+ *** Download Progress Summary as of Thu Aug 20 17:03:39 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m38s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m38s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:906KiB ETA:5m43s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m13s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:1.0MiB ETA:4m55s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m14s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m28s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:912KiB ETA:5m35s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:917KiB ETA:5m32s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:0.9MiB ETA:5m11s]
+[#470647 0.9GiB/1.2GiB(76%) CN:8 DL:1.0MiB ETA:4m52s]
+
+08/20 17:03:50 [[1;32mNOTICE[0m] CUID#14 - Redirecting to https://zenodo.org/records/14916843/files/db-light.tar.xz
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:1.0MiB ETA:4m31s]
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:1.0MiB ETA:4m39s]
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:0.9MiB ETA:5m4s]
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:0.9MiB ETA:4m56s]
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:1.0MiB ETA:4m40s]
+ *** Download Progress Summary as of Thu Aug 20 17:03:55 2026 *** 
+===============================================================================
+[#470647 0.9GiB/1.2GiB(77%) CN:8 DL:1.0MiB ETA:4m49s]
+FILE: db/db-light.tar.xz
+-------------------------------------------------------------------------------
+
