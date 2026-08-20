@@ -34,3 +34,5 @@ prokka 8 threads over 25 genomes
   GCF_008369605.1 annotating
     3632 CDS
   GCF_008931305.1 annotating
+    7709 CDS
+  GCF_013388375.1 annotating
