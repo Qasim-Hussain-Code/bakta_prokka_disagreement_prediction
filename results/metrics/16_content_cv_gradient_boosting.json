@@ -1,0 +1,289 @@
+{
+  "step": "16_content_cv_gradient_boosting",
+  "model": "gradient_boosting",
+  "seed": 42,
+  "selection": {
+    "rule": "mean MCC across five genome-grouped CV folds, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest",
+    "grid_declared_before_first_fit": true,
+    "n_candidates": 6,
+    "best_mean_mcc": 0.2953,
+    "best_params": {
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "max_iter": 200
+    },
+    "one_se_threshold": 0.27589,
+    "n_within_one_se": 6,
+    "chosen_params": {
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "max_iter": 200
+    },
+    "chosen_mean_mcc": 0.2838,
+    "chosen_is_simpler_than_best": true,
+    "implementation_note": {
+      "class": "sklearn.ensemble.HistGradientBoostingClassifier",
+      "instead_of": "sklearn.ensemble.GradientBoostingClassifier",
+      "reason": "computational tractability; measured 54.1 s versus 0.7 s per fit on this training set, a 75x difference",
+      "decided": "before any gradient-boosting result was computed"
+    },
+    "differs_from_part_one_rule": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction."
+  },
+  "n_train_rows": 37927,
+  "n_train_positive": 19870,
+  "n_features": 61,
+  "features": [
+    "aa_entropy",
+    "aa_frac_A",
+    "aa_frac_C",
+    "aa_frac_D",
+    "aa_frac_E",
+    "aa_frac_F",
+    "aa_frac_G",
+    "aa_frac_H",
+    "aa_frac_I",
+    "aa_frac_K",
+    "aa_frac_L",
+    "aa_frac_M",
+    "aa_frac_N",
+    "aa_frac_P",
+    "aa_frac_Q",
+    "aa_frac_R",
+    "aa_frac_S",
+    "aa_frac_T",
+    "aa_frac_V",
+    "aa_frac_W",
+    "aa_frac_Y",
+    "aa_low_complexity_frac",
+    "ambiguous_frac",
+    "at_skew",
+    "bakta_has_ec",
+    "bakta_has_is",
+    "bakta_has_uniref",
+    "bakta_n_dbxref",
+    "dist_to_contig_end",
+    "entropy_3mer",
+    "flank_gc_down",
+    "flank_gc_up",
+    "gc3",
+    "gc_content",
+    "gc_minus_genome",
+    "gc_skew",
+    "genome_gc",
+    "genome_length_bp",
+    "genome_n_contigs",
+    "length_bp",
+    "longest_orf_frac",
+    "low_complexity_dna_frac",
+    "max_homopolymer",
+    "min_stops_per_kb",
+    "mobile_neighbours_5kb",
+    "near_contig_edge",
+    "neighbourhood_identical_calls",
+    "prokka_has_cog",
+    "prokka_has_ec",
+    "prokka_has_protein_motif",
+    "prokka_has_similarity_hit",
+    "protein_length_aa",
+    "same_start",
+    "same_stop",
+    "start_atg",
+    "start_gtg",
+    "start_ttg",
+    "stop_taa",
+    "stop_tag",
+    "stop_tga",
+    "strand_plus"
+  ],
+  "split": {
+    "train_genomes": [
+      "GCF_000008865.2",
+      "GCF_000009085.1",
+      "GCF_000011325.1",
+      "GCF_000013425.1",
+      "GCF_000022005.1",
+      "GCF_000025985.1",
+      "GCF_000091545.1",
+      "GCF_000195955.2",
+      "GCF_000270265.1",
+      "GCF_001457635.1",
+      "GCF_001598635.1",
+      "GCF_008369605.1",
+      "GCF_008931305.1",
+      "GCF_013388375.1",
+      "GCF_018885085.1",
+      "GCF_020546685.1",
+      "GCF_020736045.1",
+      "GCF_022869645.1",
+      "GCF_025998455.1",
+      "GCF_037023865.1"
+    ],
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_overlapping_genomes": 0,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "result": "passed"
+  },
+  "cv_folds": {
+    "n_folds": 5,
+    "assignment": {
+      "GCF_000008865.2": 0,
+      "GCF_000009085.1": 1,
+      "GCF_000011325.1": 2,
+      "GCF_000013425.1": 2,
+      "GCF_000022005.1": 2,
+      "GCF_000025985.1": 2,
+      "GCF_000091545.1": 3,
+      "GCF_000195955.2": 0,
+      "GCF_000270265.1": 4,
+      "GCF_001457635.1": 1,
+      "GCF_001598635.1": 3,
+      "GCF_008369605.1": 3,
+      "GCF_008931305.1": 4,
+      "GCF_013388375.1": 4,
+      "GCF_018885085.1": 0,
+      "GCF_020546685.1": 1,
+      "GCF_020736045.1": 4,
+      "GCF_022869645.1": 1,
+      "GCF_025998455.1": 0,
+      "GCF_037023865.1": 3
+    }
+  },
+  "grid": [
+    {
+      "max_depth": 2,
+      "learning_rate": 0.05,
+      "max_iter": 200
+    },
+    {
+      "max_depth": 2,
+      "learning_rate": 0.1,
+      "max_iter": 200
+    },
+    {
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "max_iter": 200
+    },
+    {
+      "max_depth": 3,
+      "learning_rate": 0.1,
+      "max_iter": 200
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.05,
+      "max_iter": 200
+    },
+    {
+      "max_depth": 4,
+      "learning_rate": 0.1,
+      "max_iter": 200
+    }
+  ],
+  "results": [
+    {
+      "params": {
+        "max_depth": 3,
+        "learning_rate": 0.05,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.2953,
+      "std_error": 0.01941,
+      "per_fold_mcc": [
+        0.22923,
+        0.34346,
+        0.28367,
+        0.29833,
+        0.32181
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 4,
+        "learning_rate": 0.05,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.29482,
+      "std_error": 0.01702,
+      "per_fold_mcc": [
+        0.24026,
+        0.34556,
+        0.28494,
+        0.29649,
+        0.30685
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 3,
+        "learning_rate": 0.1,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.29436,
+      "std_error": 0.01463,
+      "per_fold_mcc": [
+        0.24933,
+        0.33802,
+        0.29149,
+        0.28366,
+        0.3093
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 4,
+        "learning_rate": 0.1,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.29201,
+      "std_error": 0.01562,
+      "per_fold_mcc": [
+        0.24191,
+        0.33884,
+        0.28405,
+        0.29263,
+        0.30265
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 2,
+        "learning_rate": 0.1,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.28604,
+      "std_error": 0.01743,
+      "per_fold_mcc": [
+        0.23304,
+        0.3279,
+        0.27823,
+        0.27027,
+        0.32077
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "max_iter": 200
+      },
+      "mean_mcc": 0.2838,
+      "std_error": 0.02234,
+      "per_fold_mcc": [
+        0.21132,
+        0.33222,
+        0.27236,
+        0.27306,
+        0.33005
+      ]
+    }
+  ],
+  "elapsed_seconds": 20.6,
+  "test_set_untouched": "This script reads only the training genomes. The held-out genomes play no part in choosing hyperparameters."
+}

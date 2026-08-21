@@ -1,0 +1,306 @@
+{
+  "step": "13_name_rules",
+  "fixed_before_fitting": "The placeholder list, the normalisation rule and the two sensitivity checks were declared and approved before any model was fitted. They are not revised after seeing a score.",
+  "what_the_label_is": "Disagreement between two software products about a name. Not a claim that either name is correct, and not a claim about what the protein does.",
+  "placeholder_rule": {
+    "method": "exact literal match after NFKC, trim, whitespace collapse, trailing full stop removed, case-fold",
+    "not_a_substring_match": "'hypothetical' and 'conserved' both occur inside real product names. See substring_trap for how many would be wrongly caught.",
+    "literals": {
+      "conserved protein": {
+        "bakta": 12,
+        "prokka": 0,
+        "observed": true
+      },
+      "hypothetical protein": {
+        "bakta": 10930,
+        "prokka": 34776,
+        "observed": true
+      },
+      "protein": {
+        "bakta": 7,
+        "prokka": 45,
+        "observed": true
+      },
+      "putative protein": {
+        "bakta": 0,
+        "prokka": 530,
+        "observed": true
+      },
+      "putative uncharacterized protein": {
+        "bakta": 0,
+        "prokka": 1,
+        "observed": true
+      },
+      "uncharacterised protein": {
+        "bakta": 0,
+        "prokka": 0,
+        "observed": false
+      },
+      "uncharacterized protein": {
+        "bakta": 1,
+        "prokka": 0,
+        "observed": true
+      },
+      "unknown protein": {
+        "bakta": 0,
+        "prokka": 0,
+        "observed": false
+      },
+      "unnamed protein product": {
+        "bakta": 0,
+        "prokka": 0,
+        "observed": false
+      }
+    },
+    "declared_but_not_observed": [
+      "uncharacterised protein",
+      "unknown protein",
+      "unnamed protein product"
+    ],
+    "declared_but_not_observed_note": "kept in the rule so it is complete rather than fitted to these 25 genomes",
+    "totals": {
+      "bakta_placeholder": 10950,
+      "prokka_placeholder": 35352,
+      "n_pairs": 87859
+    },
+    "substring_trap": {
+      "bakta:hypothetical": {
+        "distinct_products_containing_the_word": 12,
+        "of_which_are_placeholders": 1,
+        "would_be_wrongly_caught_by_substring_match": 11,
+        "examples_that_are_real_names": [
+          "Conserved hypothetical DNA-binding protein",
+          "Conserved hypothetical integral membrane protein",
+          "Conserved hypothetical membrane protein",
+          "Conserved hypothetical membrane-anchored protein",
+          "Conserved hypothetical protein CHP02391 domain-containing protein"
+        ]
+      },
+      "prokka:hypothetical": {
+        "distinct_products_containing_the_word": 2,
+        "of_which_are_placeholders": 1,
+        "would_be_wrongly_caught_by_substring_match": 1,
+        "examples_that_are_real_names": [
+          "Neisseria hypothetical transcription factor"
+        ]
+      },
+      "bakta:conserved": {
+        "distinct_products_containing_the_word": 37,
+        "of_which_are_placeholders": 1,
+        "would_be_wrongly_caught_by_substring_match": 36,
+        "examples_that_are_real_names": [
+          "CASTOR/POLLUX/SYM8 ion channel conserved domain-containing protein",
+          "Conserved ala-, pro-rich protein",
+          "Conserved hypothetical DNA-binding protein",
+          "Conserved hypothetical integral membrane protein",
+          "Conserved hypothetical membrane protein"
+        ]
+      },
+      "prokka:conserved": {
+        "distinct_products_containing_the_word": 1,
+        "of_which_are_placeholders": 0,
+        "would_be_wrongly_caught_by_substring_match": 1,
+        "examples_that_are_real_names": [
+          "Conserved virulence factor B"
+        ]
+      },
+      "bakta:uncharacteri": {
+        "distinct_products_containing_the_word": 1796,
+        "of_which_are_placeholders": 1,
+        "would_be_wrongly_caught_by_substring_match": 1795,
+        "examples_that_are_real_names": [
+          "ABC-type uncharacterized transport system domain-containing protein",
+          "ABC-type uncharacterized transport system, permease component",
+          "Conserved protein of uncharacterized function, PPE family protein PPE57 (Part2)",
+          "Dehydrogenase of uncharacterized specificity, short-chain alcohol dehydrogenase like protein",
+          "FlaA locus uncharacterized protein YlxG"
+        ]
+      },
+      "prokka:uncharacteri": {
+        "distinct_products_containing_the_word": 10,
+        "of_which_are_placeholders": 1,
+        "would_be_wrongly_caught_by_substring_match": 9,
+        "examples_that_are_real_names": [
+          "SPbeta prophage-derived uncharacterized protein YolA",
+          "SPbeta prophage-derived uncharacterized protein YomS",
+          "SPbeta prophage-derived uncharacterized protein YonK",
+          "SPbeta prophage-derived uncharacterized protein YopK",
+          "SPbeta prophage-derived uncharacterized protein YopR"
+        ]
+      }
+    }
+  },
+  "kept_as_named_on_purpose": {
+    "note": "Each is a database match carrying a structural claim, so calling it uninformative would be our judgement rather than the tool's. Their sizes and disagreement rates within the primary set are in 12_content_cohort.json.",
+    "patterns": {
+      "uncharacterized_orf_name": "(?i)^uncharacteri[sz]ed protein [A-Za-z0-9_.\\-]+$",
+      "domain_containing": "(?i)domain-containing protein$",
+      "duf": "\\bDUF\\d+"
+    }
+  },
+  "normalisation_rule": {
+    "primary": [
+      "1. Unicode NFKC, trim.",
+      "2. Strip trailing (...) or [...] qualifiers, repeatedly. Trailing only: '3-oxoacyl-[acyl-carrier-protein] reductase' keeps its internal bracket.",
+      "3. Strip ONE trailing gene-symbol token. The symbol set is built once per pair from BOTH tools' gene= attributes plus any trailing token matching ^[A-Za-z]{3}[A-Z][A-Za-z0-9]{0,2}$.",
+      "4. Strip leading hedges: putative, probable, possible, predicted, conserved.",
+      "5. Case-fold; every run of non-alphanumerics becomes one space; collapse whitespace."
+    ],
+    "strict_sensitivity_check": "case-fold and whitespace only; nothing stripped",
+    "loose_sensitivity_check": "primary, then drop generic tokens (conserved, containing, domain, family, like, possible, predicted, probable, protein, putative, related, subunit, type) and compare the remainder as an unordered set",
+    "sensitivity_checks_were_named_in_advance": "strict and loose are reported alongside primary. They are not alternatives to switch to after seeing which gives a better number.",
+    "step_3_is_pair_symmetric": "The gene-symbol set is built once per pair and applied to both sides. Keying it on each record's own gene= attribute is wrong and was caught in review: Bakta emits gene= on 19,216 of 87,859 CDS against Prokka's 48,201, so a per-record rule fires on one side only. Before the fix, 'GTPase Era' vs 'GTPase Era' was scored as a disagreement 23 times.",
+    "symmetry_invariant": {
+      "assertion": "identical raw product strings must never be scored as a disagreement, at any level",
+      "n_pairs_with_identical_raw_strings": 29808,
+      "n_violations": 0,
+      "enforced_by": "lib_names.assert_symmetric, called in step 12"
+    },
+    "known_residual": {
+      "case": "'Bifunctional protein FolD' vs 'Bifunctional protein FolD protein' remains a disagreement: Prokka's trailing token is 'protein', so the symbol strip does not reach FolD.",
+      "not_patched_because": "iterating the strip through trailing generic tokens would fix a handful of rows and put 'membrane protein' at risk"
+    }
+  },
+  "worked_examples": {
+    "called_same_despite_differing_raw_strings": [
+      {
+        "product_bakta": "DNA-directed RNA polymerase subunit beta",
+        "product_prokka": "DNA-directed RNA polymerase subunit beta RpoB",
+        "normalised_bakta": "dna directed rna polymerase subunit beta",
+        "normalised_prokka": "dna directed rna polymerase subunit beta",
+        "n_occurrences": 23
+      },
+      {
+        "product_bakta": "DNA gyrase subunit A",
+        "product_prokka": "DNA gyrase subunit A GyrA",
+        "normalised_bakta": "dna gyrase subunit a",
+        "normalised_prokka": "dna gyrase subunit a",
+        "n_occurrences": 19
+      },
+      {
+        "product_bakta": "3-oxoacyl-[acyl-carrier-protein] reductase",
+        "product_prokka": "3-oxoacyl-[acyl-carrier-protein] reductase FabG",
+        "normalised_bakta": "3 oxoacyl acyl carrier protein reductase",
+        "normalised_prokka": "3 oxoacyl acyl carrier protein reductase",
+        "n_occurrences": 16
+      },
+      {
+        "product_bakta": "putative membrane transporter protein",
+        "product_prokka": "putative membrane transporter protein YfcA",
+        "normalised_bakta": "membrane transporter protein",
+        "normalised_prokka": "membrane transporter protein",
+        "n_occurrences": 16
+      },
+      {
+        "product_bakta": "ABC transporter ATP-binding protein",
+        "product_prokka": "putative ABC transporter ATP-binding protein",
+        "normalised_bakta": "abc transporter atp binding protein",
+        "normalised_prokka": "abc transporter atp binding protein",
+        "n_occurrences": 15
+      },
+      {
+        "product_bakta": "Replicative DNA helicase",
+        "product_prokka": "Replicative DNA helicase DnaB",
+        "normalised_bakta": "replicative dna helicase",
+        "normalised_prokka": "replicative dna helicase",
+        "n_occurrences": 14
+      },
+      {
+        "product_bakta": "Bifunctional NAD(P)H-hydrate repair enzyme",
+        "product_prokka": "Bifunctional NAD(P)H-hydrate repair enzyme Nnr",
+        "normalised_bakta": "bifunctional nad p h hydrate repair enzyme",
+        "normalised_prokka": "bifunctional nad p h hydrate repair enzyme",
+        "n_occurrences": 12
+      },
+      {
+        "product_bakta": "putative cytosol aminopeptidase",
+        "product_prokka": "Cytosol aminopeptidase",
+        "normalised_bakta": "cytosol aminopeptidase",
+        "normalised_prokka": "cytosol aminopeptidase",
+        "n_occurrences": 12
+      }
+    ],
+    "called_different": [
+      {
+        "product_bakta": "histidine kinase",
+        "product_prokka": "Adaptive-response sensory-kinase SasA",
+        "normalised_bakta": "histidine kinase",
+        "normalised_prokka": "adaptive response sensory kinase",
+        "n_occurrences": 125
+      },
+      {
+        "product_bakta": "histidine kinase",
+        "product_prokka": "Sensor histidine kinase RcsC",
+        "normalised_bakta": "histidine kinase",
+        "normalised_prokka": "sensor histidine kinase",
+        "n_occurrences": 118
+      },
+      {
+        "product_bakta": "TonB-dependent receptor",
+        "product_prokka": "Vitamin B12 transporter BtuB",
+        "normalised_bakta": "tonb dependent receptor",
+        "normalised_prokka": "vitamin b12 transporter",
+        "n_occurrences": 59
+      },
+      {
+        "product_bakta": "Permease IIC component",
+        "product_prokka": "Lichenan permease IIC component",
+        "normalised_bakta": "permease iic component",
+        "normalised_prokka": "lichenan permease iic component",
+        "n_occurrences": 25
+      },
+      {
+        "product_bakta": "Bifunctional protein FolD",
+        "product_prokka": "Bifunctional protein FolD protein",
+        "normalised_bakta": "bifunctional protein",
+        "normalised_prokka": "bifunctional protein fold protein",
+        "n_occurrences": 24
+      },
+      {
+        "product_bakta": "HTH araC/xylS-type domain-containing protein",
+        "product_prokka": "HTH-type transcriptional activator RhaS",
+        "normalised_bakta": "hth arac xyls type domain containing protein",
+        "normalised_prokka": "hth type transcriptional activator",
+        "n_occurrences": 22
+      },
+      {
+        "product_bakta": "Integrase",
+        "product_prokka": "Tyrosine recombinase XerC",
+        "normalised_bakta": "integrase",
+        "normalised_prokka": "tyrosine recombinase",
+        "n_occurrences": 21
+      },
+      {
+        "product_bakta": "Primosomal protein N'",
+        "product_prokka": "Replication restart protein PriA",
+        "normalised_bakta": "primosomal protein n",
+        "normalised_prokka": "replication restart protein",
+        "n_occurrences": 20
+      }
+    ],
+    "note": "drawn from the data by frequency, not chosen by hand; n_occurrences is how often that exact pair appears"
+  },
+  "ec_and_gene_symbols": {
+    "decision": "separate reported columns, not part of the product comparison",
+    "reason": "A gene-symbol or EC comparison is a second measurement of the same disagreement the label measures. Folding either into the product comparison would double-count it; using either as a feature would be circular. Both are reported in 12_content_cohort.json."
+  },
+  "primary_analysis_set_n": 50210,
+  "name_disagreement_by_level": {
+    "strict": {
+      "agree": 22089,
+      "name_disagreement": 28121,
+      "rate": 0.5601
+    },
+    "primary": {
+      "agree": 24233,
+      "name_disagreement": 25977,
+      "rate": 0.5174
+    },
+    "loose": {
+      "agree": 24792,
+      "name_disagreement": 25418,
+      "rate": 0.5062
+    }
+  },
+  "interpretation": "Normalisation moves the rate by 5.4 points across its full declared range. The disagreement is substantive, not typographic."
+}

@@ -1,0 +1,476 @@
+{
+  "step": "20_content_summary",
+  "experiment": "Given a region both Bakta and Prokka called as a CDS, do the two tools give it the same product name, and is that predictable?",
+  "what_the_label_is": "Disagreement between two software products about a name. Not a claim that either name is correct, and not a claim about what the protein does.",
+  "seed": 42,
+  "cohort": {
+    "bakta_cds_total": 87960,
+    "prokka_cds_total": 87860,
+    "n_paired": 87859,
+    "n_unpaired": 101,
+    "cross_tabulation": {
+      "both_named": 50210,
+      "both_placeholder": 8653,
+      "bakta_named_only": 26699,
+      "prokka_named_only": 2297,
+      "total": 87859,
+      "shares": {
+        "both_named": 0.5715,
+        "both_placeholder": 0.0985,
+        "bakta_named_only": 0.3039,
+        "prokka_named_only": 0.0261
+      }
+    },
+    "primary_analysis_set_n": 50210,
+    "primary_analysis_set_share": 0.5715,
+    "why_conditional": "Comparing two names requires both tools to have produced one. This restriction is imposed by what is measurable under db-light, not chosen for scientific convenience."
+  },
+  "db_light_confound": {
+    "finding": "The large asymmetric cell is 'Bakta named, Prokka not' (26,699), not the reverse (2,297). Bakta on db-light leaves 12.5% of paired CDS as a placeholder against Prokka's 40.2%.",
+    "db_light_direction": "db-light was used because db-full does not fit on this machine. It has fewer reference proteins, so it can only make Bakta name FEWER regions than db-full would. It therefore works AGAINST the observed asymmetry rather than producing it: a db-full run would move rows out of 'both_placeholder' and 'prokka_named_only' into 'bakta_named_only' and make the imbalance larger.",
+    "therefore": "bakta_named_only is a LOWER BOUND under db-light. The asymmetry is a difference in reference-database breadth and naming policy between the two tools, of which the db-light constraint is one component pushing in a known direction. It is not an artefact that a db-full run would remove.",
+    "what_is_still_confounded": "The absolute size of 'both_placeholder' and 'prokka_named_only' is affected by db-light and should not be read as a property of Bakta in general."
+  },
+  "name_disagreement": {
+    "primary_rule": {
+      "n": 25977,
+      "rate": 0.5174
+    },
+    "strict_sensitivity_check": {
+      "n": 28121,
+      "rate": 0.5601
+    },
+    "loose_sensitivity_check": {
+      "n": 25418,
+      "rate": 0.5062
+    },
+    "modelled": "primary",
+    "interpretation": "Normalisation moves the rate by 5.4 points across its full declared range. The disagreement is substantive, not typographic."
+  },
+  "separate_columns": {
+    "note": "Gene symbols and EC numbers are reported, never used as features. Either would be a second measurement of the label.",
+    "gene_symbol": {
+      "n_comparable": 13760,
+      "n_disagree": 5656,
+      "rate": 0.411
+    },
+    "ec_number": {
+      "n_comparable": 750,
+      "n_disagree": 125,
+      "rate": 0.1667,
+      "source": "Bakta: Dbxref EC:; Prokka: eC_number attribute"
+    }
+  },
+  "declared_generic_families": {
+    "uncharacterized_orf_name": {
+      "n": 284,
+      "share_of_primary_set": 0.0057,
+      "name_disagreement_rate": 1.0
+    },
+    "domain_containing": {
+      "n": 4210,
+      "share_of_primary_set": 0.0838,
+      "name_disagreement_rate": 0.9993
+    },
+    "none_of_these": {
+      "n": 45716,
+      "share_of_primary_set": 0.9105,
+      "name_disagreement_rate": 0.47
+    }
+  },
+  "features": {
+    "n_features": 61,
+    "counts": {
+      "caller_derived": 35,
+      "db_derived": 9,
+      "neither": 17,
+      "reused_from_part_one": 25,
+      "new_in_part_two": 36
+    },
+    "excluded_as_constant": {
+      "bakta_has_pfam": {
+        "reason": "All 3,428 Bakta CDS carrying a PFAM cross-reference have a placeholder Bakta product (1,894 paired with a Prokka placeholder, 1,534 with a Prokka name). Under db-light Bakta falls back to Pfam only when it has nothing better to say, so a PFAM cross-reference and a named Bakta product are mutually exclusive in this panel and the feature is excluded from the primary set by construction.",
+        "verified_constant_at_runtime": true
+      }
+    },
+    "near_constant": [
+      {
+        "feature": "near_contig_edge",
+        "dominant_value": "0",
+        "share": 0.99918
+      },
+      {
+        "feature": "ambiguous_frac",
+        "dominant_value": "0.0",
+        "share": 0.99994
+      },
+      {
+        "feature": "same_start",
+        "dominant_value": 1,
+        "share": 0.99932
+      },
+      {
+        "feature": "same_stop",
+        "dominant_value": 1,
+        "share": 0.99938
+      },
+      {
+        "feature": "neighbourhood_identical_calls",
+        "dominant_value": 4,
+        "share": 0.9952
+      },
+      {
+        "feature": "bakta_has_uniref",
+        "dominant_value": 1,
+        "share": 0.99628
+      }
+    ]
+  },
+  "split": {
+    "strategy": "grouped by genome; fold 0 of lib_split is the test set",
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_test_rows": 12283,
+    "n_test_positive": 6107,
+    "test_positive_rate": 0.49719,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "assertion_result": "passed",
+    "n_overlapping_genomes": 0
+  },
+  "baselines_test_set": {
+    "majority_class": {
+      "computed": true,
+      "test_accuracy": 0.49719,
+      "test_f1": 0.66417,
+      "test_mcc": 0.0
+    },
+    "protein_length_only": {
+      "computed": true,
+      "test_accuracy": 0.51119,
+      "test_f1": 0.60396,
+      "test_mcc": 0.02845
+    },
+    "is_either_product_hypothetical": {
+      "computed": false,
+      "reason": "Degenerate by construction. The primary analysis set is defined as both tools having assigned a non-placeholder product, so this predictor takes the value 0 on every row it would be scored on. It is identical to the majority-class baseline with the minority class predicted, and carries no information about anything."
+    },
+    "database_coverage_substitute": {
+      "computed": true,
+      "test_accuracy": 0.53309,
+      "test_f1": 0.14543,
+      "test_mcc": 0.14134
+    }
+  },
+  "models_test_set": {
+    "decision_tree": {
+      "hyperparameters": {
+        "max_depth": 4,
+        "min_samples_leaf": 20
+      },
+      "grouped_cv_mean_mcc": 0.23948,
+      "test_accuracy": 0.6303,
+      "test_precision": 0.63271,
+      "test_recall": 0.61127,
+      "test_f1": 0.6218,
+      "test_mcc": 0.26059,
+      "test_roc_auc": 0.66357,
+      "confusion_matrix_counts": {
+        "true_negative": 4009,
+        "false_positive": 2167,
+        "false_negative": 2374,
+        "true_positive": 3733
+      },
+      "reliability_warning": null
+    },
+    "random_forest": {
+      "hyperparameters": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      },
+      "grouped_cv_mean_mcc": 0.29259,
+      "test_accuracy": 0.65139,
+      "test_precision": 0.64947,
+      "test_recall": 0.64925,
+      "test_f1": 0.64936,
+      "test_mcc": 0.30275,
+      "test_roc_auc": 0.70764,
+      "confusion_matrix_counts": {
+        "true_negative": 4036,
+        "false_positive": 2140,
+        "false_negative": 2142,
+        "true_positive": 3965
+      },
+      "reliability_warning": null,
+      "oob_mcc": 0.33957,
+      "oob_error": 0.33433,
+      "oob_minus_grouped_cv_mcc": 0.04698
+    },
+    "gradient_boosting": {
+      "hyperparameters": {
+        "max_depth": 2,
+        "learning_rate": 0.05,
+        "max_iter": 200
+      },
+      "grouped_cv_mean_mcc": 0.2838,
+      "test_accuracy": 0.64325,
+      "test_precision": 0.62906,
+      "test_recall": 0.68839,
+      "test_f1": 0.65739,
+      "test_mcc": 0.28812,
+      "test_roc_auc": 0.70385,
+      "confusion_matrix_counts": {
+        "true_negative": 3697,
+        "false_positive": 2479,
+        "false_negative": 1903,
+        "true_positive": 4204
+      },
+      "reliability_warning": null
+    }
+  },
+  "best_model_by_test_mcc": "random_forest",
+  "best_baseline_by_test_mcc": "database_coverage_substitute",
+  "best_model_minus_best_baseline_mcc": 0.16141,
+  "circularity_audit": {
+    "arms": {
+      "full": {
+        "n_features": 61,
+        "grouped_cv_mean_mcc": 0.29259,
+        "test_mcc": 0.30275,
+        "test_accuracy": 0.65139,
+        "test_f1": 0.64936,
+        "test_precision": 0.64947,
+        "test_recall": 0.64925,
+        "test_roc_auc": 0.70764,
+        "confusion_matrix_counts": {
+          "true_negative": 4036,
+          "false_positive": 2140,
+          "false_negative": 2142,
+          "true_positive": 3965
+        }
+      },
+      "no_caller": {
+        "n_features": 26,
+        "grouped_cv_mean_mcc": 0.23228,
+        "test_mcc": 0.25937,
+        "test_accuracy": 0.62957,
+        "test_f1": 0.63318,
+        "test_precision": 0.62363,
+        "test_recall": 0.64303,
+        "test_roc_auc": 0.68729,
+        "confusion_matrix_counts": {
+          "true_negative": 3806,
+          "false_positive": 2370,
+          "false_negative": 2180,
+          "true_positive": 3927
+        }
+      },
+      "sequence_only": {
+        "n_features": 17,
+        "grouped_cv_mean_mcc": 0.07013,
+        "test_mcc": 0.14191,
+        "test_accuracy": 0.5703,
+        "test_f1": 0.5263,
+        "test_precision": 0.58232,
+        "test_recall": 0.4801,
+        "test_roc_auc": 0.58572,
+        "confusion_matrix_counts": {
+          "true_negative": 4073,
+          "false_positive": 2103,
+          "false_negative": 3175,
+          "true_positive": 2932
+        }
+      }
+    },
+    "gaps_in_test_mcc": {
+      "full_minus_no_caller": 0.04338,
+      "no_caller_minus_sequence_only": 0.11746,
+      "full_minus_sequence_only": 0.16084
+    },
+    "reference_points": {
+      "majority_class_mcc": 0.0,
+      "protein_length_only_mcc": 0.02845,
+      "database_coverage_substitute_mcc": 0.14134
+    }
+  },
+  "permutation_importance_top_8": {
+    "decision_tree": [
+      {
+        "feature": "prokka_has_ec",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.122175
+      },
+      {
+        "feature": "bakta_n_dbxref",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.0721
+      },
+      {
+        "feature": "length_bp",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.037574
+      },
+      {
+        "feature": "prokka_has_similarity_hit",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.034399
+      },
+      {
+        "feature": "aa_frac_K",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.009365
+      },
+      {
+        "feature": "protein_length_aa",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.006631
+      },
+      {
+        "feature": "genome_length_bp",
+        "caller_derived": false,
+        "db_derived": false,
+        "permutation_importance_mean": 0.000763
+      },
+      {
+        "feature": "aa_frac_M",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.000132
+      }
+    ],
+    "random_forest": [
+      {
+        "feature": "bakta_n_dbxref",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.086758
+      },
+      {
+        "feature": "prokka_has_ec",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.05286
+      },
+      {
+        "feature": "prokka_has_protein_motif",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.011727
+      },
+      {
+        "feature": "prokka_has_similarity_hit",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.010808
+      },
+      {
+        "feature": "genome_length_bp",
+        "caller_derived": false,
+        "db_derived": false,
+        "permutation_importance_mean": 0.007695
+      },
+      {
+        "feature": "aa_frac_S",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.005478
+      },
+      {
+        "feature": "aa_frac_W",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.003642
+      },
+      {
+        "feature": "aa_frac_E",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.003637
+      }
+    ],
+    "gradient_boosting": [
+      {
+        "feature": "bakta_n_dbxref",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.075508
+      },
+      {
+        "feature": "prokka_has_ec",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.059948
+      },
+      {
+        "feature": "prokka_has_protein_motif",
+        "caller_derived": false,
+        "db_derived": true,
+        "permutation_importance_mean": 0.026873
+      },
+      {
+        "feature": "genome_length_bp",
+        "caller_derived": false,
+        "db_derived": false,
+        "permutation_importance_mean": 0.025706
+      },
+      {
+        "feature": "length_bp",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.006775
+      },
+      {
+        "feature": "aa_frac_D",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.002598
+      },
+      {
+        "feature": "aa_frac_S",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.002565
+      },
+      {
+        "feature": "aa_frac_Y",
+        "caller_derived": true,
+        "db_derived": false,
+        "permutation_importance_mean": 0.002042
+      }
+    ]
+  },
+  "hyperparameter_selection_rule": "mean MCC across five genome-grouped folds of the training genomes, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest. Grids declared before the first fit.",
+  "selection_rule_provenance": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction.",
+  "source_files": {
+    "cohort": "12_content_cohort.json",
+    "rules": "13_name_rules.json",
+    "features": "14_content_features.json",
+    "baselines": "15_content_baselines.json",
+    "cv": [
+      "16_content_cv_decision_tree.json",
+      "16_content_cv_random_forest.json",
+      "16_content_cv_gradient_boosting.json"
+    ],
+    "final": [
+      "17_content_final_decision_tree.json",
+      "17_content_final_random_forest.json",
+      "17_content_final_gradient_boosting.json"
+    ],
+    "importance": [
+      "18_content_importance_decision_tree.json",
+      "18_content_importance_random_forest.json",
+      "18_content_importance_gradient_boosting.json"
+    ],
+    "circularity": "19_content_circularity.json"
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "step": "12_content_cohort",
+  "unit": "one Bakta CDS call paired with the Prokka CDS at the same locus",
+  "label_definition": "name_disagreement = 1 when the two tools' product strings differ after the primary normalisation rule in lib_names.py. This is disagreement between two software products about a name. It is not a claim that either name is correct, and it is not a claim about what the protein does.",
+  "pairing_rule": "same sequence, same strand, largest overlap in bp, Prokka feature must be a CDS",
+  "no_new_annotation": "runs on the annotation output already on disk; the Bakta database is not required and has been removed from this machine",
+  "bakta_cds_total": 87960,
+  "prokka_cds_total": 87860,
+  "n_paired": 87859,
+  "n_unpaired": 101,
+  "unpaired_note": "Bakta CDS with no overlapping same-strand Prokka CDS. There is no second name to compare, so the naming question cannot be asked of them. They are part one's label, not part two's.",
+  "coordinate_agreement_among_pairs": {
+    "identical_start_and_stop": 87788,
+    "note": "carried over from part one for context: these tools agree on where genes are almost always, which is why the naming question is the one with signal in it"
+  },
+  "cross_tabulation": {
+    "both_named": 50210,
+    "both_placeholder": 8653,
+    "bakta_named_only": 26699,
+    "prokka_named_only": 2297,
+    "total": 87859,
+    "shares": {
+      "both_named": 0.5715,
+      "both_placeholder": 0.0985,
+      "bakta_named_only": 0.3039,
+      "prokka_named_only": 0.0261
+    }
+  },
+  "asymmetric_cells_interpretation": {
+    "finding": "The large asymmetric cell is 'Bakta named, Prokka not' (26,699), not the reverse (2,297). Bakta on db-light leaves 12.5% of paired CDS as a placeholder against Prokka's 40.2%.",
+    "db_light_direction": "db-light was used because db-full does not fit on this machine. It has fewer reference proteins, so it can only make Bakta name FEWER regions than db-full would. It therefore works AGAINST the observed asymmetry rather than producing it: a db-full run would move rows out of 'both_placeholder' and 'prokka_named_only' into 'bakta_named_only' and make the imbalance larger.",
+    "therefore": "bakta_named_only is a LOWER BOUND under db-light. The asymmetry is a difference in reference-database breadth and naming policy between the two tools, of which the db-light constraint is one component pushing in a known direction. It is not an artefact that a db-full run would remove.",
+    "what_is_still_confounded": "The absolute size of 'both_placeholder' and 'prokka_named_only' is affected by db-light and should not be read as a property of Bakta in general."
+  },
+  "primary_analysis_set": {
+    "n": 50210,
+    "share_of_pairs": 0.5715,
+    "definition": "both tools assigned a non-placeholder product",
+    "why_conditional": "Comparing two names requires both tools to have produced one. This restriction is imposed by what is measurable under db-light, not chosen for scientific convenience.",
+    "name_disagreement": {
+      "primary": {
+        "n": 25977,
+        "rate": 0.5174
+      },
+      "strict": {
+        "n": 28121,
+        "rate": 0.5601
+      },
+      "loose": {
+        "n": 25418,
+        "rate": 0.5062
+      }
+    },
+    "modelled_level": "primary"
+  },
+  "declared_generic_families_within_primary_set": {
+    "note": "Declared before fitting. These Bakta naming styles are kept as NAMED because each is a database match carrying a structural claim, but they are near-deterministic disagreements and their size is recorded here so the positive class is not read as uniform.",
+    "families": {
+      "uncharacterized_orf_name": {
+        "n": 284,
+        "share_of_primary_set": 0.0057,
+        "name_disagreement_rate": 1.0
+      },
+      "domain_containing": {
+        "n": 4210,
+        "share_of_primary_set": 0.0838,
+        "name_disagreement_rate": 0.9993
+      },
+      "none_of_these": {
+        "n": 45716,
+        "share_of_primary_set": 0.9105,
+        "name_disagreement_rate": 0.47
+      }
+    }
+  },
+  "separate_columns_not_part_of_the_label": {
+    "note": "Gene symbols and EC numbers are reported, never used as features. Either would be a second measurement of the label.",
+    "gene_symbol": {
+      "n_comparable": 13760,
+      "n_disagree": 5656,
+      "rate": 0.411
+    },
+    "ec_number": {
+      "n_comparable": 750,
+      "n_disagree": 125,
+      "rate": 0.1667,
+      "source": "Bakta: Dbxref EC:; Prokka: eC_number attribute"
+    }
+  },
+  "per_genome": [
+    {
+      "genome": "GCF_000006765.1",
+      "species": "Pseudomonas aeruginosa",
+      "bakta_cds": 5680,
+      "paired": 5674,
+      "unpaired": 6,
+      "primary_set": 3587,
+      "name_disagreement": 2088,
+      "name_disagreement_rate": 0.5821
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "species": "Salmonella enterica",
+      "bakta_cds": 4625,
+      "paired": 4617,
+      "unpaired": 8,
+      "primary_set": 3456,
+      "name_disagreement": 1421,
+      "name_disagreement_rate": 0.4112
+    },
+    {
+      "genome": "GCF_000008865.2",
+      "species": "Escherichia coli",
+      "bakta_cds": 5387,
+      "paired": 5365,
+      "unpaired": 22,
+      "primary_set": 3654,
+      "name_disagreement": 1582,
+      "name_disagreement_rate": 0.433
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "species": "Bacillus subtilis",
+      "bakta_cds": 4216,
+      "paired": 4214,
+      "unpaired": 2,
+      "primary_set": 2874,
+      "name_disagreement": 1452,
+      "name_disagreement_rate": 0.5052
+    },
+    {
+      "genome": "GCF_000009085.1",
+      "species": "Campylobacter jejuni",
+      "bakta_cds": 1658,
+      "paired": 1658,
+      "unpaired": 0,
+      "primary_set": 987,
+      "name_disagreement": 444,
+      "name_disagreement_rate": 0.4498
+    },
+    {
+      "genome": "GCF_000011325.1",
+      "species": "Corynebacterium glutamicum",
+      "bakta_cds": 3065,
+      "paired": 3065,
+      "unpaired": 0,
+      "primary_set": 1484,
+      "name_disagreement": 798,
+      "name_disagreement_rate": 0.5377
+    },
+    {
+      "genome": "GCF_000013425.1",
+      "species": "Staphylococcus aureus",
+      "bakta_cds": 2635,
+      "paired": 2630,
+      "unpaired": 5,
+      "primary_set": 1699,
+      "name_disagreement": 829,
+      "name_disagreement_rate": 0.4879
+    },
+    {
+      "genome": "GCF_000022005.1",
+      "species": "Caulobacter vibrioides",
+      "bakta_cds": 3722,
+      "paired": 3716,
+      "unpaired": 6,
+      "primary_set": 1920,
+      "name_disagreement": 1057,
+      "name_disagreement_rate": 0.5505
+    },
+    {
+      "genome": "GCF_000025985.1",
+      "species": "Bacteroides fragilis",
+      "bakta_cds": 4346,
+      "paired": 4345,
+      "unpaired": 1,
+      "primary_set": 1802,
+      "name_disagreement": 1121,
+      "name_disagreement_rate": 0.6221
+    },
+    {
+      "genome": "GCF_000091545.1",
+      "species": "Thermus thermophilus",
+      "bakta_cds": 2220,
+      "paired": 2215,
+      "unpaired": 5,
+      "primary_set": 1258,
+      "name_disagreement": 536,
+      "name_disagreement_rate": 0.4261
+    },
+    {
+      "genome": "GCF_000195955.2",
+      "species": "Mycobacterium tuberculosis",
+      "bakta_cds": 4078,
+      "paired": 4071,
+      "unpaired": 7,
+      "primary_set": 2374,
+      "name_disagreement": 1229,
+      "name_disagreement_rate": 0.5177
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "species": "Listeria monocytogenes",
+      "bakta_cds": 2875,
+      "paired": 2875,
+      "unpaired": 0,
+      "primary_set": 1863,
+      "name_disagreement": 950,
+      "name_disagreement_rate": 0.5099
+    },
+    {
+      "genome": "GCF_000270265.1",
+      "species": "Synechocystis sp. PCC 6803",
+      "bakta_cds": 3293,
+      "paired": 3292,
+      "unpaired": 1,
+      "primary_set": 1430,
+      "name_disagreement": 718,
+      "name_disagreement_rate": 0.5021
+    },
+    {
+      "genome": "GCF_001457635.1",
+      "species": "Streptococcus pneumoniae",
+      "bakta_cds": 2091,
+      "paired": 2091,
+      "unpaired": 0,
+      "primary_set": 1244,
+      "name_disagreement": 600,
+      "name_disagreement_rate": 0.4823
+    },
+    {
+      "genome": "GCF_001598635.1",
+      "species": "Enterococcus faecalis",
+      "bakta_cds": 2652,
+      "paired": 2651,
+      "unpaired": 1,
+      "primary_set": 1664,
+      "name_disagreement": 941,
+      "name_disagreement_rate": 0.5655
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "species": "Borreliella burgdorferi",
+      "bakta_cds": 1339,
+      "paired": 1339,
+      "unpaired": 0,
+      "primary_set": 503,
+      "name_disagreement": 196,
+      "name_disagreement_rate": 0.3897
+    },
+    {
+      "genome": "GCF_008369605.1",
+      "species": "Vibrio cholerae",
+      "bakta_cds": 3635,
+      "paired": 3632,
+      "unpaired": 3,
+      "primary_set": 2319,
+      "name_disagreement": 1005,
+      "name_disagreement_rate": 0.4334
+    },
+    {
+      "genome": "GCF_008931305.1",
+      "species": "Streptomyces coelicolor",
+      "bakta_cds": 7733,
+      "paired": 7712,
+      "unpaired": 21,
+      "primary_set": 3513,
+      "name_disagreement": 2351,
+      "name_disagreement_rate": 0.6692
+    },
+    {
+      "genome": "GCF_013388375.1",
+      "species": "Xanthomonas campestris",
+      "bakta_cds": 4104,
+      "paired": 4102,
+      "unpaired": 2,
+      "primary_set": 2192,
+      "name_disagreement": 1161,
+      "name_disagreement_rate": 0.5297
+    },
+    {
+      "genome": "GCF_018885085.1",
+      "species": "Clostridioides difficile",
+      "bakta_cds": 3602,
+      "paired": 3602,
+      "unpaired": 0,
+      "primary_set": 2045,
+      "name_disagreement": 1239,
+      "name_disagreement_rate": 0.6059
+    },
+    {
+      "genome": "GCF_020546685.1",
+      "species": "Deinococcus radiodurans",
+      "bakta_cds": 3133,
+      "paired": 3131,
+      "unpaired": 2,
+      "primary_set": 1461,
+      "name_disagreement": 807,
+      "name_disagreement_rate": 0.5524
+    },
+    {
+      "genome": "GCF_020736045.1",
+      "species": "Haemophilus influenzae",
+      "bakta_cds": 1792,
+      "paired": 1791,
+      "unpaired": 1,
+      "primary_set": 1268,
+      "name_disagreement": 356,
+      "name_disagreement_rate": 0.2808
+    },
+    {
+      "genome": "GCF_022869645.1",
+      "species": "Neisseria meningitidis",
+      "bakta_cds": 2059,
+      "paired": 2057,
+      "unpaired": 2,
+      "primary_set": 1198,
+      "name_disagreement": 478,
+      "name_disagreement_rate": 0.399
+    },
+    {
+      "genome": "GCF_025998455.1",
+      "species": "Helicobacter pylori",
+      "bakta_cds": 1584,
+      "paired": 1583,
+      "unpaired": 1,
+      "primary_set": 805,
+      "name_disagreement": 314,
+      "name_disagreement_rate": 0.3901
+    },
+    {
+      "genome": "GCF_037023865.1",
+      "species": "Sinorhizobium meliloti",
+      "bakta_cds": 6436,
+      "paired": 6431,
+      "unpaired": 5,
+      "primary_set": 3610,
+      "name_disagreement": 2304,
+      "name_disagreement_rate": 0.6382
+    }
+  ],
+  "table": "data/interim/content_pairs.tsv.gz"
+}

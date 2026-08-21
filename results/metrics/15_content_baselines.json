@@ -1,0 +1,266 @@
+{
+  "step": "15_content_baselines",
+  "scored_on": "held-out test genomes only, the same rows every model is scored on",
+  "denominator_note": "Baselines and models share one denominator. Scoring baselines on the whole dataset and models on a held-out split would make every comparison downstream meaningless.",
+  "n_test_rows": 12283,
+  "n_test_positive": 6107,
+  "test_positive_rate": 0.49719,
+  "test_genomes": [
+    "GCF_000006765.1",
+    "GCF_000006945.2",
+    "GCF_000009045.1",
+    "GCF_000196035.1",
+    "GCF_002151505.1"
+  ],
+  "split": {
+    "train_genomes": [
+      "GCF_000008865.2",
+      "GCF_000009085.1",
+      "GCF_000011325.1",
+      "GCF_000013425.1",
+      "GCF_000022005.1",
+      "GCF_000025985.1",
+      "GCF_000091545.1",
+      "GCF_000195955.2",
+      "GCF_000270265.1",
+      "GCF_001457635.1",
+      "GCF_001598635.1",
+      "GCF_008369605.1",
+      "GCF_008931305.1",
+      "GCF_013388375.1",
+      "GCF_018885085.1",
+      "GCF_020546685.1",
+      "GCF_020736045.1",
+      "GCF_022869645.1",
+      "GCF_025998455.1",
+      "GCF_037023865.1"
+    ],
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_overlapping_genomes": 0,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "result": "passed"
+  },
+  "baselines": {
+    "majority_class": {
+      "description": "always predict the majority class of the training genomes",
+      "predicted_class": 1,
+      "train_positive_rate": 0.5239,
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.49719,
+        "precision": 0.49719,
+        "recall": 1.0,
+        "f1": 0.66417,
+        "mcc": 0.0,
+        "roc_auc": 0.5,
+        "confusion_matrix_counts": {
+          "true_negative": 0,
+          "false_positive": 6176,
+          "false_negative": 0,
+          "true_positive": 6107
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.5821,
+          "mcc": 0.0
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.41117,
+          "mcc": 0.0
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.50522,
+          "mcc": 0.0
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.50993,
+          "mcc": 0.0
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.38966,
+          "mcc": 0.0
+        }
+      ],
+      "note": "MCC is 0 by construction for a constant predictor. It is reported so the floor is visible next to every other row."
+    },
+    "protein_length_only": {
+      "description": "one feature, one threshold",
+      "feature": "protein_length_aa",
+      "rule": "predict disagreement when protein_length_aa > 214",
+      "threshold": 214.0,
+      "direction": "above",
+      "chosen_on": "training genomes only",
+      "train_mcc": 0.06963,
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.51119,
+        "precision": 0.50569,
+        "recall": 0.74963,
+        "f1": 0.60396,
+        "mcc": 0.02845,
+        "roc_auc": 0.51253,
+        "confusion_matrix_counts": {
+          "true_negative": 1701,
+          "false_positive": 4475,
+          "false_negative": 1529,
+          "true_positive": 4578
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.57597,
+          "mcc": 0.07283
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.45833,
+          "mcc": -0.00622
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.4913,
+          "mcc": -0.02364
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.50886,
+          "mcc": 0.00936
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.53479,
+          "mcc": 0.19876
+        }
+      ]
+    },
+    "is_either_product_hypothetical": {
+      "description": "specified baseline: predict disagreement when either tool's product is a placeholder",
+      "computed": false,
+      "reason": "Degenerate by construction. The primary analysis set is defined as both tools having assigned a non-placeholder product, so this predictor takes the value 0 on every row it would be scored on. It is identical to the majority-class baseline with the minority class predicted, and carries no information about anything.",
+      "not_silently_replaced": "Reported as uncomputable rather than swapped for something that would produce a number. The substitute below is labelled as a substitute.",
+      "where_this_predictor_does_live": "It is the cohort definition itself. Its content is the cross-tabulation in 12_content_cohort.json: 8,653 pairs where both tools produced a placeholder, 26,699 where only Bakta named the region, 2,297 where only Prokka did."
+    },
+    "database_coverage_substitute": {
+      "description": "substitute for the degenerate baseline above: predict from whether Prokka found a UniProtKB similarity hit",
+      "is_a_substitute": true,
+      "what_it_tests": "If this scores close to the forest, naming disagreement is mostly a database-coverage story and not a sequence story. That was the point of the baseline it replaces.",
+      "feature": "prokka_has_similarity_hit",
+      "feature_is_db_derived": true,
+      "rule": "predict disagreement when prokka_has_similarity_hit <= 0",
+      "chosen_on": "training genomes only",
+      "train_mcc": 0.16141,
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.53309,
+        "precision": 0.80795,
+        "recall": 0.07991,
+        "f1": 0.14543,
+        "mcc": 0.14134,
+        "roc_auc": 0.53056,
+        "confusion_matrix_counts": {
+          "true_negative": 6060,
+          "false_positive": 116,
+          "false_negative": 5619,
+          "true_positive": 488
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.46808,
+          "mcc": 0.14282
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.59925,
+          "mcc": 0.10253
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.52053,
+          "mcc": 0.1476
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.52979,
+          "mcc": 0.16986
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.62624,
+          "mcc": 0.13904
+        }
+      ]
+    }
+  }
+}

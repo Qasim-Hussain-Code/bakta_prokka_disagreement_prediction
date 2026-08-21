@@ -1,0 +1,132 @@
+{
+  "step": "17_content_final_gradient_boosting",
+  "model": "gradient_boosting",
+  "seed": 42,
+  "hyperparameters": {
+    "max_depth": 2,
+    "learning_rate": 0.05,
+    "max_iter": 200
+  },
+  "hyperparameters_chosen_by": "step 16, mean MCC over 5 genome-grouped folds with the one-standard-error rule; test genomes untouched",
+  "grouped_cv_mean_mcc": 0.2838,
+  "n_features": 61,
+  "split": {
+    "train_genomes": [
+      "GCF_000008865.2",
+      "GCF_000009085.1",
+      "GCF_000011325.1",
+      "GCF_000013425.1",
+      "GCF_000022005.1",
+      "GCF_000025985.1",
+      "GCF_000091545.1",
+      "GCF_000195955.2",
+      "GCF_000270265.1",
+      "GCF_001457635.1",
+      "GCF_001598635.1",
+      "GCF_008369605.1",
+      "GCF_008931305.1",
+      "GCF_013388375.1",
+      "GCF_018885085.1",
+      "GCF_020546685.1",
+      "GCF_020736045.1",
+      "GCF_022869645.1",
+      "GCF_025998455.1",
+      "GCF_037023865.1"
+    ],
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_overlapping_genomes": 0,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "result": "passed"
+  },
+  "test": {
+    "n_rows": 12283,
+    "n_positive": 6107,
+    "n_negative": 6176,
+    "positive_rate": 0.49719,
+    "accuracy": 0.64325,
+    "precision": 0.62906,
+    "recall": 0.68839,
+    "f1": 0.65739,
+    "mcc": 0.28812,
+    "roc_auc": 0.70385,
+    "confusion_matrix_counts": {
+      "true_negative": 3697,
+      "false_positive": 2479,
+      "false_negative": 1903,
+      "true_positive": 4204
+    },
+    "majority_class_accuracy": 0.50281
+  },
+  "per_genome_test": [
+    {
+      "genome": "GCF_000006765.1",
+      "n_rows": 3587,
+      "n_positive": 2088,
+      "positive_rate": 0.5821,
+      "accuracy": 0.63647,
+      "mcc": 0.22368
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "n_rows": 3456,
+      "n_positive": 1421,
+      "positive_rate": 0.41117,
+      "accuracy": 0.64294,
+      "mcc": 0.25688
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "n_rows": 2874,
+      "n_positive": 1452,
+      "positive_rate": 0.50522,
+      "accuracy": 0.64962,
+      "mcc": 0.29916
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "n_rows": 1863,
+      "n_positive": 950,
+      "positive_rate": 0.50993,
+      "accuracy": 0.63983,
+      "mcc": 0.30313
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "n_rows": 503,
+      "n_positive": 196,
+      "positive_rate": 0.38966,
+      "accuracy": 0.66998,
+      "mcc": 0.2839
+    }
+  ],
+  "train_for_reference": {
+    "note": "in-sample, reported only so the gap to the test numbers is visible; not a performance claim",
+    "accuracy": 0.66388,
+    "mcc": 0.33533,
+    "f1": 0.65332
+  },
+  "baseline_comparison_same_test_rows": {
+    "majority_class": {
+      "mcc": 0.0,
+      "accuracy": 0.49719,
+      "f1": 0.66417
+    },
+    "protein_length_only": {
+      "mcc": 0.02845,
+      "accuracy": 0.51119,
+      "f1": 0.60396
+    },
+    "database_coverage_substitute": {
+      "mcc": 0.14134,
+      "accuracy": 0.53309,
+      "f1": 0.14543
+    }
+  },
+  "label_note": "The label is disagreement between two software products about a name. A positive prediction is not a claim that either name is wrong, and not a claim about what the protein does."
+}

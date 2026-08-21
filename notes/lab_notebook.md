@@ -185,3 +185,151 @@ If the interval question is worth keeping, it needs a gene-caller pair that
 does not share an implementation — Prodigal against GeneMarkS-2 or Glimmer,
 say. Comparing two wrappers around one caller cannot produce disagreement to
 model.
+
+## 2026-08-22 — the content experiment. Predictable, but not from sequence.
+
+Part one's negative result stands untouched. Scripts 01–11 and their metrics
+files were not edited. This is a second experiment on the same annotation
+output, no new genomes and no re-annotation.
+
+Housekeeping first: the tree was already clean at `414f949`, and the 3.8 GB
+Bakta database was deleted once it was certain nothing downstream needs it —
+the whole content experiment reads GFF and `.faa` files. 3.9 GB free became
+7.8 GB. `provenance/fetch_bakta_db.sh` re-downloads the pinned release.
+
+### Two defects in part one's artefacts, found and reported, not fixed
+
+`has_gene_symbol` is **constant 1** across all 87,960 part-one rows.
+`04_extract_calls.py` reads the gene symbol as `a.get("gene", a.get("Name",
+""))`, and Bakta sets `Name=product` on every CDS, so the fallback filled the
+column with product strings. Bakta's real `gene=` is present on 19,216 CDS,
+not all of them.
+
+No part-one number moves: a constant feature can never be split on and its
+permutation importance is exactly zero. But it was a dead feature shipped
+without anyone noticing, which is the same class of failure as Prokka exiting
+0 with no rRNAs. Step 14 now hard-fails on any constant feature. That check
+fired on its first run, on `bakta_has_pfam`, for a real structural reason:
+every one of the 3,428 Bakta CDS carrying a PFAM cross-reference has a
+placeholder product, so a PFAM hit and a Bakta name are mutually exclusive
+here. Declared as a verified exclusion rather than silently dropped, and the
+declaration itself fails if it ever stops being true.
+
+### The db-light confound runs the opposite way to what was assumed
+
+The brief expected db-light to leave Bakta under-named relative to Prokka. It
+does relative to db-full — but Bakta on db-light still leaves only 12.5% of
+paired CDS as a placeholder against Prokka's 40.2%. The big asymmetric cell is
+**Bakta named, Prokka did not** (26,699), against 2,297 the other way.
+
+db-light can only make Bakta name *fewer* regions, so it works against that
+asymmetry rather than producing it. A db-full run would push rows from
+`both_placeholder` and `prokka_named_only` into `bakta_named_only` and make
+the imbalance larger. So `bakta_named_only` is a **lower bound**, and calling
+the asymmetric cells a "db-light artefact" would have been wrong in a way that
+flattered the constraint. What db-light genuinely confounds is the absolute
+size of `both_placeholder` and `prokka_named_only`.
+
+### A normalisation rule that split strings from themselves
+
+First draft of the gene-symbol strip keyed on each record's own `gene=`
+attribute. Bakta populates it on 19,216 CDS and Prokka on 48,201, so the strip
+fired on one side and not the other, and `'GTPase Era'` was scored as a
+disagreement against `'GTPase Era'` 23 times. `'Co-chaperonin GroES'` and
+`'Transcription termination factor Rho'` did the same.
+
+Fixed by building the symbol set once per pair from both tools. The invariant
+— identical raw strings can never be scored as a disagreement — is now an
+assertion in `lib_names.assert_symmetric`, called by step 12, and it refuses
+to write the label file rather than warning. 29,808 pairs have identical raw
+strings; zero violations.
+
+Worth recording that this bug inflated the disagreement rate in the direction
+that made the experiment look more interesting. It would have survived any
+amount of staring at summary statistics.
+
+### Two declared deviations from the brief
+
+**The selection rule.** The brief called for "part one's rule verbatim: mean
+MCC across five grouped folds, 1-SE tie-break". That is not part one's rule —
+`lib_model.sweep_depth` selects by mean average precision with a plain argmax
+and no 1-SE step. Implemented what was specified, which also suits a
+51.7%-positive problem better than AP does, and recorded the discrepancy in
+every sweep file instead of quietly picking one.
+
+**Gradient boosting.** `HistGradientBoostingClassifier` rather than
+`GradientBoostingClassifier`: 54.1 s versus 0.7 s per fit here, so one sweep
+is 27 minutes against 0.4. Decided before any boosting result existed and
+recorded with the measurement.
+
+### The specified baseline was degenerate
+
+"Is either product hypothetical" cannot be computed on the primary analysis
+set, because that set is *defined* as both tools having named the region. It
+is constant 0 on every row it would be scored on. Reported as uncomputable
+rather than swapped for something that produces a number; a substitute
+carrying the same intent — did Prokka find a UniProtKB similarity hit —
+was added and labelled as a substitute.
+
+### The result
+
+50,210 both-named regions, 51.7% name disagreement under the primary rule
+(56.0% strict, 50.6% loose). A real, balanced problem, unlike part one's 13
+positives.
+
+    random forest, test MCC   0.303
+    gradient boosting         0.288
+    decision tree             0.261
+    database coverage         0.141   <- baseline
+    protein length            0.028
+    majority class            0.000
+
+And then the audit:
+
+    full            61 features   CV 0.293   test 0.303
+    no caller       26 features   CV 0.232   test 0.259
+    sequence only   17 features   CV 0.070   test 0.142
+
+Sequence-only collapses to the database-coverage baseline. Permutation
+importance says it without ambiguity: 9 db-derived features are worth 0.165 in
+MCC, 35 caller-derived features 0.019, and the 17 sequence and genome features
+**−0.001**. Not "small" — negative, i.e. indistinguishable from noise.
+
+So the answer is that Bakta/Prokka naming disagreement *is* predictable, at
+MCC ~0.30, and what predicts it is how well each tool's reference database
+covers the region. `bakta_n_dbxref`, `prokka_has_ec`,
+`prokka_has_protein_motif`. That is a fact about reference databases, not
+about DNA.
+
+The honest reading: the second experiment did not fail the way the first did.
+The label had plenty of signal and the models found it. But the question on
+the tin was "can sequence predict this", and the sequence-only grouped-CV MCC
+of 0.070 says no. The audit earned its place for a second time, in a different
+way — part one it caught a module footprint, here it caught database coverage.
+
+The `db_derived` flag was the load-bearing design decision of this half. Had
+the features carried only part one's caller flag, the `no_caller` arm would
+have scored 0.259 and looked like a sequence result.
+
+### OOB against grouped CV
+
+Forest OOB MCC 0.340 against a grouped-CV mean of 0.293. Gap +0.047, and in
+the expected direction: OOB bootstraps rows, so rows from the same genome sit
+both in-bag and out-of-bag. The gap is a measurement of genome-level leakage,
+which is the reason the split is grouped by genome in the first place.
+
+### Loose ends
+
+- 8.4% of the primary set is Bakta's `... domain-containing protein` naming
+  style, which disagrees ~100% of the time. Declared before fitting, counts in
+  `12_content_cohort.json`. Not excluded, because it is a real Bakta name.
+- Six features are near-constant (>99.5% one value) and recorded as such:
+  `near_contig_edge`, `ambiguous_frac`, `same_start`, `same_stop`,
+  `neighbourhood_identical_calls`, `bakta_has_uniref`. `same_start`/`same_stop`
+  being near-constant is part one's finding restated.
+- `scripts/verify_readme_numbers.py` checks every quoted number against the
+  metrics files. It caught two errors in the first README draft: the
+  majority-class accuracy (0.503 is `majority_class_accuracy`, the best
+  possible constant; the baseline actually scores 0.497 because its class is
+  fixed on the training genomes) and the third-ranked feature. Both were
+  exactly the kind of transcription error the standard exists to prevent.

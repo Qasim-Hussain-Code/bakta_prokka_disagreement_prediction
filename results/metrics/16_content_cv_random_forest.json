@@ -1,0 +1,346 @@
+{
+  "step": "16_content_cv_random_forest",
+  "model": "random_forest",
+  "seed": 42,
+  "selection": {
+    "rule": "mean MCC across five genome-grouped CV folds, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest",
+    "grid_declared_before_first_fit": true,
+    "n_candidates": 10,
+    "best_mean_mcc": 0.30618,
+    "best_params": {
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    "one_se_threshold": 0.28818,
+    "n_within_one_se": 8,
+    "chosen_params": {
+      "max_depth": 8,
+      "min_samples_leaf": 5
+    },
+    "chosen_mean_mcc": 0.29259,
+    "chosen_is_simpler_than_best": true,
+    "implementation_note": null,
+    "differs_from_part_one_rule": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction."
+  },
+  "n_train_rows": 37927,
+  "n_train_positive": 19870,
+  "n_features": 61,
+  "features": [
+    "aa_entropy",
+    "aa_frac_A",
+    "aa_frac_C",
+    "aa_frac_D",
+    "aa_frac_E",
+    "aa_frac_F",
+    "aa_frac_G",
+    "aa_frac_H",
+    "aa_frac_I",
+    "aa_frac_K",
+    "aa_frac_L",
+    "aa_frac_M",
+    "aa_frac_N",
+    "aa_frac_P",
+    "aa_frac_Q",
+    "aa_frac_R",
+    "aa_frac_S",
+    "aa_frac_T",
+    "aa_frac_V",
+    "aa_frac_W",
+    "aa_frac_Y",
+    "aa_low_complexity_frac",
+    "ambiguous_frac",
+    "at_skew",
+    "bakta_has_ec",
+    "bakta_has_is",
+    "bakta_has_uniref",
+    "bakta_n_dbxref",
+    "dist_to_contig_end",
+    "entropy_3mer",
+    "flank_gc_down",
+    "flank_gc_up",
+    "gc3",
+    "gc_content",
+    "gc_minus_genome",
+    "gc_skew",
+    "genome_gc",
+    "genome_length_bp",
+    "genome_n_contigs",
+    "length_bp",
+    "longest_orf_frac",
+    "low_complexity_dna_frac",
+    "max_homopolymer",
+    "min_stops_per_kb",
+    "mobile_neighbours_5kb",
+    "near_contig_edge",
+    "neighbourhood_identical_calls",
+    "prokka_has_cog",
+    "prokka_has_ec",
+    "prokka_has_protein_motif",
+    "prokka_has_similarity_hit",
+    "protein_length_aa",
+    "same_start",
+    "same_stop",
+    "start_atg",
+    "start_gtg",
+    "start_ttg",
+    "stop_taa",
+    "stop_tag",
+    "stop_tga",
+    "strand_plus"
+  ],
+  "split": {
+    "train_genomes": [
+      "GCF_000008865.2",
+      "GCF_000009085.1",
+      "GCF_000011325.1",
+      "GCF_000013425.1",
+      "GCF_000022005.1",
+      "GCF_000025985.1",
+      "GCF_000091545.1",
+      "GCF_000195955.2",
+      "GCF_000270265.1",
+      "GCF_001457635.1",
+      "GCF_001598635.1",
+      "GCF_008369605.1",
+      "GCF_008931305.1",
+      "GCF_013388375.1",
+      "GCF_018885085.1",
+      "GCF_020546685.1",
+      "GCF_020736045.1",
+      "GCF_022869645.1",
+      "GCF_025998455.1",
+      "GCF_037023865.1"
+    ],
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_overlapping_genomes": 0,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "result": "passed"
+  },
+  "cv_folds": {
+    "n_folds": 5,
+    "assignment": {
+      "GCF_000008865.2": 0,
+      "GCF_000009085.1": 1,
+      "GCF_000011325.1": 2,
+      "GCF_000013425.1": 2,
+      "GCF_000022005.1": 2,
+      "GCF_000025985.1": 2,
+      "GCF_000091545.1": 3,
+      "GCF_000195955.2": 0,
+      "GCF_000270265.1": 4,
+      "GCF_001457635.1": 1,
+      "GCF_001598635.1": 3,
+      "GCF_008369605.1": 3,
+      "GCF_008931305.1": 4,
+      "GCF_013388375.1": 4,
+      "GCF_018885085.1": 0,
+      "GCF_020546685.1": 1,
+      "GCF_020736045.1": 4,
+      "GCF_022869645.1": 1,
+      "GCF_025998455.1": 0,
+      "GCF_037023865.1": 3
+    }
+  },
+  "grid": [
+    {
+      "max_depth": 4,
+      "min_samples_leaf": 1
+    },
+    {
+      "max_depth": 4,
+      "min_samples_leaf": 5
+    },
+    {
+      "max_depth": 8,
+      "min_samples_leaf": 1
+    },
+    {
+      "max_depth": 8,
+      "min_samples_leaf": 5
+    },
+    {
+      "max_depth": 12,
+      "min_samples_leaf": 1
+    },
+    {
+      "max_depth": 12,
+      "min_samples_leaf": 5
+    },
+    {
+      "max_depth": 16,
+      "min_samples_leaf": 1
+    },
+    {
+      "max_depth": 16,
+      "min_samples_leaf": 5
+    },
+    {
+      "max_depth": null,
+      "min_samples_leaf": 1
+    },
+    {
+      "max_depth": null,
+      "min_samples_leaf": 5
+    }
+  ],
+  "results": [
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 1
+      },
+      "mean_mcc": 0.30618,
+      "std_error": 0.018,
+      "per_fold_mcc": [
+        0.25141,
+        0.36398,
+        0.30394,
+        0.29764,
+        0.31393
+      ]
+    },
+    {
+      "params": {
+        "max_depth": null,
+        "min_samples_leaf": 5
+      },
+      "mean_mcc": 0.3049,
+      "std_error": 0.01381,
+      "per_fold_mcc": [
+        0.26125,
+        0.34098,
+        0.31191,
+        0.28848,
+        0.32189
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 1
+      },
+      "mean_mcc": 0.30301,
+      "std_error": 0.01353,
+      "per_fold_mcc": [
+        0.26044,
+        0.34121,
+        0.30217,
+        0.29191,
+        0.31932
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 16,
+        "min_samples_leaf": 5
+      },
+      "mean_mcc": 0.30263,
+      "std_error": 0.01401,
+      "per_fold_mcc": [
+        0.26199,
+        0.33889,
+        0.3047,
+        0.28199,
+        0.3256
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 5
+      },
+      "mean_mcc": 0.30233,
+      "std_error": 0.01201,
+      "per_fold_mcc": [
+        0.27067,
+        0.33602,
+        0.30826,
+        0.27992,
+        0.31678
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 1
+      },
+      "mean_mcc": 0.30136,
+      "std_error": 0.01184,
+      "per_fold_mcc": [
+        0.26407,
+        0.32633,
+        0.31255,
+        0.28374,
+        0.32013
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      },
+      "mean_mcc": 0.29259,
+      "std_error": 0.01419,
+      "per_fold_mcc": [
+        0.24789,
+        0.31789,
+        0.30557,
+        0.27132,
+        0.32028
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 8,
+        "min_samples_leaf": 1
+      },
+      "mean_mcc": 0.29174,
+      "std_error": 0.01223,
+      "per_fold_mcc": [
+        0.25185,
+        0.31693,
+        0.30148,
+        0.27605,
+        0.3124
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 4,
+        "min_samples_leaf": 1
+      },
+      "mean_mcc": 0.26589,
+      "std_error": 0.01885,
+      "per_fold_mcc": [
+        0.20978,
+        0.30481,
+        0.25619,
+        0.24779,
+        0.31087
+      ]
+    },
+    {
+      "params": {
+        "max_depth": 4,
+        "min_samples_leaf": 5
+      },
+      "mean_mcc": 0.2658,
+      "std_error": 0.01938,
+      "per_fold_mcc": [
+        0.20595,
+        0.30301,
+        0.25691,
+        0.25019,
+        0.31294
+      ]
+    }
+  ],
+  "elapsed_seconds": 199.3,
+  "test_set_untouched": "This script reads only the training genomes. The held-out genomes play no part in choosing hyperparameters."
+}

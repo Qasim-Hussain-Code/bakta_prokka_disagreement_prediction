@@ -1,0 +1,143 @@
+{
+  "step": "17_content_final_random_forest",
+  "model": "random_forest",
+  "seed": 42,
+  "hyperparameters": {
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "hyperparameters_chosen_by": "step 16, mean MCC over 5 genome-grouped folds with the one-standard-error rule; test genomes untouched",
+  "grouped_cv_mean_mcc": 0.29259,
+  "n_features": 61,
+  "split": {
+    "train_genomes": [
+      "GCF_000008865.2",
+      "GCF_000009085.1",
+      "GCF_000011325.1",
+      "GCF_000013425.1",
+      "GCF_000022005.1",
+      "GCF_000025985.1",
+      "GCF_000091545.1",
+      "GCF_000195955.2",
+      "GCF_000270265.1",
+      "GCF_001457635.1",
+      "GCF_001598635.1",
+      "GCF_008369605.1",
+      "GCF_008931305.1",
+      "GCF_013388375.1",
+      "GCF_018885085.1",
+      "GCF_020546685.1",
+      "GCF_020736045.1",
+      "GCF_022869645.1",
+      "GCF_025998455.1",
+      "GCF_037023865.1"
+    ],
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "n_overlapping_genomes": 0,
+    "assertion": "set(train_genomes) & set(test_genomes) == empty",
+    "result": "passed"
+  },
+  "test": {
+    "n_rows": 12283,
+    "n_positive": 6107,
+    "n_negative": 6176,
+    "positive_rate": 0.49719,
+    "accuracy": 0.65139,
+    "precision": 0.64947,
+    "recall": 0.64925,
+    "f1": 0.64936,
+    "mcc": 0.30275,
+    "roc_auc": 0.70764,
+    "confusion_matrix_counts": {
+      "true_negative": 4036,
+      "false_positive": 2140,
+      "false_negative": 2142,
+      "true_positive": 3965
+    },
+    "majority_class_accuracy": 0.50281
+  },
+  "per_genome_test": [
+    {
+      "genome": "GCF_000006765.1",
+      "n_rows": 3587,
+      "n_positive": 2088,
+      "positive_rate": 0.5821,
+      "accuracy": 0.64511,
+      "mcc": 0.24259
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "n_rows": 3456,
+      "n_positive": 1421,
+      "positive_rate": 0.41117,
+      "accuracy": 0.66985,
+      "mcc": 0.30351
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "n_rows": 2874,
+      "n_positive": 1452,
+      "positive_rate": 0.50522,
+      "accuracy": 0.6517,
+      "mcc": 0.3048
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "n_rows": 1863,
+      "n_positive": 950,
+      "positive_rate": 0.50993,
+      "accuracy": 0.63339,
+      "mcc": 0.30741
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "n_rows": 503,
+      "n_positive": 196,
+      "positive_rate": 0.38966,
+      "accuracy": 0.63419,
+      "mcc": 0.29064
+    }
+  ],
+  "train_for_reference": {
+    "note": "in-sample, reported only so the gap to the test numbers is visible; not a performance claim",
+    "accuracy": 0.69979,
+    "mcc": 0.40904,
+    "f1": 0.68805
+  },
+  "baseline_comparison_same_test_rows": {
+    "majority_class": {
+      "mcc": 0.0,
+      "accuracy": 0.49719,
+      "f1": 0.66417
+    },
+    "protein_length_only": {
+      "mcc": 0.02845,
+      "accuracy": 0.51119,
+      "f1": 0.60396
+    },
+    "database_coverage_substitute": {
+      "mcc": 0.14134,
+      "accuracy": 0.53309,
+      "f1": 0.14543
+    }
+  },
+  "label_note": "The label is disagreement between two software products about a name. A positive prediction is not a claim that either name is wrong, and not a claim about what the protein does.",
+  "oob": {
+    "oob_accuracy": 0.66567,
+    "oob_error": 0.33433,
+    "oob_mcc": 0.33957,
+    "interpretation": "OOB bootstraps rows, not genomes. Rows from the same genome land both in-bag and out-of-bag, so an OOB estimate is scored against near-neighbours from the same annotation run. The gap between OOB and the genome-grouped CV mean is therefore a measurement of genome-level leakage, not a discrepancy to be explained away. OOB above grouped CV is the expected direction and its size is the quantity of interest."
+  },
+  "oob_vs_grouped_cv": {
+    "oob_mcc": 0.33957,
+    "grouped_cv_mean_mcc": 0.29259,
+    "gap": 0.04698,
+    "interpretation": "The gap is a measurement of genome-level leakage. OOB resamples rows, so a held-out row is scored by trees that saw its neighbours from the same genome and the same annotation run. Grouped CV holds whole genomes out. The difference is what that leakage is worth, not an error in either estimate."
+  }
+}

@@ -1,0 +1,501 @@
+{
+  "step": "14_content_features",
+  "n_rows_total": 87859,
+  "n_rows_primary_set": 50210,
+  "n_positive_primary_set": 25977,
+  "positive_rate_primary_set": 0.51737,
+  "n_features": 61,
+  "flags": {
+    "caller_derived": "the value encodes a gene-caller decision: chosen boundaries, the reading frame they imply, the strand. Everything computed from the translated protein is included, because there is no protein without a frame.",
+    "db_derived": "computed from either tool's database-search output rather than from sequence. A model predicting name disagreement from these has learned which regions are thinly represented in the reference sets, not something about the DNA.",
+    "read_from_the_table": "step 19 reads both flags from this manifest. No downstream script carries a hard-coded feature list."
+  },
+  "counts": {
+    "caller_derived": 35,
+    "db_derived": 9,
+    "neither": 17,
+    "reused_from_part_one": 25,
+    "new_in_part_two": 36
+  },
+  "dropped_from_part_one": {
+    "is_hypothetical": "constant 0 inside the primary analysis set by construction: the set is defined as both tools having named the region",
+    "has_gene_symbol": "constant 1 across all 87,960 part-one rows. 04_extract_calls.py read the gene symbol as a.get('gene', a.get('Name', '')) and Bakta sets Name=product, so the fallback filled the column with product strings. A constant feature can never be split on, so no part-one number moves; scripts 01-11 are left exactly as they are."
+  },
+  "caller_flag_reads_differently_here": "In part one the caller flag was alarming: the label was 'Bakta called this and Prokka did not', so a caller-derived feature was close to a restatement of it. Here both tools called every region in the cohort, and part one established they agree on the exact coordinates in 87,788 of 87,888 matched calls. The caller decision is shared rather than a source of the label. The flag is kept strict anyway so it means the same thing in both halves.",
+  "excluded_as_constant_in_primary_set": {
+    "bakta_has_pfam": {
+      "reason": "All 3,428 Bakta CDS carrying a PFAM cross-reference have a placeholder Bakta product (1,894 paired with a Prokka placeholder, 1,534 with a Prokka name). Under db-light Bakta falls back to Pfam only when it has nothing better to say, so a PFAM cross-reference and a named Bakta product are mutually exclusive in this panel and the feature is excluded from the primary set by construction.",
+      "verified_constant_at_runtime": true
+    }
+  },
+  "constant_feature_check": {
+    "n_constant_undeclared": 0,
+    "n_excluded_as_declared_constant": 1,
+    "n_near_constant": 6,
+    "near_constant": [
+      {
+        "feature": "near_contig_edge",
+        "dominant_value": "0",
+        "share": 0.99918
+      },
+      {
+        "feature": "ambiguous_frac",
+        "dominant_value": "0.0",
+        "share": 0.99994
+      },
+      {
+        "feature": "same_start",
+        "dominant_value": 1,
+        "share": 0.99932
+      },
+      {
+        "feature": "same_stop",
+        "dominant_value": 1,
+        "share": 0.99938
+      },
+      {
+        "feature": "neighbourhood_identical_calls",
+        "dominant_value": 4,
+        "share": 0.9952
+      },
+      {
+        "feature": "bakta_has_uniref",
+        "dominant_value": 1,
+        "share": 0.99628
+      }
+    ],
+    "near_constant_note": "over 99.5% one value across the primary set. Kept, but they carry almost no information and should not be read as meaningful if they surface in an importance ranking."
+  },
+  "manifest": {
+    "gc_content": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "GC fraction of the called interval"
+    },
+    "gc_skew": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "(G-C)/(G+C) over the interval"
+    },
+    "at_skew": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "(A-T)/(A+T) over the interval"
+    },
+    "gc_minus_genome": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "interval GC minus whole-genome GC; a classic signal of horizontally acquired or mobile sequence"
+    },
+    "entropy_3mer": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "Shannon entropy of 3-mer composition, bits; low in repetitive sequence"
+    },
+    "max_homopolymer": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "longest single-base run"
+    },
+    "longest_orf_frac": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "longest stop-free stretch across all 6 frames, as a fraction of interval length; computed independently of the frame Bakta chose"
+    },
+    "min_stops_per_kb": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "stop codons per kb in the emptiest of the 6 frames"
+    },
+    "flank_gc_up": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "GC of the 100 bp before the interval"
+    },
+    "flank_gc_down": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "GC of the 100 bp after the interval"
+    },
+    "dist_to_contig_end": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "bp to the nearer end of the contig"
+    },
+    "near_contig_edge": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "within 500 bp of a contig end"
+    },
+    "ambiguous_frac": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "fraction of non-ACGT bases in the interval"
+    },
+    "genome_gc": {
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "GC of the whole genome"
+    },
+    "genome_length_bp": {
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "total genome length"
+    },
+    "genome_n_contigs": {
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "number of replicons/contigs"
+    },
+    "length_bp": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "length of the interval Bakta chose"
+    },
+    "strand_plus": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "Bakta called this on the forward strand"
+    },
+    "gc3": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "GC at third codon positions; requires the reading frame Bakta chose"
+    },
+    "start_atg": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "Bakta's chosen start codon is ATG"
+    },
+    "start_gtg": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "Bakta's chosen start codon is GTG"
+    },
+    "start_ttg": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "Bakta's chosen start codon is TTG"
+    },
+    "stop_taa": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "stop codon of the called ORF is TAA"
+    },
+    "stop_tag": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "stop codon of the called ORF is TAG"
+    },
+    "stop_tga": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_one",
+      "description": "stop codon of the called ORF is TGA"
+    },
+    "low_complexity_dna_frac": {
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of 40 bp windows with 3-mer entropy below 4.0 bits; frame-free"
+    },
+    "protein_length_aa": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "length of the translated protein in residues; a function of the interval the caller chose"
+    },
+    "aa_entropy": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "Shannon entropy of amino acid composition, bits"
+    },
+    "aa_low_complexity_frac": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of 20-residue windows in which one residue occupies at least 50%"
+    },
+    "same_start": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "the two callers chose the same start coordinate"
+    },
+    "same_stop": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "the two callers chose the same stop coordinate"
+    },
+    "neighbourhood_identical_calls": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "how many of the 2 nearest Bakta CDS either side were called with identical coordinates by both tools"
+    },
+    "bakta_has_uniref": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Bakta's Dbxref contains a UniRef cluster"
+    },
+    "bakta_has_ec": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Bakta's Dbxref contains an EC number"
+    },
+    "bakta_has_is": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Bakta's Dbxref contains an ISFinder insertion-sequence match"
+    },
+    "bakta_n_dbxref": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "number of cross-references Bakta attached"
+    },
+    "prokka_has_similarity_hit": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Prokka's inference cites a UniProtKB protein similarity"
+    },
+    "prokka_has_protein_motif": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Prokka's inference cites an HMM protein motif"
+    },
+    "prokka_has_cog": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Prokka assigned a COG"
+    },
+    "prokka_has_ec": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Prokka assigned an EC number"
+    },
+    "mobile_neighbours_5kb": {
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "source": "part_two",
+      "description": "Bakta CDS within 5000 bp carrying an ISFinder match; the only mobile-element context derivable from what is already annotated"
+    },
+    "aa_frac_A": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue A in the translated protein"
+    },
+    "aa_frac_C": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue C in the translated protein"
+    },
+    "aa_frac_D": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue D in the translated protein"
+    },
+    "aa_frac_E": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue E in the translated protein"
+    },
+    "aa_frac_F": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue F in the translated protein"
+    },
+    "aa_frac_G": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue G in the translated protein"
+    },
+    "aa_frac_H": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue H in the translated protein"
+    },
+    "aa_frac_I": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue I in the translated protein"
+    },
+    "aa_frac_K": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue K in the translated protein"
+    },
+    "aa_frac_L": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue L in the translated protein"
+    },
+    "aa_frac_M": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue M in the translated protein"
+    },
+    "aa_frac_N": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue N in the translated protein"
+    },
+    "aa_frac_P": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue P in the translated protein"
+    },
+    "aa_frac_Q": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue Q in the translated protein"
+    },
+    "aa_frac_R": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue R in the translated protein"
+    },
+    "aa_frac_S": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue S in the translated protein"
+    },
+    "aa_frac_T": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue T in the translated protein"
+    },
+    "aa_frac_V": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue V in the translated protein"
+    },
+    "aa_frac_W": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue W in the translated protein"
+    },
+    "aa_frac_Y": {
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "source": "part_two",
+      "description": "fraction of residue Y in the translated protein"
+    }
+  },
+  "protein_source": "Bakta .faa, keyed by locus_tag",
+  "n_rows_without_protein_record": 0,
+  "table": "data/interim/content_features.tsv.gz"
+}

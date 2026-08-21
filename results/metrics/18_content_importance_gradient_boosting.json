@@ -1,0 +1,840 @@
+{
+  "step": "18_content_importance_gradient_boosting",
+  "model": "gradient_boosting",
+  "hyperparameters": {
+    "max_depth": 2,
+    "learning_rate": 0.05,
+    "max_iter": 200
+  },
+  "scoring": "matthews_corrcoef",
+  "n_repeats": 10,
+  "measured_on": "held-out genomes, not the training set",
+  "correlation_threshold": 0.7,
+  "caveats": {
+    "read_permutation_not_impurity": "Impurity importance is computed on the training data and favours continuous, high-cardinality features over binary ones regardless of usefulness. It is reported for completeness; the permutation column is the one to read.",
+    "correlated_features": "Twenty amino acid fractions sum to one, and protein length tracks interval length. When one member of a correlated group is permuted the model falls back on its partners, so each measured drop understates the group. See correlated_with.",
+    "not_causal": "These ranks describe what this model used. They are not evidence about biology, and the label is tool output."
+  },
+  "summary_by_flag": {
+    "caller_derived": {
+      "n_features": 35,
+      "summed_permutation_importance": 0.017429,
+      "top_3": [
+        "length_bp",
+        "aa_frac_D",
+        "aa_frac_S"
+      ]
+    },
+    "db_derived": {
+      "n_features": 9,
+      "summed_permutation_importance": 0.160003,
+      "top_3": [
+        "bakta_n_dbxref",
+        "prokka_has_ec",
+        "prokka_has_protein_motif"
+      ]
+    },
+    "neither": {
+      "n_features": 17,
+      "summed_permutation_importance": 0.024522,
+      "top_3": [
+        "genome_length_bp",
+        "genome_gc",
+        "dist_to_contig_end"
+      ]
+    }
+  },
+  "ranked_by_permutation": [
+    {
+      "feature": "bakta_n_dbxref",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.075508,
+      "permutation_importance_std": 0.003391,
+      "correlated_with": []
+    },
+    {
+      "feature": "prokka_has_ec",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.059948,
+      "permutation_importance_std": 0.004871,
+      "correlated_with": []
+    },
+    {
+      "feature": "prokka_has_protein_motif",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.026873,
+      "permutation_importance_std": 0.002388,
+      "correlated_with": [
+        {
+          "feature": "prokka_has_similarity_hit",
+          "pearson_r": -1.0
+        }
+      ]
+    },
+    {
+      "feature": "genome_length_bp",
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.025706,
+      "permutation_importance_std": 0.004979,
+      "correlated_with": [
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.975
+        },
+        {
+          "feature": "gc3",
+          "pearson_r": 0.93
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.922
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.822
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.821
+        }
+      ]
+    },
+    {
+      "feature": "length_bp",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.006775,
+      "permutation_importance_std": 0.003317,
+      "correlated_with": [
+        {
+          "feature": "protein_length_aa",
+          "pearson_r": 1.0
+        }
+      ]
+    },
+    {
+      "feature": "aa_frac_D",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.002598,
+      "permutation_importance_std": 0.002669,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_S",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.002565,
+      "permutation_importance_std": 0.003888,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_Y",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.002042,
+      "permutation_importance_std": 0.00217,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_R",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.001567,
+      "permutation_importance_std": 0.001643,
+      "correlated_with": []
+    },
+    {
+      "feature": "genome_gc",
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.001339,
+      "permutation_importance_std": 0.001893,
+      "correlated_with": [
+        {
+          "feature": "genome_length_bp",
+          "pearson_r": 0.975
+        },
+        {
+          "feature": "gc3",
+          "pearson_r": 0.955
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.946
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.851
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.85
+        }
+      ]
+    },
+    {
+      "feature": "aa_frac_N",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.001127,
+      "permutation_importance_std": 0.000965,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_L",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.001104,
+      "permutation_importance_std": 0.001351,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_F",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.00109,
+      "permutation_importance_std": 0.001081,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_W",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.001012,
+      "permutation_importance_std": 0.002325,
+      "correlated_with": []
+    },
+    {
+      "feature": "dist_to_contig_end",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.000755,
+      "permutation_importance_std": 0.001098,
+      "correlated_with": []
+    },
+    {
+      "feature": "bakta_has_is",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.000742,
+      "permutation_importance_std": 0.000457,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_A",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.00046,
+      "permutation_importance_std": 0.001644,
+      "correlated_with": []
+    },
+    {
+      "feature": "longest_orf_frac",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.000294,
+      "permutation_importance_std": 0.000783,
+      "correlated_with": []
+    },
+    {
+      "feature": "gc3",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.000226,
+      "permutation_importance_std": 0.000211,
+      "correlated_with": [
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.971
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.955
+        },
+        {
+          "feature": "genome_length_bp",
+          "pearson_r": 0.93
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.859
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.856
+        }
+      ]
+    },
+    {
+      "feature": "aa_frac_I",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.00012,
+      "permutation_importance_std": 0.000332,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_T",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 7.1e-05,
+      "permutation_importance_std": 0.000494,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_P",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 6.9e-05,
+      "permutation_importance_std": 0.000151,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_V",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 6.7e-05,
+      "permutation_importance_std": 0.001301,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_entropy",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_H",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_M",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_Q",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_low_complexity_frac",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "ambiguous_frac",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "at_skew",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "bakta_has_uniref",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "entropy_3mer",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "flank_gc_up",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "gc3",
+          "pearson_r": 0.856
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.855
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.85
+        },
+        {
+          "feature": "genome_length_bp",
+          "pearson_r": 0.821
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.757
+        }
+      ]
+    },
+    {
+      "feature": "gc_skew",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "low_complexity_dna_frac",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "max_homopolymer",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "min_stops_per_kb",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "mobile_neighbours_5kb",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "near_contig_edge",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "neighbourhood_identical_calls",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "prokka_has_similarity_hit",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "prokka_has_protein_motif",
+          "pearson_r": -1.0
+        }
+      ]
+    },
+    {
+      "feature": "protein_length_aa",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "length_bp",
+          "pearson_r": 1.0
+        }
+      ]
+    },
+    {
+      "feature": "same_start",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "same_stop",
+          "pearson_r": 0.798
+        }
+      ]
+    },
+    {
+      "feature": "same_stop",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "same_start",
+          "pearson_r": 0.798
+        }
+      ]
+    },
+    {
+      "feature": "start_atg",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "start_gtg",
+          "pearson_r": -0.742
+        }
+      ]
+    },
+    {
+      "feature": "start_gtg",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "start_atg",
+          "pearson_r": -0.742
+        }
+      ]
+    },
+    {
+      "feature": "start_ttg",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "stop_tag",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "stop_tga",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": [
+        {
+          "feature": "stop_taa",
+          "pearson_r": -0.799
+        }
+      ]
+    },
+    {
+      "feature": "strand_plus",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "flank_gc_down",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -3.6e-05,
+      "permutation_importance_std": 0.000274,
+      "correlated_with": [
+        {
+          "feature": "gc3",
+          "pearson_r": 0.859
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.857
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.851
+        },
+        {
+          "feature": "genome_length_bp",
+          "pearson_r": 0.822
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.757
+        }
+      ]
+    },
+    {
+      "feature": "stop_taa",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -7e-05,
+      "permutation_importance_std": 0.001273,
+      "correlated_with": [
+        {
+          "feature": "stop_tga",
+          "pearson_r": -0.799
+        }
+      ]
+    },
+    {
+      "feature": "aa_frac_C",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.000268,
+      "permutation_importance_std": 0.000917,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_G",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.000361,
+      "permutation_importance_std": 0.000187,
+      "correlated_with": []
+    },
+    {
+      "feature": "gc_content",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.000413,
+      "permutation_importance_std": 0.000997,
+      "correlated_with": [
+        {
+          "feature": "gc3",
+          "pearson_r": 0.971
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.946
+        },
+        {
+          "feature": "genome_length_bp",
+          "pearson_r": 0.922
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.857
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.855
+        }
+      ]
+    },
+    {
+      "feature": "aa_frac_K",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.000991,
+      "permutation_importance_std": 0.002912,
+      "correlated_with": [
+        {
+          "feature": "gc_content",
+          "pearson_r": -0.701
+        }
+      ]
+    },
+    {
+      "feature": "prokka_has_cog",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.001079,
+      "permutation_importance_std": 0.002088,
+      "correlated_with": []
+    },
+    {
+      "feature": "genome_n_contigs",
+      "group": "genome",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.001186,
+      "permutation_importance_std": 0.000516,
+      "correlated_with": []
+    },
+    {
+      "feature": "aa_frac_E",
+      "group": "caller",
+      "caller_derived": true,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.001774,
+      "permutation_importance_std": 0.003335,
+      "correlated_with": []
+    },
+    {
+      "feature": "gc_minus_genome",
+      "group": "sequence",
+      "caller_derived": false,
+      "db_derived": false,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.001937,
+      "permutation_importance_std": 0.001212,
+      "correlated_with": []
+    },
+    {
+      "feature": "bakta_has_ec",
+      "group": "db",
+      "caller_derived": false,
+      "db_derived": true,
+      "impurity_importance": null,
+      "permutation_importance_mean": -0.001989,
+      "permutation_importance_std": 0.000306,
+      "correlated_with": []
+    }
+  ]
+}

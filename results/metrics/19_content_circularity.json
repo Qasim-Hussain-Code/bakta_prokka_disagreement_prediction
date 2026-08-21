@@ -1,0 +1,560 @@
+{
+  "step": "19_content_circularity",
+  "model": "random_forest",
+  "seed": 42,
+  "arms_definition": {
+    "full": "every feature",
+    "no_caller": "caller_derived features removed",
+    "sequence_only": "caller_derived and db_derived features both removed"
+  },
+  "feature_membership_read_from": "the caller_derived and db_derived flags in 14_content_features.json; no feature list is hard-coded in this script",
+  "held_identical_between_arms": "folds, grid, selection rule, seed. Only the feature set varies, so the gaps are attributable to it.",
+  "arms": {
+    "full": {
+      "n_features": 61,
+      "features": [
+        "aa_entropy",
+        "aa_frac_A",
+        "aa_frac_C",
+        "aa_frac_D",
+        "aa_frac_E",
+        "aa_frac_F",
+        "aa_frac_G",
+        "aa_frac_H",
+        "aa_frac_I",
+        "aa_frac_K",
+        "aa_frac_L",
+        "aa_frac_M",
+        "aa_frac_N",
+        "aa_frac_P",
+        "aa_frac_Q",
+        "aa_frac_R",
+        "aa_frac_S",
+        "aa_frac_T",
+        "aa_frac_V",
+        "aa_frac_W",
+        "aa_frac_Y",
+        "aa_low_complexity_frac",
+        "ambiguous_frac",
+        "at_skew",
+        "bakta_has_ec",
+        "bakta_has_is",
+        "bakta_has_uniref",
+        "bakta_n_dbxref",
+        "dist_to_contig_end",
+        "entropy_3mer",
+        "flank_gc_down",
+        "flank_gc_up",
+        "gc3",
+        "gc_content",
+        "gc_minus_genome",
+        "gc_skew",
+        "genome_gc",
+        "genome_length_bp",
+        "genome_n_contigs",
+        "length_bp",
+        "longest_orf_frac",
+        "low_complexity_dna_frac",
+        "max_homopolymer",
+        "min_stops_per_kb",
+        "mobile_neighbours_5kb",
+        "near_contig_edge",
+        "neighbourhood_identical_calls",
+        "prokka_has_cog",
+        "prokka_has_ec",
+        "prokka_has_protein_motif",
+        "prokka_has_similarity_hit",
+        "protein_length_aa",
+        "same_start",
+        "same_stop",
+        "start_atg",
+        "start_gtg",
+        "start_ttg",
+        "stop_taa",
+        "stop_tag",
+        "stop_tga",
+        "strand_plus"
+      ],
+      "n_dropped": 0,
+      "dropped_features": [],
+      "hyperparameters": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      },
+      "grouped_cv_mean_mcc": 0.29259,
+      "selection": {
+        "rule": "mean MCC across five genome-grouped CV folds, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest",
+        "grid_declared_before_first_fit": true,
+        "n_candidates": 10,
+        "best_mean_mcc": 0.30618,
+        "best_params": {
+          "max_depth": null,
+          "min_samples_leaf": 1
+        },
+        "one_se_threshold": 0.28818,
+        "n_within_one_se": 8,
+        "chosen_params": {
+          "max_depth": 8,
+          "min_samples_leaf": 5
+        },
+        "chosen_mean_mcc": 0.29259,
+        "chosen_is_simpler_than_best": true,
+        "implementation_note": null,
+        "differs_from_part_one_rule": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction."
+      },
+      "oob": {
+        "oob_accuracy": 0.66567,
+        "oob_error": 0.33433,
+        "oob_mcc": 0.33957,
+        "interpretation": "OOB bootstraps rows, not genomes. Rows from the same genome land both in-bag and out-of-bag, so an OOB estimate is scored against near-neighbours from the same annotation run. The gap between OOB and the genome-grouped CV mean is therefore a measurement of genome-level leakage, not a discrepancy to be explained away. OOB above grouped CV is the expected direction and its size is the quantity of interest."
+      },
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.65139,
+        "precision": 0.64947,
+        "recall": 0.64925,
+        "f1": 0.64936,
+        "mcc": 0.30275,
+        "roc_auc": 0.70764,
+        "confusion_matrix_counts": {
+          "true_negative": 4036,
+          "false_positive": 2140,
+          "false_negative": 2142,
+          "true_positive": 3965
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome_test": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.64511,
+          "mcc": 0.24259
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.66985,
+          "mcc": 0.30351
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.6517,
+          "mcc": 0.3048
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.63339,
+          "mcc": 0.30741
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.63419,
+          "mcc": 0.29064
+        }
+      ],
+      "elapsed_seconds": 205.8
+    },
+    "no_caller": {
+      "n_features": 26,
+      "features": [
+        "ambiguous_frac",
+        "at_skew",
+        "bakta_has_ec",
+        "bakta_has_is",
+        "bakta_has_uniref",
+        "bakta_n_dbxref",
+        "dist_to_contig_end",
+        "entropy_3mer",
+        "flank_gc_down",
+        "flank_gc_up",
+        "gc_content",
+        "gc_minus_genome",
+        "gc_skew",
+        "genome_gc",
+        "genome_length_bp",
+        "genome_n_contigs",
+        "longest_orf_frac",
+        "low_complexity_dna_frac",
+        "max_homopolymer",
+        "min_stops_per_kb",
+        "mobile_neighbours_5kb",
+        "near_contig_edge",
+        "prokka_has_cog",
+        "prokka_has_ec",
+        "prokka_has_protein_motif",
+        "prokka_has_similarity_hit"
+      ],
+      "n_dropped": 35,
+      "dropped_features": [
+        "aa_entropy",
+        "aa_frac_A",
+        "aa_frac_C",
+        "aa_frac_D",
+        "aa_frac_E",
+        "aa_frac_F",
+        "aa_frac_G",
+        "aa_frac_H",
+        "aa_frac_I",
+        "aa_frac_K",
+        "aa_frac_L",
+        "aa_frac_M",
+        "aa_frac_N",
+        "aa_frac_P",
+        "aa_frac_Q",
+        "aa_frac_R",
+        "aa_frac_S",
+        "aa_frac_T",
+        "aa_frac_V",
+        "aa_frac_W",
+        "aa_frac_Y",
+        "aa_low_complexity_frac",
+        "gc3",
+        "length_bp",
+        "neighbourhood_identical_calls",
+        "protein_length_aa",
+        "same_start",
+        "same_stop",
+        "start_atg",
+        "start_gtg",
+        "start_ttg",
+        "stop_taa",
+        "stop_tag",
+        "stop_tga",
+        "strand_plus"
+      ],
+      "hyperparameters": {
+        "max_depth": 8,
+        "min_samples_leaf": 5
+      },
+      "grouped_cv_mean_mcc": 0.23228,
+      "selection": {
+        "rule": "mean MCC across five genome-grouped CV folds, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest",
+        "grid_declared_before_first_fit": true,
+        "n_candidates": 10,
+        "best_mean_mcc": 0.23541,
+        "best_params": {
+          "max_depth": 12,
+          "min_samples_leaf": 5
+        },
+        "one_se_threshold": 0.22879,
+        "n_within_one_se": 6,
+        "chosen_params": {
+          "max_depth": 8,
+          "min_samples_leaf": 5
+        },
+        "chosen_mean_mcc": 0.23228,
+        "chosen_is_simpler_than_best": true,
+        "implementation_note": null,
+        "differs_from_part_one_rule": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction."
+      },
+      "oob": {
+        "oob_accuracy": 0.6527,
+        "oob_error": 0.3473,
+        "oob_mcc": 0.31476,
+        "interpretation": "OOB bootstraps rows, not genomes. Rows from the same genome land both in-bag and out-of-bag, so an OOB estimate is scored against near-neighbours from the same annotation run. The gap between OOB and the genome-grouped CV mean is therefore a measurement of genome-level leakage, not a discrepancy to be explained away. OOB above grouped CV is the expected direction and its size is the quantity of interest."
+      },
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.62957,
+        "precision": 0.62363,
+        "recall": 0.64303,
+        "f1": 0.63318,
+        "mcc": 0.25937,
+        "roc_auc": 0.68729,
+        "confusion_matrix_counts": {
+          "true_negative": 3806,
+          "false_positive": 2370,
+          "false_negative": 2180,
+          "true_positive": 3927
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome_test": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.61277,
+          "mcc": 0.17374
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.64439,
+          "mcc": 0.26382
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.63083,
+          "mcc": 0.26158
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.62265,
+          "mcc": 0.2607
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.666,
+          "mcc": 0.30177
+        }
+      ],
+      "elapsed_seconds": 153.1
+    },
+    "sequence_only": {
+      "n_features": 17,
+      "features": [
+        "ambiguous_frac",
+        "at_skew",
+        "dist_to_contig_end",
+        "entropy_3mer",
+        "flank_gc_down",
+        "flank_gc_up",
+        "gc_content",
+        "gc_minus_genome",
+        "gc_skew",
+        "genome_gc",
+        "genome_length_bp",
+        "genome_n_contigs",
+        "longest_orf_frac",
+        "low_complexity_dna_frac",
+        "max_homopolymer",
+        "min_stops_per_kb",
+        "near_contig_edge"
+      ],
+      "n_dropped": 44,
+      "dropped_features": [
+        "aa_entropy",
+        "aa_frac_A",
+        "aa_frac_C",
+        "aa_frac_D",
+        "aa_frac_E",
+        "aa_frac_F",
+        "aa_frac_G",
+        "aa_frac_H",
+        "aa_frac_I",
+        "aa_frac_K",
+        "aa_frac_L",
+        "aa_frac_M",
+        "aa_frac_N",
+        "aa_frac_P",
+        "aa_frac_Q",
+        "aa_frac_R",
+        "aa_frac_S",
+        "aa_frac_T",
+        "aa_frac_V",
+        "aa_frac_W",
+        "aa_frac_Y",
+        "aa_low_complexity_frac",
+        "bakta_has_ec",
+        "bakta_has_is",
+        "bakta_has_uniref",
+        "bakta_n_dbxref",
+        "gc3",
+        "length_bp",
+        "mobile_neighbours_5kb",
+        "neighbourhood_identical_calls",
+        "prokka_has_cog",
+        "prokka_has_ec",
+        "prokka_has_protein_motif",
+        "prokka_has_similarity_hit",
+        "protein_length_aa",
+        "same_start",
+        "same_stop",
+        "start_atg",
+        "start_gtg",
+        "start_ttg",
+        "stop_taa",
+        "stop_tag",
+        "stop_tga",
+        "strand_plus"
+      ],
+      "hyperparameters": {
+        "max_depth": 4,
+        "min_samples_leaf": 5
+      },
+      "grouped_cv_mean_mcc": 0.07013,
+      "selection": {
+        "rule": "mean MCC across five genome-grouped CV folds, then the one-standard-error rule: among candidates within one standard error of the best mean, take the simplest",
+        "grid_declared_before_first_fit": true,
+        "n_candidates": 10,
+        "best_mean_mcc": 0.08357,
+        "best_params": {
+          "max_depth": 12,
+          "min_samples_leaf": 1
+        },
+        "one_se_threshold": 0.05447,
+        "n_within_one_se": 10,
+        "chosen_params": {
+          "max_depth": 4,
+          "min_samples_leaf": 5
+        },
+        "chosen_mean_mcc": 0.07013,
+        "chosen_is_simpler_than_best": true,
+        "implementation_note": null,
+        "differs_from_part_one_rule": "scripts/lib_model.py selects by mean average precision with a plain argmax and no one-standard-error step. This half uses MCC with the one-standard-error rule, as specified for it. Recorded rather than resolved silently in either direction."
+      },
+      "oob": {
+        "oob_accuracy": 0.58417,
+        "oob_error": 0.41583,
+        "oob_mcc": 0.17391,
+        "interpretation": "OOB bootstraps rows, not genomes. Rows from the same genome land both in-bag and out-of-bag, so an OOB estimate is scored against near-neighbours from the same annotation run. The gap between OOB and the genome-grouped CV mean is therefore a measurement of genome-level leakage, not a discrepancy to be explained away. OOB above grouped CV is the expected direction and its size is the quantity of interest."
+      },
+      "test": {
+        "n_rows": 12283,
+        "n_positive": 6107,
+        "n_negative": 6176,
+        "positive_rate": 0.49719,
+        "accuracy": 0.5703,
+        "precision": 0.58232,
+        "recall": 0.4801,
+        "f1": 0.5263,
+        "mcc": 0.14191,
+        "roc_auc": 0.58572,
+        "confusion_matrix_counts": {
+          "true_negative": 4073,
+          "false_positive": 2103,
+          "false_negative": 3175,
+          "true_positive": 2932
+        },
+        "majority_class_accuracy": 0.50281
+      },
+      "per_genome_test": [
+        {
+          "genome": "GCF_000006765.1",
+          "n_rows": 3587,
+          "n_positive": 2088,
+          "positive_rate": 0.5821,
+          "accuracy": 0.5821,
+          "mcc": 0.0
+        },
+        {
+          "genome": "GCF_000006945.2",
+          "n_rows": 3456,
+          "n_positive": 1421,
+          "positive_rate": 0.41117,
+          "accuracy": 0.61285,
+          "mcc": 0.14261
+        },
+        {
+          "genome": "GCF_000009045.1",
+          "n_rows": 2874,
+          "n_positive": 1452,
+          "positive_rate": 0.50522,
+          "accuracy": 0.51983,
+          "mcc": 0.05985
+        },
+        {
+          "genome": "GCF_000196035.1",
+          "n_rows": 1863,
+          "n_positive": 950,
+          "positive_rate": 0.50993,
+          "accuracy": 0.53999,
+          "mcc": 0.13249
+        },
+        {
+          "genome": "GCF_002151505.1",
+          "n_rows": 503,
+          "n_positive": 196,
+          "positive_rate": 0.38966,
+          "accuracy": 0.59443,
+          "mcc": 0.13953
+        }
+      ],
+      "elapsed_seconds": 158.8
+    }
+  },
+  "side_by_side": {
+    "full": {
+      "n_features": 61,
+      "grouped_cv_mean_mcc": 0.29259,
+      "test_mcc": 0.30275,
+      "test_accuracy": 0.65139,
+      "test_f1": 0.64936,
+      "test_precision": 0.64947,
+      "test_recall": 0.64925,
+      "test_roc_auc": 0.70764,
+      "confusion_matrix_counts": {
+        "true_negative": 4036,
+        "false_positive": 2140,
+        "false_negative": 2142,
+        "true_positive": 3965
+      }
+    },
+    "no_caller": {
+      "n_features": 26,
+      "grouped_cv_mean_mcc": 0.23228,
+      "test_mcc": 0.25937,
+      "test_accuracy": 0.62957,
+      "test_f1": 0.63318,
+      "test_precision": 0.62363,
+      "test_recall": 0.64303,
+      "test_roc_auc": 0.68729,
+      "confusion_matrix_counts": {
+        "true_negative": 3806,
+        "false_positive": 2370,
+        "false_negative": 2180,
+        "true_positive": 3927
+      }
+    },
+    "sequence_only": {
+      "n_features": 17,
+      "grouped_cv_mean_mcc": 0.07013,
+      "test_mcc": 0.14191,
+      "test_accuracy": 0.5703,
+      "test_f1": 0.5263,
+      "test_precision": 0.58232,
+      "test_recall": 0.4801,
+      "test_roc_auc": 0.58572,
+      "confusion_matrix_counts": {
+        "true_negative": 4073,
+        "false_positive": 2103,
+        "false_negative": 3175,
+        "true_positive": 2932
+      }
+    }
+  },
+  "gaps_in_test_mcc": {
+    "full_minus_no_caller": 0.04338,
+    "no_caller_minus_sequence_only": 0.11746,
+    "full_minus_sequence_only": 0.16084
+  },
+  "reference_points_same_test_rows": {
+    "majority_class_mcc": 0.0,
+    "protein_length_only_mcc": 0.02845,
+    "database_coverage_substitute_mcc": 0.14134
+  },
+  "label_note": "The label is disagreement between two software products about a name. None of these arms measures whether a name is correct."
+}
