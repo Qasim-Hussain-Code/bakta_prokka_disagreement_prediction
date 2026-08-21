@@ -1,0 +1,79 @@
+{
+  "step": "02_annotation_versions",
+  "note": "The database release determines which calls Bakta makes and is part of the result, not metadata. Any published Bakta number must be read against this file.",
+  "bakta": {
+    "tool": "bakta 1.12.0",
+    "db_path": "/home/qasim/bakta_prokka_disagreement_prediction/db/db-light",
+    "db_type": "light",
+    "db_type_reason": "db-full does not fit in available disk on this machine. db-light has fewer reference proteins, so some CDS that db-full would name are left hypothetical. This affects annotation content; it does not change which regions are called as CDS.",
+    "db_version": {
+      "date": "2025-02-24",
+      "major": 6,
+      "minor": 0,
+      "type": "light",
+      "doi": "10.5281/zenodo.14916843",
+      "software-min": {
+        "major": 1,
+        "minor": 11
+      },
+      "dependencies": [
+        {
+          "name": "AMRFinderPlus",
+          "release": "2024-12-18.1"
+        },
+        {
+          "name": "COG",
+          "release": "2024"
+        },
+        {
+          "name": "DoriC",
+          "release": "12"
+        },
+        {
+          "name": "ISFinder",
+          "release": "2019-09-25"
+        },
+        {
+          "name": "Mob-suite",
+          "release": "3"
+        },
+        {
+          "name": "Pfam",
+          "release": "37.2"
+        },
+        {
+          "name": "RefSeq",
+          "release": "228"
+        },
+        {
+          "name": "Rfam",
+          "release": "15"
+        },
+        {
+          "name": "UniProtKB/Swiss-Prot",
+          "release": "2025_01"
+        },
+        {
+          "name": "VFDB",
+          "release": "2025-02-14"
+        }
+      ]
+    },
+    "amrfinderplus_db_version_used": "2026-08-07.1",
+    "amrfinderplus_db_version_bundled": "2024-12-18.1",
+    "amrfinderplus_db_note": "AMRFinderPlus 4.2.7 refuses any database older than a version it hardcodes, and the release bundled in bakta db-light v6.0 was older, so it was updated in place. AMR annotation content therefore comes from a newer reference set than the Bakta release declares. It does not change which regions are called as CDS, so the label is unaffected.",
+    "db_bytes": 4247058008,
+    "db_file_count": 209
+  },
+  "prokka": {
+    "tool": "prokka 1.15.6"
+  },
+  "shared_parameters": {
+    "organism_hints": null,
+    "organism_hints_note": "Neither tool given --genus/--species. Both change output when hinted; hinting one and not the other would make the disagreement partly a function of the hint.",
+    "translation_table": 11,
+    "kingdom": "Bacteria",
+    "contig_headers": "original",
+    "contig_headers_note": "Bakta run with --keep-contig-headers so both tools key intervals on the same sequence identifiers. Without it Bakta emits contig_N and no interval could ever be matched to Prokka's."
+  }
+}

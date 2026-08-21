@@ -1,0 +1,10 @@
+recorded: 2026-08-20T19:50:17+08:00
+bakta:  bakta 1.12.0
+bakta_bin: /home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/bin/bakta
+prokka: prokka 1.15.6
+prokka_bin: /home/qasim/.bactopia/conda/bioconda--prokka-1.15.6/bin/prokka
+bakta_db: /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
+python: Python 3.10.15
+sklearn: 1.7.2
+numpy: 1.26.4
+matplotlib: 3.10.9

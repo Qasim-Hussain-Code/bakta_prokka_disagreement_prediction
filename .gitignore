@@ -22,3 +22,6 @@ env/
 
 # os
 .DS_Store
+
+# ignore lab_notebook.md present in notes
+notes/lab_notebook.md   

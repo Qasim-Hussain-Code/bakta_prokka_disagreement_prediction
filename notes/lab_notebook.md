@@ -99,3 +99,89 @@ Zenodo download is slow (~1.34 GB at 50–300 KB/s, one connection dropped at
 
 - Bakta annotation not yet run; waiting on the database.
 - Nothing downstream of `04` has been executed on real data yet.
+
+## 2026-08-20 (later) — the pipeline ran, and the premise mostly failed
+
+Everything executed end to end. The result is a negative one, and it is more
+interesting than the result the experiment was designed to find.
+
+### The two tools barely disagree about where genes are
+
+87,960 Bakta CDS calls. **72** have no overlapping Prokka feature. Positive
+rate **0.0008**. Among the 87,888 matched calls, **87,788 share an identical
+start *and* stop** — not merely overlapping, byte-identical coordinates.
+
+The reason is visible in the GFF `source` column:
+
+    bakta    87,917 Pyrodigal  +  43 Bakta (sORF module)
+    prokka   87,860 Prodigal:v2.6
+
+Both tools delegate CDS calling to the same algorithm. Pyrodigal is a Cython
+reimplementation of Prodigal. Asking whether Bakta and Prokka disagree about
+gene boundaries is largely asking whether Prodigal agrees with itself, and it
+does: 38 divergences in 87,917 calls, 0.04%.
+
+This was knowable before a single genome was downloaded, by reading what each
+tool wraps. It was not knowable from their output, which is why it is written
+down here rather than quietly fixed.
+
+### What the 72 disagreements actually are
+
+Of the 72 positives, **34 come from Bakta's sORF module** — a separate short-ORF
+detection stage that Prokka has no equivalent of. That is 34 of the 43 sORF
+calls Bakta made in total: nearly every sORF Bakta finds is a disagreement,
+because Prokka structurally cannot find them. Prodigal's default minimum gene
+length is 90 bp; the shortest positive here is 45 bp.
+
+Positive lengths: median **118 bp** (~39 aa), 43 of 72 under 300 bp.
+Negative lengths: median **816 bp**.
+
+The products name the mechanism outright: Type I toxin-antitoxin system Ibs
+family toxins, *trp* and *his* operon leader peptides. Classic short
+regulatory peptides, exactly the class a dedicated sORF finder exists to catch.
+
+So the label is not "these tools read the sequence differently". It is
+"Bakta runs one extra module". That is a fact about software architecture, not
+about DNA.
+
+### The model numbers, and why they should not be quoted
+
+Held-out set: 18,735 rows, **13 positives**.
+
+    no-skill AP           0.00069
+    length_bp only        0.542
+    forest, all features  0.589
+    forest, sequence only 0.470
+
+Two things make these unquotable as point estimates. First, 13 positives:
+re-ranking one of them moves average precision by tenths. `lib_model.evaluate`
+now attaches a reliability warning to any metrics file computed on fewer than
+30 positives, so the caveat travels with the number instead of living only in
+this notebook.
+
+Second, and worse: a single feature, `length_bp`, gets AP 0.542 against the
+full forest's 0.589. The forest adds almost nothing over "is this call
+short?". And `length_bp` sits in the **caller** group — it is the length of the
+interval Bakta chose. The model is not reading sequence. It is reading the
+footprint of the sORF module, which is precisely the circularity step 10 was
+built to detect. The audit fires as designed: sequence-only drops to 0.470 and
+keeps most of its apparent skill, because short ORFs also look different in
+composition — but on 13 positives that residual is not distinguishable from
+noise.
+
+### Honest conclusion
+
+The question as posed — can Bakta/Prokka CDS disagreement be predicted from
+sequence — does not have enough disagreement to answer. Not because the
+modelling failed, but because the premise does not hold for these two tools at
+the interval level.
+
+The comparison that *does* have signal is annotation **content**: both tools
+call the same 87.9k regions and then differ in what they name them. That is a
+different experiment, on the same annotation output already sitting on disk,
+and it needs no new compute.
+
+If the interval question is worth keeping, it needs a gene-caller pair that
+does not share an implementation — Prodigal against GeneMarkS-2 or Glimmer,
+say. Comparing two wrappers around one caller cannot produce disagreement to
+model.

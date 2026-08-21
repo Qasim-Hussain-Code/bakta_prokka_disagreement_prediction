@@ -1,0 +1,301 @@
+{
+  "step": "05_build_disagreement_set",
+  "unit": "one Bakta CDS call",
+  "label_definition": "1 = no Prokka feature of any type overlaps this interval by at least 1 bp on the same strand; 0 = one does",
+  "label_is_tool_output": "A positive case means Bakta made a call where Prokka did not. It does not mean a gene is present.",
+  "overlap_rule": "same strand, >=1 bp, any Prokka feature type",
+  "n_rows": 87960,
+  "n_positive": 72,
+  "positive_rate": 0.0008,
+  "category_counts": {
+    "cds": 87859,
+    "none": 72,
+    "non_cds": 29
+  },
+  "boundary_agreement_among_matched": {
+    "n_matched": 87888,
+    "same_start_and_stop": 87788,
+    "same_stop_only": 22,
+    "same_start_only": 15,
+    "neither": 63,
+    "note": "Start-codon choice is where these tools disagree most often while still calling the same gene. These are label 0."
+  },
+  "table": "data/interim/disagreement.tsv.gz",
+  "per_genome": [
+    {
+      "genome": "GCF_000006765.1",
+      "species": "Pseudomonas aeruginosa",
+      "bakta_cds": 5680,
+      "prokka_cds": 5671,
+      "unique_to_bakta": 4,
+      "unique_to_bakta_rate": 0.0007,
+      "matched_cds": 5674,
+      "matched_non_cds": 2,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "species": "Salmonella enterica",
+      "bakta_cds": 4625,
+      "prokka_cds": 4620,
+      "unique_to_bakta": 7,
+      "unique_to_bakta_rate": 0.0015,
+      "matched_cds": 4617,
+      "matched_non_cds": 1,
+      "unique_to_prokka": 2
+    },
+    {
+      "genome": "GCF_000008865.2",
+      "species": "Escherichia coli",
+      "bakta_cds": 5387,
+      "prokka_cds": 5373,
+      "unique_to_bakta": 21,
+      "unique_to_bakta_rate": 0.0039,
+      "matched_cds": 5365,
+      "matched_non_cds": 1,
+      "unique_to_prokka": 3
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "species": "Bacillus subtilis",
+      "bakta_cds": 4216,
+      "prokka_cds": 4214,
+      "unique_to_bakta": 2,
+      "unique_to_bakta_rate": 0.0005,
+      "matched_cds": 4214,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 1
+    },
+    {
+      "genome": "GCF_000009085.1",
+      "species": "Campylobacter jejuni",
+      "bakta_cds": 1658,
+      "prokka_cds": 1658,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 1658,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000011325.1",
+      "species": "Corynebacterium glutamicum",
+      "bakta_cds": 3065,
+      "prokka_cds": 3065,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 3065,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000013425.1",
+      "species": "Staphylococcus aureus",
+      "bakta_cds": 2635,
+      "prokka_cds": 2630,
+      "unique_to_bakta": 5,
+      "unique_to_bakta_rate": 0.0019,
+      "matched_cds": 2630,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000022005.1",
+      "species": "Caulobacter vibrioides",
+      "bakta_cds": 3722,
+      "prokka_cds": 3711,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0003,
+      "matched_cds": 3716,
+      "matched_non_cds": 5,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000025985.1",
+      "species": "Bacteroides fragilis",
+      "bakta_cds": 4346,
+      "prokka_cds": 4346,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0002,
+      "matched_cds": 4345,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 1
+    },
+    {
+      "genome": "GCF_000091545.1",
+      "species": "Thermus thermophilus",
+      "bakta_cds": 2220,
+      "prokka_cds": 2210,
+      "unique_to_bakta": 4,
+      "unique_to_bakta_rate": 0.0018,
+      "matched_cds": 2215,
+      "matched_non_cds": 1,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000195955.2",
+      "species": "Mycobacterium tuberculosis",
+      "bakta_cds": 4078,
+      "prokka_cds": 4069,
+      "unique_to_bakta": 3,
+      "unique_to_bakta_rate": 0.0007,
+      "matched_cds": 4071,
+      "matched_non_cds": 4,
+      "unique_to_prokka": 1
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "species": "Listeria monocytogenes",
+      "bakta_cds": 2875,
+      "prokka_cds": 2875,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 2875,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_000270265.1",
+      "species": "Synechocystis sp. PCC 6803",
+      "bakta_cds": 3293,
+      "prokka_cds": 3292,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0003,
+      "matched_cds": 3292,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_001457635.1",
+      "species": "Streptococcus pneumoniae",
+      "bakta_cds": 2091,
+      "prokka_cds": 2091,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 2091,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_001598635.1",
+      "species": "Enterococcus faecalis",
+      "bakta_cds": 2652,
+      "prokka_cds": 2651,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0004,
+      "matched_cds": 2651,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "species": "Borreliella burgdorferi",
+      "bakta_cds": 1339,
+      "prokka_cds": 1339,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 1339,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_008369605.1",
+      "species": "Vibrio cholerae",
+      "bakta_cds": 3635,
+      "prokka_cds": 3632,
+      "unique_to_bakta": 3,
+      "unique_to_bakta_rate": 0.0008,
+      "matched_cds": 3632,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_008931305.1",
+      "species": "Streptomyces coelicolor",
+      "bakta_cds": 7733,
+      "prokka_cds": 7709,
+      "unique_to_bakta": 14,
+      "unique_to_bakta_rate": 0.0018,
+      "matched_cds": 7712,
+      "matched_non_cds": 7,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_013388375.1",
+      "species": "Xanthomonas campestris",
+      "bakta_cds": 4104,
+      "prokka_cds": 4102,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 4102,
+      "matched_non_cds": 2,
+      "unique_to_prokka": 2
+    },
+    {
+      "genome": "GCF_018885085.1",
+      "species": "Clostridioides difficile",
+      "bakta_cds": 3602,
+      "prokka_cds": 3604,
+      "unique_to_bakta": 0,
+      "unique_to_bakta_rate": 0.0,
+      "matched_cds": 3602,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_020546685.1",
+      "species": "Deinococcus radiodurans",
+      "bakta_cds": 3133,
+      "prokka_cds": 3133,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0003,
+      "matched_cds": 3131,
+      "matched_non_cds": 1,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_020736045.1",
+      "species": "Haemophilus influenzae",
+      "bakta_cds": 1792,
+      "prokka_cds": 1792,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0006,
+      "matched_cds": 1791,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_022869645.1",
+      "species": "Neisseria meningitidis",
+      "bakta_cds": 2059,
+      "prokka_cds": 2058,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0005,
+      "matched_cds": 2057,
+      "matched_non_cds": 1,
+      "unique_to_prokka": 1
+    },
+    {
+      "genome": "GCF_025998455.1",
+      "species": "Helicobacter pylori",
+      "bakta_cds": 1584,
+      "prokka_cds": 1583,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0006,
+      "matched_cds": 1583,
+      "matched_non_cds": 0,
+      "unique_to_prokka": 0
+    },
+    {
+      "genome": "GCF_037023865.1",
+      "species": "Sinorhizobium meliloti",
+      "bakta_cds": 6436,
+      "prokka_cds": 6432,
+      "unique_to_bakta": 1,
+      "unique_to_bakta_rate": 0.0002,
+      "matched_cds": 6431,
+      "matched_non_cds": 4,
+      "unique_to_prokka": 0
+    }
+  ]
+}

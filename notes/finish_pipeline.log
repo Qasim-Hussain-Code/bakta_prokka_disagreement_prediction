@@ -1,42 +1,234 @@
 
 ############ waiting for prokka to finish ############
-2026-08-20T17:16:58+08:00
+2026-08-20T17:38:31+08:00
 prokka genome dirs: 25
 
 ############ database provenance ############
-2026-08-20T17:22:38+08:00
+2026-08-20T17:38:31+08:00
 === recording database provenance ===
-recorded: 2026-08-20T17:22:38+08:00
+recorded: 2026-08-20T17:38:31+08:00
 db_path: /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
 db_type: light
 db_type_reason: full database does not fit in available disk on this machine
 version_json: {"date":"2025-02-24","major":6,"minor":0,"type":"light","doi":"10.5281/zenodo.14916843","software-min":{"major":1,"minor":11},"dependencies":[{"name":"AMRFinderPlus","release":"2024-12-18.1"},{"name":"COG","release":"2024"},{"name":"DoriC","release":"12"},{"name":"ISFinder","release":"2019-09-25"},{"name":"Mob-suite","release":"3"},{"name":"Pfam","release":"37.2"},{"name":"RefSeq","release":"228"},{"name":"Rfam","release":"15"},{"name":"UniProtKB/Swiss-Prot","release":"2025_01"},{"name":"VFDB","release":"2025-02-14"}]}
-db_size_bytes: 3994889852
-db_file_count: 47
+db_size_bytes: 4247082596
+db_file_count: 209
 
 ############ 02 annotate bakta ############
-2026-08-20T17:22:38+08:00
+2026-08-20T17:38:31+08:00
 bakta 8 threads over 25 genomes, db /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
   GCF_000006765.1 annotating
-FATAL: bakta failed on GCF_000006765.1; see data/annotations/bakta/GCF_000006765.1.log
-predict CRISPR arrays...
-	found: 0
-predict & annotate CDSs...
-	predicted: 5681 
-	discarded length: 0
-	discarded spurious: 0
-	revised translational exceptions: 1
-	skip UPS/IPS detection with light db version
-	found PSCCs: 5353
-	lookup annotations...
-	conduct expert systems...
-Traceback (most recent call last):
-  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/bin/bakta", line 10, in <module>
-    sys.exit(main())
-             ~~~~^^
-  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/lib/python3.13/site-packages/bakta/main.py", line 301, in main
-    expert_amr_found = exp_amr.search(cdss, cds_aa_path)
-  File "/home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/lib/python3.13/site-packages/bakta/expert/amrfinder.py", line 47, in search
-    raise Exception(f"amrfinder error! error code: {proc.returncode}. Please, try 'amrfinder_update --force_update --database {amrfinderplus_db_path}' to update AMRFinderPlus's internal database.")
-Exception: amrfinder error! error code: 1. Please, try 'amrfinder_update --force_update --database /home/qasim/bakta_prokka_disagreement_prediction/db/db-light/amrfinderplus-db' to update AMRFinderPlus's internal database.
-FATAL: bakta annotation failed; see data/annotations/bakta/*.log
+    5680 CDS
+  GCF_000006945.2 annotating
+    4625 CDS
+  GCF_000008865.2 annotating
+    5387 CDS
+  GCF_000009045.1 annotating
+    4216 CDS
+  GCF_000009085.1 annotating
+    1658 CDS
+  GCF_000011325.1 annotating
+    3065 CDS
+  GCF_000013425.1 annotating
+    2635 CDS
+  GCF_000022005.1 annotating
+    3722 CDS
+  GCF_000025985.1 annotating
+    4346 CDS
+  GCF_000091545.1 annotating
+    2220 CDS
+  GCF_000195955.2 annotating
+    4078 CDS
+  GCF_000196035.1 annotating
+    2875 CDS
+  GCF_000270265.1 annotating
+    3293 CDS
+  GCF_001457635.1 annotating
+    2091 CDS
+  GCF_001598635.1 annotating
+    2652 CDS
+  GCF_002151505.1 annotating
+    1339 CDS
+  GCF_008369605.1 annotating
+    3635 CDS
+  GCF_008931305.1 annotating
+    7733 CDS
+  GCF_013388375.1 annotating
+    4104 CDS
+  GCF_018885085.1 annotating
+    3602 CDS
+  GCF_020546685.1 annotating
+    3133 CDS
+  GCF_020736045.1 annotating
+    1792 CDS
+  GCF_022869645.1 annotating
+    2059 CDS
+  GCF_025998455.1 annotating
+    1584 CDS
+  GCF_037023865.1 annotating
+    6436 CDS
+=== recording bakta run provenance ===
+wrote results/metrics/02_bakta_runs.json: 25 genomes, 87,960 CDS
+wrote results/metrics/02_annotation_versions.json
+
+############ 04_extract_calls ############
+2026-08-20T19:47:04+08:00
+182,378 features from 25 genomes
+  bakta    92,486 features   87,960 CDS
+  prokka   89,892 features   87,860 CDS
+wrote data/interim/calls.tsv.gz
+wrote results/metrics/04_calls.json
+
+############ 05_build_disagreement_set ############
+2026-08-20T19:47:06+08:00
+87,960 Bakta CDS calls across 25 genomes
+  positive (Prokka silent): 72 (0.08%)
+  matched by Prokka CDS:    87,859
+  matched by non-CDS:       29
+wrote data/interim/disagreement.tsv.gz
+wrote results/metrics/05_disagreement.json
+
+############ 06_features ############
+2026-08-20T19:47:10+08:00
+  GCF_000006765.1  5,680 intervals
+  GCF_000006945.2  4,625 intervals
+  GCF_000008865.2  5,387 intervals
+  GCF_000009045.1  4,216 intervals
+  GCF_000009085.1  1,658 intervals
+  GCF_000011325.1  3,065 intervals
+  GCF_000013425.1  2,635 intervals
+  GCF_000022005.1  3,722 intervals
+  GCF_000025985.1  4,346 intervals
+  GCF_000091545.1  2,220 intervals
+  GCF_000195955.2  4,078 intervals
+  GCF_000196035.1  2,875 intervals
+  GCF_000270265.1  3,293 intervals
+  GCF_001457635.1  2,091 intervals
+  GCF_001598635.1  2,652 intervals
+  GCF_002151505.1  1,339 intervals
+  GCF_008369605.1  3,635 intervals
+  GCF_008931305.1  7,733 intervals
+  GCF_013388375.1  4,104 intervals
+  GCF_018885085.1  3,602 intervals
+  GCF_020546685.1  3,133 intervals
+  GCF_020736045.1  1,792 intervals
+  GCF_022869645.1  2,059 intervals
+  GCF_025998455.1  1,584 intervals
+  GCF_037023865.1  6,436 intervals
+
+87,960 rows x 27 features
+  caller    11 features
+  genome     3 features
+  sequence  13 features
+wrote data/interim/features.tsv.gz
+wrote results/metrics/06_features.json
+
+############ 07_baselines ############
+2026-08-20T19:47:48+08:00
+train 69,225 rows / 20 genomes (positive rate 0.0009)
+test  18,735 rows / 5 genomes (positive rate 0.0007)
+no-skill average precision = 0.0007
+  majority_class     AP 0.0007  ROC-AUC 0.5
+  length_bp_only     AP 0.5422  ROC-AUC 0.77187
+  gc_content_only    AP 0.0009  ROC-AUC 0.54246
+wrote results/metrics/07_baselines.json
+
+############ 08_forest ############
+2026-08-20T19:47:50+08:00
+27 features, 20 train / 5 test genomes
+train rows 69,225 (positive rate 0.0009)
+sweeping max_depth on training folds (test set untouched)
+  depth 4     mean AP 0.09313
+  depth 6     mean AP 0.1108
+  depth 8     mean AP 0.15296
+  depth 12    mean AP 0.30044
+  depth 16    mean AP 0.402
+  depth None  mean AP 0.47276 <-
+
+held-out test: AP 0.58863 (no-skill 0.00069), ROC-AUC 0.86872
+wrote results/metrics/08_forest.json
+
+############ 09_feature_importance ############
+2026-08-20T19:48:53+08:00
+permutation importance, 10 repeats on held-out genomes
+
+feature                group          perm  impurity
+  length_bp            caller      0.30413   0.15178
+  min_stops_per_kb     sequence    0.01386   0.11411
+  gc_skew              sequence    0.00813   0.03020
+  dist_to_contig_end   sequence    0.00617   0.06244
+  genome_length_bp     genome      0.00427   0.02920
+  is_hypothetical      caller      0.00328   0.00717
+  strand_plus          caller      0.00129   0.00391
+  start_gtg            caller      0.00079   0.00300
+  stop_tga             caller      0.00065   0.00396
+  flank_gc_up          sequence    0.00030   0.03227
+  start_atg            caller      0.00008   0.00320
+  gc_minus_genome      sequence    0.00002   0.08368
+wrote results/metrics/09_feature_importance.json
+
+############ 10_circularity_audit ############
+2026-08-20T19:49:11+08:00
+refitting without the 'caller' group (11 features dropped, 16 kept)
+  depth 4     mean AP 0.07604
+  depth 6     mean AP 0.08059
+  depth 8     mean AP 0.098
+  depth 12    mean AP 0.16776
+  depth 16    mean AP 0.26309
+  depth None  mean AP 0.37025 <-
+
+sequence-only test AP 0.47027 (no-skill 0.00069)
+all features      AP 0.58863
+lift over no-skill: all 0.58794, sequence-only 0.46958
+wrote results/metrics/10_circularity_audit.json
+
+############ 11_figures ############
+2026-08-20T19:50:14+08:00
+writing figures
+  figures/01_disagreement_by_genome.png + .pdf
+  figures/05_length_by_label.png + .pdf
+  figures/02_precision_recall.png + .pdf
+  figures/03_feature_importance.png + .pdf
+  figures/04_circularity_audit.png + .pdf
+done
+
+############ recording tool versions ############
+2026-08-20T19:50:17+08:00
+recorded: 2026-08-20T19:50:17+08:00
+bakta:  bakta 1.12.0
+bakta_bin: /home/qasim/.bactopia/conda/bioconda--bakta-1.12.0/bin/bakta
+prokka: prokka 1.15.6
+prokka_bin: /home/qasim/.bactopia/conda/bioconda--prokka-1.15.6/bin/prokka
+bakta_db: /home/qasim/bakta_prokka_disagreement_prediction/db/db-light
+python: Python 3.10.15
+sklearn: 1.7.2
+numpy: 1.26.4
+matplotlib: 3.10.9
+
+############ ALL DONE ############
+2026-08-20T19:50:18+08:00
+/dev/nvme0n1p5  196G  181G  5.1G  98% /
+figures/:
+01_disagreement_by_genome.pdf
+01_disagreement_by_genome.png
+02_precision_recall.pdf
+02_precision_recall.png
+03_feature_importance.pdf
+03_feature_importance.png
+04_circularity_audit.pdf
+04_circularity_audit.png
+05_length_by_label.pdf
+05_length_by_label.png
+
+results/metrics/:
+01_genomes.json
+02_annotation_versions.json
+02_bakta_runs.json
+03_prokka_runs.json
+04_calls.json
+05_disagreement.json
+06_features.json
+07_baselines.json
+08_forest.json
+09_feature_importance.json
+10_circularity_audit.json

@@ -1,0 +1,77 @@
+{
+  "step": "07_baselines",
+  "headline_metric": "average_precision",
+  "headline_metric_note": "Accuracy is not reported as a headline. At this positive rate a constant negative prediction scores well on accuracy and is useless. The no-skill average precision is the positive rate.",
+  "split": {
+    "strategy": "grouped by genome, folds dealt round-robin by GC rank",
+    "n_folds": 5,
+    "test_fold": 0,
+    "n_train_genomes": 20,
+    "n_test_genomes": 5,
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "test_gc_range": [
+      0.2845,
+      0.6656
+    ],
+    "train_gc_range": [
+      0.2852,
+      0.7212
+    ],
+    "folds": {
+      "GCF_000006765.1": 0,
+      "GCF_000006945.2": 0,
+      "GCF_000008865.2": 3,
+      "GCF_000009045.1": 0,
+      "GCF_000009085.1": 2,
+      "GCF_000011325.1": 1,
+      "GCF_000013425.1": 3,
+      "GCF_000022005.1": 2,
+      "GCF_000025985.1": 4,
+      "GCF_000091545.1": 3,
+      "GCF_000195955.2": 4,
+      "GCF_000196035.1": 0,
+      "GCF_000270265.1": 2,
+      "GCF_001457635.1": 3,
+      "GCF_001598635.1": 4,
+      "GCF_002151505.1": 0,
+      "GCF_008369605.1": 1,
+      "GCF_008931305.1": 4,
+      "GCF_013388375.1": 3,
+      "GCF_018885085.1": 1,
+      "GCF_020546685.1": 1,
+      "GCF_020736045.1": 1,
+      "GCF_022869645.1": 4,
+      "GCF_025998455.1": 2,
+      "GCF_037023865.1": 2
+    }
+  },
+  "n_train_rows": 69225,
+  "n_test_rows": 18735,
+  "train_positive_rate": 0.00085,
+  "test_positive_rate": 0.00069,
+  "no_skill_average_precision": 0.00069,
+  "baselines": [
+    {
+      "baseline": "majority_class",
+      "average_precision": 0.00069,
+      "roc_auc": 0.5,
+      "note": "constant prediction; average_precision here is the no-skill floor"
+    },
+    {
+      "baseline": "length_bp_only",
+      "average_precision": 0.54215,
+      "roc_auc": 0.77187
+    },
+    {
+      "baseline": "gc_content_only",
+      "average_precision": 0.00093,
+      "roc_auc": 0.54246
+    }
+  ]
+}

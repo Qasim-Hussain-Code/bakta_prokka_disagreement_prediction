@@ -1,0 +1,158 @@
+{
+  "step": "06_features",
+  "n_rows": 87960,
+  "n_positive": 72,
+  "n_features": 27,
+  "feature_groups": {
+    "sequence": 13,
+    "genome": 3,
+    "caller": 11
+  },
+  "features_by_group": {
+    "sequence": [
+      "gc_content",
+      "gc_skew",
+      "at_skew",
+      "gc_minus_genome",
+      "entropy_3mer",
+      "max_homopolymer",
+      "longest_orf_frac",
+      "min_stops_per_kb",
+      "flank_gc_up",
+      "flank_gc_down",
+      "dist_to_contig_end",
+      "near_contig_edge",
+      "ambiguous_frac"
+    ],
+    "genome": [
+      "genome_gc",
+      "genome_length_bp",
+      "genome_n_contigs"
+    ],
+    "caller": [
+      "length_bp",
+      "strand_plus",
+      "gc3",
+      "start_atg",
+      "start_gtg",
+      "start_ttg",
+      "stop_taa",
+      "stop_tag",
+      "stop_tga",
+      "is_hypothetical",
+      "has_gene_symbol"
+    ]
+  },
+  "manifest": {
+    "gc_content": {
+      "group": "sequence",
+      "description": "GC fraction of the called interval"
+    },
+    "gc_skew": {
+      "group": "sequence",
+      "description": "(G-C)/(G+C) over the interval"
+    },
+    "at_skew": {
+      "group": "sequence",
+      "description": "(A-T)/(A+T) over the interval"
+    },
+    "gc_minus_genome": {
+      "group": "sequence",
+      "description": "interval GC minus whole-genome GC; a classic signal of horizontally acquired or mobile sequence"
+    },
+    "entropy_3mer": {
+      "group": "sequence",
+      "description": "Shannon entropy of 3-mer composition, bits; low in repetitive sequence"
+    },
+    "max_homopolymer": {
+      "group": "sequence",
+      "description": "longest single-base run"
+    },
+    "longest_orf_frac": {
+      "group": "sequence",
+      "description": "longest stop-free stretch across all 6 frames, as a fraction of interval length; computed independently of the frame Bakta chose"
+    },
+    "min_stops_per_kb": {
+      "group": "sequence",
+      "description": "stop codons per kb in the emptiest of the 6 frames"
+    },
+    "flank_gc_up": {
+      "group": "sequence",
+      "description": "GC of the 100 bp before the interval"
+    },
+    "flank_gc_down": {
+      "group": "sequence",
+      "description": "GC of the 100 bp after the interval"
+    },
+    "dist_to_contig_end": {
+      "group": "sequence",
+      "description": "bp to the nearer end of the contig"
+    },
+    "near_contig_edge": {
+      "group": "sequence",
+      "description": "within 500 bp of a contig end"
+    },
+    "ambiguous_frac": {
+      "group": "sequence",
+      "description": "fraction of non-ACGT bases in the interval"
+    },
+    "genome_gc": {
+      "group": "genome",
+      "description": "GC of the whole genome"
+    },
+    "genome_length_bp": {
+      "group": "genome",
+      "description": "total genome length"
+    },
+    "genome_n_contigs": {
+      "group": "genome",
+      "description": "number of replicons/contigs"
+    },
+    "length_bp": {
+      "group": "caller",
+      "description": "length of the interval Bakta chose"
+    },
+    "strand_plus": {
+      "group": "caller",
+      "description": "Bakta called this on the forward strand"
+    },
+    "gc3": {
+      "group": "caller",
+      "description": "GC at third codon positions; requires the reading frame Bakta chose"
+    },
+    "start_atg": {
+      "group": "caller",
+      "description": "Bakta's chosen start codon is ATG"
+    },
+    "start_gtg": {
+      "group": "caller",
+      "description": "Bakta's chosen start codon is GTG"
+    },
+    "start_ttg": {
+      "group": "caller",
+      "description": "Bakta's chosen start codon is TTG"
+    },
+    "stop_taa": {
+      "group": "caller",
+      "description": "stop codon of the called ORF is TAA"
+    },
+    "stop_tag": {
+      "group": "caller",
+      "description": "stop codon of the called ORF is TAG"
+    },
+    "stop_tga": {
+      "group": "caller",
+      "description": "stop codon of the called ORF is TGA"
+    },
+    "is_hypothetical": {
+      "group": "caller",
+      "description": "Bakta's product is hypothetical/unknown; near-restatement of the label"
+    },
+    "has_gene_symbol": {
+      "group": "caller",
+      "description": "Bakta assigned a gene symbol"
+    }
+  },
+  "circularity_note": "The 'caller' group is derived from Bakta's own decision or database lookup, not from sequence. is_hypothetical is close to a restatement of the label. Step 10 refits without the whole group and reports both numbers; the sequence-only number is the one that answers the question.",
+  "table": "data/interim/features.tsv.gz"
+}

@@ -1,0 +1,213 @@
+{
+  "step": "08_forest",
+  "feature_set": "all groups, including gene-caller-derived",
+  "feature_set_caveat": "Includes the caller group, so this number does not answer 'predictable from sequence alone'. See 10_circularity_audit.",
+  "n_features": 27,
+  "features": [
+    "length_bp",
+    "strand_plus",
+    "gc3",
+    "start_atg",
+    "start_gtg",
+    "start_ttg",
+    "stop_taa",
+    "stop_tag",
+    "stop_tga",
+    "is_hypothetical",
+    "has_gene_symbol",
+    "genome_gc",
+    "genome_length_bp",
+    "genome_n_contigs",
+    "gc_content",
+    "gc_skew",
+    "at_skew",
+    "gc_minus_genome",
+    "entropy_3mer",
+    "max_homopolymer",
+    "longest_orf_frac",
+    "min_stops_per_kb",
+    "flank_gc_up",
+    "flank_gc_down",
+    "dist_to_contig_end",
+    "near_contig_edge",
+    "ambiguous_frac"
+  ],
+  "model": {
+    "estimator": "RandomForestClassifier",
+    "n_estimators": 300,
+    "class_weight": "balanced_subsample",
+    "random_state": 0,
+    "max_depth_grid": [
+      "4",
+      "6",
+      "8",
+      "12",
+      "16",
+      "None"
+    ],
+    "max_depth_selected": null,
+    "selection": "mean average precision over training folds only"
+  },
+  "split": {
+    "strategy": "grouped by genome, folds dealt round-robin by GC rank",
+    "n_folds": 5,
+    "test_fold": 0,
+    "n_train_genomes": 20,
+    "n_test_genomes": 5,
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "test_gc_range": [
+      0.2845,
+      0.6656
+    ],
+    "train_gc_range": [
+      0.2852,
+      0.7212
+    ],
+    "folds": {
+      "GCF_000006765.1": 0,
+      "GCF_000006945.2": 0,
+      "GCF_000008865.2": 3,
+      "GCF_000009045.1": 0,
+      "GCF_000009085.1": 2,
+      "GCF_000011325.1": 1,
+      "GCF_000013425.1": 3,
+      "GCF_000022005.1": 2,
+      "GCF_000025985.1": 4,
+      "GCF_000091545.1": 3,
+      "GCF_000195955.2": 4,
+      "GCF_000196035.1": 0,
+      "GCF_000270265.1": 2,
+      "GCF_001457635.1": 3,
+      "GCF_001598635.1": 4,
+      "GCF_002151505.1": 0,
+      "GCF_008369605.1": 1,
+      "GCF_008931305.1": 4,
+      "GCF_013388375.1": 3,
+      "GCF_018885085.1": 1,
+      "GCF_020546685.1": 1,
+      "GCF_020736045.1": 1,
+      "GCF_022869645.1": 4,
+      "GCF_025998455.1": 2,
+      "GCF_037023865.1": 2
+    }
+  },
+  "depth_sweep": [
+    {
+      "max_depth": 4,
+      "mean_average_precision": 0.09313,
+      "per_fold": [
+        0.20943,
+        0.01982,
+        0.08558,
+        0.05768
+      ]
+    },
+    {
+      "max_depth": 6,
+      "mean_average_precision": 0.1108,
+      "per_fold": [
+        0.21691,
+        0.05045,
+        0.09871,
+        0.07712
+      ]
+    },
+    {
+      "max_depth": 8,
+      "mean_average_precision": 0.15296,
+      "per_fold": [
+        0.28579,
+        0.0838,
+        0.1401,
+        0.10217
+      ]
+    },
+    {
+      "max_depth": 12,
+      "mean_average_precision": 0.30044,
+      "per_fold": [
+        0.54545,
+        0.25035,
+        0.30375,
+        0.10222
+      ]
+    },
+    {
+      "max_depth": 16,
+      "mean_average_precision": 0.402,
+      "per_fold": [
+        0.80833,
+        0.25047,
+        0.44787,
+        0.10131
+      ]
+    },
+    {
+      "max_depth": null,
+      "mean_average_precision": 0.47276,
+      "per_fold": [
+        0.88667,
+        0.25046,
+        0.65121,
+        0.1027
+      ]
+    }
+  ],
+  "test": {
+    "n_rows": 18735,
+    "n_positive": 13,
+    "positive_rate": 0.00069,
+    "no_skill_average_precision": 0.00069,
+    "average_precision": 0.58863,
+    "roc_auc": 0.86872,
+    "reliability_warning": "only 13 positives in the held-out set. Average precision and ROC-AUC on this few positives carry very wide uncertainty -- a single differently-ranked positive moves them substantially. Do not quote these as point estimates."
+  },
+  "test_per_genome": [
+    {
+      "genome": "GCF_000006765.1",
+      "n_rows": 5680,
+      "n_positive": 4,
+      "positive_rate": 0.0007,
+      "average_precision": 0.00073,
+      "roc_auc": 0.5105
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "n_rows": 4625,
+      "n_positive": 7,
+      "positive_rate": 0.00151,
+      "average_precision": 0.85962,
+      "roc_auc": 0.99974
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "n_rows": 4216,
+      "n_positive": 2,
+      "positive_rate": 0.00047,
+      "average_precision": 0.83333,
+      "roc_auc": 0.99988
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "n_rows": 2875,
+      "n_positive": 0,
+      "positive_rate": 0.0,
+      "average_precision": null,
+      "roc_auc": null
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "n_rows": 1339,
+      "n_positive": 0,
+      "positive_rate": 0.0,
+      "average_precision": null,
+      "roc_auc": null
+    }
+  ]
+}

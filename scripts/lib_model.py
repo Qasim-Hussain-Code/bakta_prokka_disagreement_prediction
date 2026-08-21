@@ -103,8 +103,18 @@ def sweep_depth(X, y, fold_of_row):
     return best["max_depth"], results
 
 
+MIN_POSITIVES_FOR_STABLE_AP = 30
+
+
 def evaluate(model, X, y, genomes):
-    """Test-set metrics, overall and per genome."""
+    """Test-set metrics, overall and per genome.
+
+    A reliability warning is attached when the held-out set contains very few
+    positives. Average precision on a dozen positives moves by tenths when a
+    single one is ranked differently, and a bare number in a metrics file
+    invites being quoted as though it were an estimate. The warning travels
+    with the number rather than living only in a notebook.
+    """
     proba = model.predict_proba(X)[:, 1]
     overall = {
         "n_rows": int(len(y)),
@@ -115,6 +125,13 @@ def evaluate(model, X, y, genomes):
         "roc_auc": (round(float(roc_auc_score(y, proba)), 5)
                     if len(set(y)) > 1 else None),
     }
+    if int(y.sum()) < MIN_POSITIVES_FOR_STABLE_AP:
+        overall["reliability_warning"] = (
+            f"only {int(y.sum())} positives in the held-out set. Average "
+            "precision and ROC-AUC on this few positives carry very wide "
+            "uncertainty -- a single differently-ranked positive moves them "
+            "substantially. Do not quote these as point estimates."
+        )
     per_genome = []
     for g in sorted(set(genomes)):
         m = genomes == g

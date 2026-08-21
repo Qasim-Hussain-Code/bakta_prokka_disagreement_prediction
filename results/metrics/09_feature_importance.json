@@ -1,0 +1,335 @@
+{
+  "step": "09_feature_importance",
+  "scoring": "average_precision",
+  "n_repeats": 10,
+  "measured_on": "held-out genomes, not the training set",
+  "correlation_threshold": 0.7,
+  "caveats": {
+    "impurity_bias": "Impurity importance favours continuous, high-cardinality features over binary ones regardless of usefulness.",
+    "correlated_features": "Correlated features split credit. When one is permuted the forest falls back on its partners, so the measured drop understates each of them. See correlated_with.",
+    "not_causal": "These ranks describe what this model used. They are not evidence about biology, and the label is tool output."
+  },
+  "ranked_by_permutation": [
+    {
+      "feature": "length_bp",
+      "group": "caller",
+      "impurity_importance": 0.151783,
+      "permutation_importance_mean": 0.304133,
+      "permutation_importance_std": 0.03362,
+      "correlated_with": []
+    },
+    {
+      "feature": "min_stops_per_kb",
+      "group": "sequence",
+      "impurity_importance": 0.114114,
+      "permutation_importance_mean": 0.013858,
+      "permutation_importance_std": 0.009815,
+      "correlated_with": [
+        {
+          "feature": "longest_orf_frac",
+          "pearson_r": -0.741
+        }
+      ]
+    },
+    {
+      "feature": "gc_skew",
+      "group": "sequence",
+      "impurity_importance": 0.030198,
+      "permutation_importance_mean": 0.008128,
+      "permutation_importance_std": 0.00389,
+      "correlated_with": []
+    },
+    {
+      "feature": "dist_to_contig_end",
+      "group": "sequence",
+      "impurity_importance": 0.062441,
+      "permutation_importance_mean": 0.006165,
+      "permutation_importance_std": 0.01074,
+      "correlated_with": []
+    },
+    {
+      "feature": "genome_length_bp",
+      "group": "genome",
+      "impurity_importance": 0.029196,
+      "permutation_importance_mean": 0.004272,
+      "permutation_importance_std": 0.014921,
+      "correlated_with": []
+    },
+    {
+      "feature": "is_hypothetical",
+      "group": "caller",
+      "impurity_importance": 0.00717,
+      "permutation_importance_mean": 0.003283,
+      "permutation_importance_std": 0.009404,
+      "correlated_with": []
+    },
+    {
+      "feature": "strand_plus",
+      "group": "caller",
+      "impurity_importance": 0.003909,
+      "permutation_importance_mean": 0.001295,
+      "permutation_importance_std": 0.002565,
+      "correlated_with": []
+    },
+    {
+      "feature": "start_gtg",
+      "group": "caller",
+      "impurity_importance": 0.003003,
+      "permutation_importance_mean": 0.000788,
+      "permutation_importance_std": 0.00316,
+      "correlated_with": [
+        {
+          "feature": "start_atg",
+          "pearson_r": -0.828
+        }
+      ]
+    },
+    {
+      "feature": "stop_tga",
+      "group": "caller",
+      "impurity_importance": 0.003955,
+      "permutation_importance_mean": 0.000649,
+      "permutation_importance_std": 0.008722,
+      "correlated_with": []
+    },
+    {
+      "feature": "flank_gc_up",
+      "group": "sequence",
+      "impurity_importance": 0.032266,
+      "permutation_importance_mean": 0.000299,
+      "permutation_importance_std": 0.00831,
+      "correlated_with": [
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.899
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.895
+        },
+        {
+          "feature": "gc3",
+          "pearson_r": 0.893
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.836
+        }
+      ]
+    },
+    {
+      "feature": "start_atg",
+      "group": "caller",
+      "impurity_importance": 0.003203,
+      "permutation_importance_mean": 8.4e-05,
+      "permutation_importance_std": 0.003667,
+      "correlated_with": [
+        {
+          "feature": "start_gtg",
+          "pearson_r": -0.828
+        }
+      ]
+    },
+    {
+      "feature": "gc_minus_genome",
+      "group": "sequence",
+      "impurity_importance": 0.083683,
+      "permutation_importance_mean": 1.5e-05,
+      "permutation_importance_std": 0.024257,
+      "correlated_with": []
+    },
+    {
+      "feature": "has_gene_symbol",
+      "group": "caller",
+      "impurity_importance": 0.0,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "ambiguous_frac",
+      "group": "sequence",
+      "impurity_importance": 0.0,
+      "permutation_importance_mean": 0.0,
+      "permutation_importance_std": 0.0,
+      "correlated_with": []
+    },
+    {
+      "feature": "start_ttg",
+      "group": "caller",
+      "impurity_importance": 8.9e-05,
+      "permutation_importance_mean": -1e-06,
+      "permutation_importance_std": 1e-06,
+      "correlated_with": []
+    },
+    {
+      "feature": "near_contig_edge",
+      "group": "sequence",
+      "impurity_importance": 0.0194,
+      "permutation_importance_mean": -0.000492,
+      "permutation_importance_std": 0.002763,
+      "correlated_with": []
+    },
+    {
+      "feature": "genome_n_contigs",
+      "group": "genome",
+      "impurity_importance": 0.005983,
+      "permutation_importance_mean": -0.000867,
+      "permutation_importance_std": 0.003694,
+      "correlated_with": []
+    },
+    {
+      "feature": "gc3",
+      "group": "caller",
+      "impurity_importance": 0.047068,
+      "permutation_importance_mean": -0.001038,
+      "permutation_importance_std": 0.008237,
+      "correlated_with": [
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.972
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.956
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.893
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.893
+        }
+      ]
+    },
+    {
+      "feature": "flank_gc_down",
+      "group": "sequence",
+      "impurity_importance": 0.039328,
+      "permutation_importance_mean": -0.001135,
+      "permutation_importance_std": 0.010511,
+      "correlated_with": [
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.899
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.895
+        },
+        {
+          "feature": "gc3",
+          "pearson_r": 0.893
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.836
+        }
+      ]
+    },
+    {
+      "feature": "stop_tag",
+      "group": "caller",
+      "impurity_importance": 0.003999,
+      "permutation_importance_mean": -0.002566,
+      "permutation_importance_std": 0.00502,
+      "correlated_with": []
+    },
+    {
+      "feature": "stop_taa",
+      "group": "caller",
+      "impurity_importance": 0.003131,
+      "permutation_importance_mean": -0.003212,
+      "permutation_importance_std": 0.007429,
+      "correlated_with": []
+    },
+    {
+      "feature": "max_homopolymer",
+      "group": "sequence",
+      "impurity_importance": 0.019123,
+      "permutation_importance_mean": -0.004045,
+      "permutation_importance_std": 0.005545,
+      "correlated_with": []
+    },
+    {
+      "feature": "genome_gc",
+      "group": "genome",
+      "impurity_importance": 0.037366,
+      "permutation_importance_mean": -0.005366,
+      "permutation_importance_std": 0.00611,
+      "correlated_with": [
+        {
+          "feature": "gc3",
+          "pearson_r": 0.956
+        },
+        {
+          "feature": "gc_content",
+          "pearson_r": 0.953
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.899
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.899
+        }
+      ]
+    },
+    {
+      "feature": "longest_orf_frac",
+      "group": "sequence",
+      "impurity_importance": 0.073016,
+      "permutation_importance_mean": -0.008853,
+      "permutation_importance_std": 0.005236,
+      "correlated_with": [
+        {
+          "feature": "min_stops_per_kb",
+          "pearson_r": -0.741
+        }
+      ]
+    },
+    {
+      "feature": "at_skew",
+      "group": "sequence",
+      "impurity_importance": 0.034948,
+      "permutation_importance_mean": -0.010434,
+      "permutation_importance_std": 0.008508,
+      "correlated_with": []
+    },
+    {
+      "feature": "entropy_3mer",
+      "group": "sequence",
+      "impurity_importance": 0.130661,
+      "permutation_importance_mean": -0.021687,
+      "permutation_importance_std": 0.021732,
+      "correlated_with": []
+    },
+    {
+      "feature": "gc_content",
+      "group": "sequence",
+      "impurity_importance": 0.06097,
+      "permutation_importance_mean": -0.022194,
+      "permutation_importance_std": 0.011215,
+      "correlated_with": [
+        {
+          "feature": "gc3",
+          "pearson_r": 0.972
+        },
+        {
+          "feature": "genome_gc",
+          "pearson_r": 0.953
+        },
+        {
+          "feature": "flank_gc_up",
+          "pearson_r": 0.895
+        },
+        {
+          "feature": "flank_gc_down",
+          "pearson_r": 0.895
+        }
+      ]
+    }
+  ]
+}

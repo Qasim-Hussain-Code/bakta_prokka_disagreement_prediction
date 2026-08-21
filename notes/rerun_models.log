@@ -1,0 +1,56 @@
+############ 08_forest ############
+2026-08-21T13:00:44+08:00
+27 features, 20 train / 5 test genomes
+train rows 69,225 (positive rate 0.0009)
+sweeping max_depth on training folds (test set untouched)
+  depth 4     mean AP 0.09313
+  depth 6     mean AP 0.1108
+  depth 8     mean AP 0.15296
+  depth 12    mean AP 0.30044
+  depth 16    mean AP 0.402
+  depth None  mean AP 0.47276 <-
+
+held-out test: AP 0.58863 (no-skill 0.00069), ROC-AUC 0.86872
+wrote results/metrics/08_forest.json
+############ 09_feature_importance ############
+2026-08-21T13:02:16+08:00
+permutation importance, 10 repeats on held-out genomes
+
+feature                group          perm  impurity
+  length_bp            caller      0.30413   0.15178
+  min_stops_per_kb     sequence    0.01386   0.11411
+  gc_skew              sequence    0.00813   0.03020
+  dist_to_contig_end   sequence    0.00617   0.06244
+  genome_length_bp     genome      0.00427   0.02920
+  is_hypothetical      caller      0.00328   0.00717
+  strand_plus          caller      0.00129   0.00391
+  start_gtg            caller      0.00079   0.00300
+  stop_tga             caller      0.00065   0.00396
+  flank_gc_up          sequence    0.00030   0.03227
+  start_atg            caller      0.00008   0.00320
+  gc_minus_genome      sequence    0.00002   0.08368
+wrote results/metrics/09_feature_importance.json
+############ 10_circularity_audit ############
+2026-08-21T13:02:43+08:00
+refitting without the 'caller' group (11 features dropped, 16 kept)
+  depth 4     mean AP 0.07604
+  depth 6     mean AP 0.08059
+  depth 8     mean AP 0.098
+  depth 12    mean AP 0.16776
+  depth 16    mean AP 0.26309
+  depth None  mean AP 0.37025 <-
+
+sequence-only test AP 0.47027 (no-skill 0.00069)
+all features      AP 0.58863
+lift over no-skill: all 0.58794, sequence-only 0.46958
+wrote results/metrics/10_circularity_audit.json
+############ 11_figures ############
+2026-08-21T13:04:00+08:00
+writing figures
+  figures/01_disagreement_by_genome.png + .pdf
+  figures/05_length_by_label.png + .pdf
+  figures/02_precision_recall.png + .pdf
+  figures/03_feature_importance.png + .pdf
+  figures/04_circularity_audit.png + .pdf
+done
+############ RERUN DONE ############

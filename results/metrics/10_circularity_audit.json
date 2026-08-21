@@ -1,0 +1,221 @@
+{
+  "step": "10_circularity_audit",
+  "excluded_group": "caller",
+  "excluded_features": [
+    "length_bp",
+    "strand_plus",
+    "gc3",
+    "start_atg",
+    "start_gtg",
+    "start_ttg",
+    "stop_taa",
+    "stop_tag",
+    "stop_tga",
+    "is_hypothetical",
+    "has_gene_symbol"
+  ],
+  "kept_features": [
+    "genome_gc",
+    "genome_length_bp",
+    "genome_n_contigs",
+    "gc_content",
+    "gc_skew",
+    "at_skew",
+    "gc_minus_genome",
+    "entropy_3mer",
+    "max_homopolymer",
+    "longest_orf_frac",
+    "min_stops_per_kb",
+    "flank_gc_up",
+    "flank_gc_down",
+    "dist_to_contig_end",
+    "near_contig_edge",
+    "ambiguous_frac"
+  ],
+  "procedure_note": "Identical to step 08 apart from the feature set: same folds, same depth grid, same seed, depth swept on training folds only. The difference between the two numbers is attributable to the dropped group.",
+  "model": {
+    "max_depth_selected": null,
+    "max_depth_grid": [
+      "4",
+      "6",
+      "8",
+      "12",
+      "16",
+      "None"
+    ],
+    "n_estimators": 300,
+    "random_state": 0
+  },
+  "split": {
+    "strategy": "grouped by genome, folds dealt round-robin by GC rank",
+    "n_folds": 5,
+    "test_fold": 0,
+    "n_train_genomes": 20,
+    "n_test_genomes": 5,
+    "test_genomes": [
+      "GCF_000006765.1",
+      "GCF_000006945.2",
+      "GCF_000009045.1",
+      "GCF_000196035.1",
+      "GCF_002151505.1"
+    ],
+    "test_gc_range": [
+      0.2845,
+      0.6656
+    ],
+    "train_gc_range": [
+      0.2852,
+      0.7212
+    ],
+    "folds": {
+      "GCF_000006765.1": 0,
+      "GCF_000006945.2": 0,
+      "GCF_000008865.2": 3,
+      "GCF_000009045.1": 0,
+      "GCF_000009085.1": 2,
+      "GCF_000011325.1": 1,
+      "GCF_000013425.1": 3,
+      "GCF_000022005.1": 2,
+      "GCF_000025985.1": 4,
+      "GCF_000091545.1": 3,
+      "GCF_000195955.2": 4,
+      "GCF_000196035.1": 0,
+      "GCF_000270265.1": 2,
+      "GCF_001457635.1": 3,
+      "GCF_001598635.1": 4,
+      "GCF_002151505.1": 0,
+      "GCF_008369605.1": 1,
+      "GCF_008931305.1": 4,
+      "GCF_013388375.1": 3,
+      "GCF_018885085.1": 1,
+      "GCF_020546685.1": 1,
+      "GCF_020736045.1": 1,
+      "GCF_022869645.1": 4,
+      "GCF_025998455.1": 2,
+      "GCF_037023865.1": 2
+    }
+  },
+  "depth_sweep": [
+    {
+      "max_depth": 4,
+      "mean_average_precision": 0.07604,
+      "per_fold": [
+        0.22614,
+        0.00483,
+        0.04371,
+        0.02948
+      ]
+    },
+    {
+      "max_depth": 6,
+      "mean_average_precision": 0.08059,
+      "per_fold": [
+        0.21483,
+        0.00663,
+        0.04382,
+        0.05708
+      ]
+    },
+    {
+      "max_depth": 8,
+      "mean_average_precision": 0.098,
+      "per_fold": [
+        0.2643,
+        0.01717,
+        0.05147,
+        0.05909
+      ]
+    },
+    {
+      "max_depth": 12,
+      "mean_average_precision": 0.16776,
+      "per_fold": [
+        0.32912,
+        0.12538,
+        0.13998,
+        0.07655
+      ]
+    },
+    {
+      "max_depth": 16,
+      "mean_average_precision": 0.26309,
+      "per_fold": [
+        0.62359,
+        0.12518,
+        0.20232,
+        0.10128
+      ]
+    },
+    {
+      "max_depth": null,
+      "mean_average_precision": 0.37025,
+      "per_fold": [
+        0.8,
+        0.25018,
+        0.32973,
+        0.10109
+      ]
+    }
+  ],
+  "test": {
+    "n_rows": 18735,
+    "n_positive": 13,
+    "positive_rate": 0.00069,
+    "no_skill_average_precision": 0.00069,
+    "average_precision": 0.47027,
+    "roc_auc": 0.90692,
+    "reliability_warning": "only 13 positives in the held-out set. Average precision and ROC-AUC on this few positives carry very wide uncertainty -- a single differently-ranked positive moves them substantially. Do not quote these as point estimates."
+  },
+  "test_per_genome": [
+    {
+      "genome": "GCF_000006765.1",
+      "n_rows": 5680,
+      "n_positive": 4,
+      "positive_rate": 0.0007,
+      "average_precision": 0.00143,
+      "roc_auc": 0.63645
+    },
+    {
+      "genome": "GCF_000006945.2",
+      "n_rows": 4625,
+      "n_positive": 7,
+      "positive_rate": 0.00151,
+      "average_precision": 0.68823,
+      "roc_auc": 0.99915
+    },
+    {
+      "genome": "GCF_000009045.1",
+      "n_rows": 4216,
+      "n_positive": 2,
+      "positive_rate": 0.00047,
+      "average_precision": 1.0,
+      "roc_auc": 1.0
+    },
+    {
+      "genome": "GCF_000196035.1",
+      "n_rows": 2875,
+      "n_positive": 0,
+      "positive_rate": 0.0,
+      "average_precision": null,
+      "roc_auc": null
+    },
+    {
+      "genome": "GCF_002151505.1",
+      "n_rows": 1339,
+      "n_positive": 0,
+      "positive_rate": 0.0,
+      "average_precision": null,
+      "roc_auc": null
+    }
+  ],
+  "comparison": {
+    "average_precision_all_features": 0.58863,
+    "average_precision_sequence_only": 0.47027,
+    "no_skill_average_precision": 0.00069,
+    "absolute_drop": 0.11836,
+    "lift_over_no_skill_all_features": 0.58794,
+    "lift_over_no_skill_sequence_only": 0.46958,
+    "share_of_lift_lost": 0.2013
+  },
+  "reading_note": "The sequence-only number is the one that answers the question. A collapse to the no-skill floor means the disagreement is not predictable from sequence with these features, which is a result, not a failure."
+}

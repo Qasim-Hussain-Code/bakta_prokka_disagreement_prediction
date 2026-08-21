@@ -1,0 +1,467 @@
+{
+  "step": "02_annotate_bakta",
+  "threads": 8,
+  "n_genomes": 25,
+  "total_cds": 87960,
+  "runs": [
+    {
+      "accession": "GCF_000006765.1",
+      "gff": "data/annotations/bakta/GCF_000006765.1/GCF_000006765.1.gff3",
+      "sha256": "4bc0bf831cba5cf15d00aa23ec1b1fde53e2c1b5e7066628edcfd37f81351ff0",
+      "feature_counts": {
+        "CDS": 5680,
+        "ncRNA": 48,
+        "oriC": 2,
+        "rRNA": 12,
+        "region": 1,
+        "regulatory_region": 29,
+        "tRNA": 63,
+        "tmRNA": 1
+      },
+      "cds": 5680,
+      "seconds": 150
+    },
+    {
+      "accession": "GCF_000006945.2",
+      "gff": "data/annotations/bakta/GCF_000006945.2/GCF_000006945.2.gff3",
+      "sha256": "622f2fc06a194646cec9803453b426379ce01deea76701e7d8a56095a3a05dcd",
+      "feature_counts": {
+        "CDS": 4625,
+        "CRISPR": 3,
+        "crispr-repeat": 56,
+        "crispr-spacer": 56,
+        "ncRNA": 158,
+        "oriC": 2,
+        "oriT": 1,
+        "rRNA": 22,
+        "region": 2,
+        "regulatory_region": 61,
+        "tRNA": 87,
+        "tmRNA": 1
+      },
+      "cds": 4625,
+      "seconds": 130
+    },
+    {
+      "accession": "GCF_000008865.2",
+      "gff": "data/annotations/bakta/GCF_000008865.2/GCF_000008865.2.gff3",
+      "sha256": "465a00d11edde5b3ce604226a1814b911eaa490a81aeef00bd3f69ed981c3b88",
+      "feature_counts": {
+        "CDS": 5387,
+        "CRISPR": 1,
+        "crispr-repeat": 3,
+        "crispr-spacer": 3,
+        "ncRNA": 220,
+        "oriC": 3,
+        "oriT": 1,
+        "rRNA": 22,
+        "region": 3,
+        "regulatory_region": 74,
+        "tRNA": 107,
+        "tmRNA": 1
+      },
+      "cds": 5387,
+      "seconds": 140
+    },
+    {
+      "accession": "GCF_000009045.1",
+      "gff": "data/annotations/bakta/GCF_000009045.1/GCF_000009045.1.gff3",
+      "sha256": "f6957b281dae9796efeaf53e57167b4a4ec8dcd45e7a450947355e4122dadbcf",
+      "feature_counts": {
+        "CDS": 4216,
+        "ncRNA": 36,
+        "oriC": 2,
+        "rRNA": 30,
+        "region": 1,
+        "regulatory_region": 67,
+        "tRNA": 86,
+        "tmRNA": 1
+      },
+      "cds": 4216,
+      "seconds": 130
+    },
+    {
+      "accession": "GCF_000009085.1",
+      "gff": "data/annotations/bakta/GCF_000009085.1/GCF_000009085.1.gff3",
+      "sha256": "9b99d54dccf8a03abbdb861aae8b41d548f2ff68250ee9e2e0d5f32e9a3c8cd1",
+      "feature_counts": {
+        "CDS": 1658,
+        "CRISPR": 1,
+        "crispr-repeat": 4,
+        "crispr-spacer": 4,
+        "ncRNA": 3,
+        "oriC": 1,
+        "rRNA": 9,
+        "region": 1,
+        "regulatory_region": 2,
+        "tRNA": 44,
+        "tmRNA": 1
+      },
+      "cds": 1658,
+      "seconds": 62
+    },
+    {
+      "accession": "GCF_000011325.1",
+      "gff": "data/annotations/bakta/GCF_000011325.1/GCF_000011325.1.gff3",
+      "sha256": "9b1c7f1e99de2b8f0ae027414907123442a4b06e70591e69aad3ccc426256e51",
+      "feature_counts": {
+        "CDS": 3065,
+        "ncRNA": 4,
+        "oriC": 1,
+        "rRNA": 18,
+        "region": 1,
+        "regulatory_region": 13,
+        "tRNA": 60,
+        "tmRNA": 1
+      },
+      "cds": 3065,
+      "seconds": 79
+    },
+    {
+      "accession": "GCF_000013425.1",
+      "gff": "data/annotations/bakta/GCF_000013425.1/GCF_000013425.1.gff3",
+      "sha256": "d55a0754f3b94ed24c6d0ccd36041f36903d524a6e0f27d61da1329073bd4037",
+      "feature_counts": {
+        "CDS": 2635,
+        "gap": 1,
+        "ncRNA": 85,
+        "oriC": 1,
+        "rRNA": 16,
+        "region": 1,
+        "regulatory_region": 26,
+        "tRNA": 61,
+        "tmRNA": 1
+      },
+      "cds": 2635,
+      "seconds": 76
+    },
+    {
+      "accession": "GCF_000022005.1",
+      "gff": "data/annotations/bakta/GCF_000022005.1/GCF_000022005.1.gff3",
+      "sha256": "fd5d3d538a89808869774d765fac47e8ac86a12dd6eaba07d0e1fd75594cf188",
+      "feature_counts": {
+        "CDS": 3722,
+        "ncRNA": 18,
+        "rRNA": 6,
+        "region": 1,
+        "regulatory_region": 14,
+        "tRNA": 51,
+        "tmRNA": 1
+      },
+      "cds": 3722,
+      "seconds": 5062
+    },
+    {
+      "accession": "GCF_000025985.1",
+      "gff": "data/annotations/bakta/GCF_000025985.1/GCF_000025985.1.gff3",
+      "sha256": "a608bf21e38a6ce00970dd634748eebf20dc64e3df9f4084a37e716ea3eb4261",
+      "feature_counts": {
+        "CDS": 4346,
+        "CRISPR": 2,
+        "crispr-repeat": 33,
+        "crispr-spacer": 33,
+        "ncRNA": 11,
+        "oriC": 1,
+        "rRNA": 19,
+        "region": 2,
+        "regulatory_region": 13,
+        "tRNA": 73,
+        "tmRNA": 1
+      },
+      "cds": 4346,
+      "seconds": 129
+    },
+    {
+      "accession": "GCF_000091545.1",
+      "gff": "data/annotations/bakta/GCF_000091545.1/GCF_000091545.1.gff3",
+      "sha256": "884b00d9c1fb4a7b8a7afa88d08723f02ffb745ad058dd1793c0616a001dde48",
+      "feature_counts": {
+        "CDS": 2220,
+        "CRISPR": 8,
+        "crispr-repeat": 99,
+        "crispr-spacer": 99,
+        "gap": 7,
+        "ncRNA": 3,
+        "oriC": 1,
+        "rRNA": 6,
+        "region": 3,
+        "regulatory_region": 8,
+        "tRNA": 49,
+        "tmRNA": 1
+      },
+      "cds": 2220,
+      "seconds": 73
+    },
+    {
+      "accession": "GCF_000195955.2",
+      "gff": "data/annotations/bakta/GCF_000195955.2/GCF_000195955.2.gff3",
+      "sha256": "6925a08f633f181c3d8a87fe83ce96f7e4b9e04f21164361b2c1cf1ef298c205",
+      "feature_counts": {
+        "CDS": 4078,
+        "CRISPR": 2,
+        "crispr-repeat": 41,
+        "crispr-spacer": 41,
+        "ncRNA": 21,
+        "oriC": 1,
+        "rRNA": 3,
+        "region": 1,
+        "regulatory_region": 14,
+        "tRNA": 45,
+        "tmRNA": 1
+      },
+      "cds": 4078,
+      "seconds": 125
+    },
+    {
+      "accession": "GCF_000196035.1",
+      "gff": "data/annotations/bakta/GCF_000196035.1/GCF_000196035.1.gff3",
+      "sha256": "1ec0cfd632d61c05b5253ad9dad04ba5b5459e3ce237c205ad7d5bec1a80cf61",
+      "feature_counts": {
+        "CDS": 2875,
+        "CRISPR": 1,
+        "crispr-repeat": 5,
+        "crispr-spacer": 5,
+        "ncRNA": 52,
+        "oriC": 1,
+        "rRNA": 18,
+        "region": 1,
+        "regulatory_region": 53,
+        "tRNA": 67,
+        "tmRNA": 1
+      },
+      "cds": 2875,
+      "seconds": 102
+    },
+    {
+      "accession": "GCF_000270265.1",
+      "gff": "data/annotations/bakta/GCF_000270265.1/GCF_000270265.1.gff3",
+      "sha256": "a7a722b946ae81e14ddd169237969252b536edc8c71b7b28cc4534414565535f",
+      "feature_counts": {
+        "CDS": 3293,
+        "ncRNA": 12,
+        "rRNA": 6,
+        "region": 1,
+        "regulatory_region": 6,
+        "tRNA": 41,
+        "tmRNA": 1
+      },
+      "cds": 3293,
+      "seconds": 92
+    },
+    {
+      "accession": "GCF_001457635.1",
+      "gff": "data/annotations/bakta/GCF_001457635.1/GCF_001457635.1.gff3",
+      "sha256": "1040e27f5424ba67ae74aa2065b6d4d3f8b10448f5e512ef2466e4a0a9f6d9e7",
+      "feature_counts": {
+        "CDS": 2091,
+        "ncRNA": 43,
+        "oriC": 1,
+        "rRNA": 12,
+        "region": 1,
+        "regulatory_region": 22,
+        "tRNA": 58,
+        "tmRNA": 1
+      },
+      "cds": 2091,
+      "seconds": 75
+    },
+    {
+      "accession": "GCF_001598635.1",
+      "gff": "data/annotations/bakta/GCF_001598635.1/GCF_001598635.1.gff3",
+      "sha256": "1f77eb1f3fccf2301658a39b45bb2e13d38173ced28cc46ed8f1540495cd9ca3",
+      "feature_counts": {
+        "CDS": 2652,
+        "CRISPR": 1,
+        "crispr-repeat": 6,
+        "crispr-spacer": 6,
+        "ncRNA": 26,
+        "oriC": 2,
+        "rRNA": 12,
+        "region": 1,
+        "regulatory_region": 43,
+        "tRNA": 62,
+        "tmRNA": 1
+      },
+      "cds": 2652,
+      "seconds": 106
+    },
+    {
+      "accession": "GCF_002151505.1",
+      "gff": "data/annotations/bakta/GCF_002151505.1/GCF_002151505.1.gff3",
+      "sha256": "5d42634ed139961a1e069c7cf294d04fff171fefbe2d71880e5d69ca32597329",
+      "feature_counts": {
+        "CDS": 1339,
+        "ncRNA": 2,
+        "oriC": 1,
+        "rRNA": 5,
+        "region": 13,
+        "tRNA": 32,
+        "tmRNA": 1
+      },
+      "cds": 1339,
+      "seconds": 63
+    },
+    {
+      "accession": "GCF_008369605.1",
+      "gff": "data/annotations/bakta/GCF_008369605.1/GCF_008369605.1.gff3",
+      "sha256": "d5555615fa7e90b08c93d9cabe26be1fef103740d8164748d92e9c06ddb775b6",
+      "feature_counts": {
+        "CDS": 3635,
+        "ncRNA": 49,
+        "oriC": 2,
+        "rRNA": 31,
+        "region": 3,
+        "regulatory_region": 28,
+        "tRNA": 102,
+        "tmRNA": 1
+      },
+      "cds": 3635,
+      "seconds": 126
+    },
+    {
+      "accession": "GCF_008931305.1",
+      "gff": "data/annotations/bakta/GCF_008931305.1/GCF_008931305.1.gff3",
+      "sha256": "b729047bcef58d73ca90ca40e34fe4094c22e4792637bca41badbd959baec88a",
+      "feature_counts": {
+        "CDS": 7733,
+        "ncRNA": 28,
+        "oriC": 1,
+        "rRNA": 18,
+        "region": 1,
+        "regulatory_region": 25,
+        "tRNA": 72,
+        "tmRNA": 1
+      },
+      "cds": 7733,
+      "seconds": 228
+    },
+    {
+      "accession": "GCF_013388375.1",
+      "gff": "data/annotations/bakta/GCF_013388375.1/GCF_013388375.1.gff3",
+      "sha256": "5bc8015b341dc925874940390436f05a4f6c808dcb7d5e06755e5672d89a9507",
+      "feature_counts": {
+        "CDS": 4104,
+        "CRISPR": 1,
+        "crispr-repeat": 56,
+        "crispr-spacer": 56,
+        "ncRNA": 114,
+        "oriC": 2,
+        "rRNA": 6,
+        "region": 1,
+        "regulatory_region": 8,
+        "tRNA": 55,
+        "tmRNA": 1
+      },
+      "cds": 4104,
+      "seconds": 149
+    },
+    {
+      "accession": "GCF_018885085.1",
+      "gff": "data/annotations/bakta/GCF_018885085.1/GCF_018885085.1.gff3",
+      "sha256": "4e6bcdac7018ce683c613f372162da7827ae8cb6c588524a57266427deb8bd9b",
+      "feature_counts": {
+        "CDS": 3602,
+        "CRISPR": 5,
+        "crispr-repeat": 76,
+        "crispr-spacer": 76,
+        "ncRNA": 9,
+        "oriC": 1,
+        "rRNA": 35,
+        "region": 2,
+        "regulatory_region": 80,
+        "tRNA": 90,
+        "tmRNA": 1
+      },
+      "cds": 3602,
+      "seconds": 141
+    },
+    {
+      "accession": "GCF_020546685.1",
+      "gff": "data/annotations/bakta/GCF_020546685.1/GCF_020546685.1.gff3",
+      "sha256": "74ffa4dd3b83b07bf6d9e3879807241217b3a1f01c551ff0056b86e8dd697a1c",
+      "feature_counts": {
+        "CDS": 3133,
+        "ncRNA": 4,
+        "oriC": 1,
+        "rRNA": 9,
+        "region": 4,
+        "regulatory_region": 6,
+        "tRNA": 51,
+        "tmRNA": 1
+      },
+      "cds": 3133,
+      "seconds": 107
+    },
+    {
+      "accession": "GCF_020736045.1",
+      "gff": "data/annotations/bakta/GCF_020736045.1/GCF_020736045.1.gff3",
+      "sha256": "37cea0b1aa633cb7a4c2d3f61ce7eceacdfb8eeba62beb858e13027075683139",
+      "feature_counts": {
+        "CDS": 1792,
+        "ncRNA": 17,
+        "oriC": 2,
+        "rRNA": 19,
+        "region": 1,
+        "regulatory_region": 17,
+        "tRNA": 60,
+        "tmRNA": 1
+      },
+      "cds": 1792,
+      "seconds": 81
+    },
+    {
+      "accession": "GCF_022869645.1",
+      "gff": "data/annotations/bakta/GCF_022869645.1/GCF_022869645.1.gff3",
+      "sha256": "60834b17397be0a2d667bfe8ce8ac72c15c90b7ed3fe04dc5ccf323d47ea3a32",
+      "feature_counts": {
+        "CDS": 2059,
+        "CRISPR": 1,
+        "crispr-repeat": 19,
+        "crispr-spacer": 19,
+        "ncRNA": 10,
+        "oriC": 2,
+        "rRNA": 12,
+        "region": 1,
+        "regulatory_region": 8,
+        "tRNA": 60,
+        "tmRNA": 1
+      },
+      "cds": 2059,
+      "seconds": 95
+    },
+    {
+      "accession": "GCF_025998455.1",
+      "gff": "data/annotations/bakta/GCF_025998455.1/GCF_025998455.1.gff3",
+      "sha256": "ec0174de0fa5253bb38d749eae14c58f328707407457350f6f743a92cbd4e6e5",
+      "feature_counts": {
+        "CDS": 1584,
+        "ncRNA": 10,
+        "oriC": 1,
+        "rRNA": 6,
+        "region": 1,
+        "regulatory_region": 1,
+        "tRNA": 36,
+        "tmRNA": 1
+      },
+      "cds": 1584,
+      "seconds": 52
+    },
+    {
+      "accession": "GCF_037023865.1",
+      "gff": "data/annotations/bakta/GCF_037023865.1/GCF_037023865.1.gff3",
+      "sha256": "b2879d80586b2286830e110e0184c3b32638e637641ea724e40ec9e1699d2e96",
+      "feature_counts": {
+        "CDS": 6436,
+        "ncRNA": 29,
+        "oriC": 2,
+        "rRNA": 9,
+        "region": 3,
+        "regulatory_region": 25,
+        "tRNA": 56,
+        "tmRNA": 1
+      },
+      "cds": 6436,
+      "seconds": 139
+    }
+  ]
+}
