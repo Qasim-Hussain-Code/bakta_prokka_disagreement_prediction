@@ -4,13 +4,6 @@ The working record for this project: what was tried, what broke, what was
 decided before any number was seen, and where the brief turned out to be
 wrong. Published deliberately.
 
-An earlier version of this line read "Not published", which was never true —
-the file has been tracked and pushed since the first commit, and the
-`.gitignore` entry that appeared to cover it was added afterwards and so had
-no effect on an already-tracked file. Both have been corrected rather than the
-history rewritten: force-pushing over published commits would break every
-clone and would not un-publish anything.
-
 Numbers here are provisional until the matching file lands in
 `results/metrics/`. The README quotes only values that
 `scripts/verify_readme_numbers.py` has checked against those files.
