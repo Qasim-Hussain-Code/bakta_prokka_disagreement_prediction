@@ -61,6 +61,75 @@
       "source": "Bakta: Dbxref EC:; Prokka: eC_number attribute"
     }
   },
+  "headline_pair_with_and_without_fallback_families": {
+    "whole_primary_set": {
+      "n": 50210,
+      "n_disagree": 25977,
+      "rate": 0.5174
+    },
+    "excluding_fallback_families": {
+      "n": 45716,
+      "n_disagree": 21486,
+      "rate": 0.47
+    },
+    "fallback_families": {
+      "n": 4494,
+      "n_disagree": 4491,
+      "rate": 0.9993
+    },
+    "statement": "51.7% of both-named regions are named differently by the two tools; 47.0% once three Bakta fallback-naming conventions that disagree by construction are excluded. Both numbers should be published together."
+  },
+  "mechanism": {
+    "bakta_evidence_depth": {
+      "excludes": "the fallback-naming families, which are ~100% disagreement by construction and would drive every bucket",
+      "buckets": {
+        "2_the_minimum": {
+          "n": 41308,
+          "n_disagree": 18255,
+          "rate": 0.4419
+        },
+        "3": {
+          "n": 2724,
+          "n_disagree": 2174,
+          "rate": 0.7981
+        },
+        "4_or_more": {
+          "n": 1684,
+          "n_disagree": 1057,
+          "rate": 0.6277
+        }
+      },
+      "finding": "Disagreement RISES with Bakta cross-reference count, from 44.2% at the minimum two to 79.8% at three. This is the opposite of the thin-evidence chain. A third cross-reference is typically an EC number, a BlastRules hit, a virulence-factor or insertion-sequence match, and it comes with a MORE specific Bakta name -- which is then more likely to differ from Prokka's more generic one."
+    },
+    "prokka_evidence_depth": {
+      "by_ec": {
+        "with_ec": {
+          "n": 26861,
+          "n_disagree": 11306,
+          "rate": 0.4209
+        },
+        "without_ec": {
+          "n": 18855,
+          "n_disagree": 10180,
+          "rate": 0.5399
+        }
+      },
+      "by_similarity_hit": {
+        "with_similarity_hit": {
+          "n": 42307,
+          "n_disagree": 19001,
+          "rate": 0.4491
+        },
+        "without_similarity_hit": {
+          "n": 3409,
+          "n_disagree": 2485,
+          "rate": 0.729
+        }
+      },
+      "finding": "On Prokka's side the thin-evidence direction does hold: 54.0% disagreement without an EC number against 42.1% with one."
+    },
+    "conclusion": "The chain holds for the fallback-naming families and on Prokka's side, and reverses on Bakta's. There are two mechanisms pulling in opposite directions, not one. bakta_n_dbxref is the forest's strongest feature because extra Bakta evidence predicts a more specific Bakta name that Prokka does not match -- not because thin evidence predicts a fallback name. The db-derived features and the naming families are related, but they are not two views of a single mechanism."
+  },
   "declared_generic_families": {
     "uncharacterized_orf_name": {
       "n": 284,
@@ -471,6 +540,7 @@
       "18_content_importance_random_forest.json",
       "18_content_importance_gradient_boosting.json"
     ],
-    "circularity": "19_content_circularity.json"
+    "circularity": "19_content_circularity.json",
+    "mechanism": "22_content_mechanism.json"
   }
 }

@@ -333,3 +333,129 @@ which is the reason the split is grouped by genome in the first place.
   possible constant; the baseline actually scores 0.497 because its class is
   fixed on the training genomes) and the third-ranked feature. Both were
   exactly the kind of transcription error the standard exists to prevent.
+
+## 2026-08-22 — part two ran, and the premise held this time
+
+The content experiment executed end to end on the annotation already on disk.
+No new genomes, no re-annotation. The Bakta database was deleted first (4.0 GB,
+root filesystem was at 98 %); `provenance/fetch_bakta_db.sh` re-downloads the
+pinned release and nothing downstream needs it.
+
+### The headline is the rate, not the model
+
+50,210 regions where both tools produced a real product name. They disagree on
+**25,977 of them, 51.7 %**. That is the finding. It needs no classifier.
+
+The model numbers are real but modest and should not be allowed to displace
+it: forest test MCC 0.303, accuracy 0.651. Reported, not led with.
+
+### The objection, pre-empted
+
+Three Bakta naming conventions cannot match Prokka by construction:
+`… domain-containing protein`, `Uncharacterized protein <ORF-name>`, and DUF
+numbers. Declared before fitting, so this is not a post-hoc carve-out.
+
+Counting them needed care. Matched independently they total 4,650 rows, but
+**every one of the 156 DUF names also ends in `domain-containing protein`**, so
+the sum double-counts. The distinct union is **4,494**. Publishing 4,650 would
+have been wrong by 156.
+
+Those 4,494 disagree 99.9 % of the time. The remaining 45,716 disagree 47.0 %.
+Both numbers go in the README. The finding barely moves, which is the point.
+
+### The db-light confound runs the opposite way to what was assumed
+
+Worth recording because the brief for this half assumed the other direction.
+
+db-light has fewer reference proteins, so it can only make Bakta name *fewer*
+regions than db-full would. But Bakta on db-light still leaves only 12.5 % of
+paired CDS as a placeholder against Prokka's 40.2 %. The large asymmetric cell
+is *Bakta named, Prokka did not* (26,699) versus the reverse (2,297).
+
+So db-light works **against** the observed asymmetry rather than producing it.
+26,699 is a lower bound, and 51.7 % is plausibly an underestimate: db-full
+would add exactly the regions Bakta currently cannot name, which are
+thin-evidence cases, and that is where disagreement concentrates.
+
+### The mechanism is two mechanisms, and one of them inverts
+
+The importance ranking makes a single chain look obvious — weak coverage →
+Bakta fallback name → disagreement. It is cheap to test, so I tested it
+(`22_content_mechanism.json`) rather than writing it up as a mechanism.
+
+On Prokka's side it holds: 54.0 % disagreement without an EC number, 42.1 %
+with one.
+
+On Bakta's side it **reverses**. Disagreement rises with cross-reference
+count: 44.2 % at the minimum two, 79.8 % at three, 62.8 % at four or more. A
+third cross-reference is usually an EC number, a BlastRules hit or a
+virulence-factor match, and it comes with a *more specific* Bakta name — which
+is then more likely to differ from Prokka's generic one.
+
+`bakta_n_dbxref` is the forest's top feature (+0.087) for that reason, not the
+one that looked obvious. Two mechanisms pulling opposite ways, not one.
+
+### The circularity audit fired again, harder
+
+    full             61 features   CV MCC 0.293   test MCC 0.303
+    no_caller        26 features   CV MCC 0.232   test MCC 0.259
+    sequence_only    17 features   CV MCC 0.070   test MCC 0.142
+
+Summed permutation importance: db-derived **0.165** across 9 features,
+caller-derived 0.019 across 35, sequence and genome **−0.001** across 17.
+
+The sequence features contribute nothing. The model reads database-search
+output. That is the answer, and it is the answer the `db_derived` flag was
+added to be able to give.
+
+Note the sequence-only arm's CV/test gap (0.070 vs 0.142). The grouped-CV
+number is the one to trust for generalisation; a five-genome test set moves.
+
+### Things that went wrong, and the checks that caught them
+
+**The normalisation rule was not symmetric.** First draft stripped a trailing
+gene symbol using *each record's own* `gene=` attribute. Bakta emits `gene=` on
+19,216 of 87,859 CDS and Prokka on 48,201, so the strip fired on one side only
+and drove identical raw strings apart — `GTPase Era` vs `GTPase Era` scored as
+a disagreement 23 times. The symbol set is now built once per pair from both
+tools. `lib_names.assert_symmetric` fails the run if it ever regresses.
+
+**`has_gene_symbol` was dead in part one.** `04_extract_calls.py` reads
+`a.get("gene", a.get("Name", ""))` and Bakta sets `Name=product`, so the column
+was filled with product strings and the feature was constant 1 across all
+87,960 rows. A constant feature cannot be split on, so no part-one number
+moves — scripts 01–11 are untouched — but it was dead weight nobody noticed.
+Step 14 now fails on any constant feature. That check immediately caught
+`bakta_has_pfam`: every Bakta CDS carrying a PFAM cross-reference has a
+placeholder product, so it is excluded from the primary set by construction.
+Handled as a *declared and verified* exclusion, not a silent drop — the run
+also fails if a declared-constant feature turns out to vary.
+
+**A specified baseline was degenerate.** "Is either product hypothetical"
+cannot be computed on a cohort defined as both tools having named the region.
+Reported as uncomputable rather than quietly swapped; the database-coverage
+predictor is labelled as its substitute.
+
+**A figure would have crashed.** `FLAG_COLOUR` had no entry for the `genome`
+group. Now raises rather than falling back to a colour that reads as a
+different group.
+
+### Two documented deviations from the brief
+
+Recorded in the metrics files rather than resolved silently.
+
+1. The brief called the selection rule "part one's, verbatim". It is not —
+   `lib_model.sweep_depth` uses mean average precision with a plain argmax and
+   no one-standard-error step. Implemented as *specified* (MCC + 1-SE), which
+   also suits a 51.7 %-positive problem better than AP does.
+2. Gradient boosting uses `HistGradientBoostingClassifier`. Measured 54.1 s
+   versus 0.7 s per fit here — one sweep would have been 27 minutes against
+   0.4. Decided before any gradient-boosting result existed.
+
+### Still open
+
+- The interval question still needs a gene-caller pair that does not share an
+  implementation. Nothing here changes that.
+- `bakta_pfam_style_name` as an explicit flag, and a with/without-families
+  model comparison, were considered and not run. The 47.0 % remainder rate
+  covers what they would have shown.

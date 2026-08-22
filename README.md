@@ -2,208 +2,229 @@
 
 Machine Learning for Biology | Chapter 3.
 
-Two experiments on the same 25 annotated genomes. The first asks whether the
-two annotators disagree about **where** genes are, and finds that they barely
-do. The second asks whether they disagree about **what** those genes are, and
-finds that they do, roughly half the time — but that the disagreement is
-predictable from database coverage rather than from sequence.
-
-Both results are negative in the sense that neither confirms the hypothesis it
-was built to test. Both are reported in full.
-
-## What the labels are, and are not
-
-Neither label is biology. Both are tool output.
-
-**Part one.** A positive case means Bakta made a CDS call where Prokka did
-not. It does not mean a gene is present.
-
-**Part two.** A positive case, `name_disagreement`, means the two tools wrote
-different product names for the same region. It is not a claim that either
-name is correct, and it is not a claim about what the protein does. The
-columns are `product_bakta` and `product_prokka`; there is no column anywhere
-in this repository for a correct answer, because the experiment does not
-observe one.
+Two experiments on one panel of 25 complete bacterial genomes (95.2 Mbp,
+8 phyla, GC 28.45–72.12 %), annotated once with Bakta and once with Prokka.
 
 ---
 
-## Part one — where genes are
+## The headline
 
-Can Bakta/Prokka CDS disagreement be predicted from sequence alone?
+**Bakta and Prokka give the same coding region a different product name about
+half the time.**
 
-**The premise does not hold for these two tools.** 87,960 Bakta CDS calls.
-**72** have no overlapping Prokka feature, a positive rate of **0.0008**.
-Among the 87,888 matched calls, **87,788** share an identical start *and*
-stop — not merely overlapping, byte-identical coordinates.
+Of 87,859 CDS regions both tools called, 50,210 were given a non-placeholder
+product name by both. The two tools disagree about that name on **25,977 of
+them — 51.7 %**.
 
-The reason is visible in the GFF `source` column. Bakta delegates CDS calling
-to Pyrodigal and Prokka to Prodigal, and Pyrodigal is a Cython
-reimplementation of Prodigal. The comparison was largely asking whether
-Prodigal agrees with itself. It does.
+That number needs no model to matter. Product names are what pangenome
+analyses, functional enrichment tests and AMR reports are built on, and two
+standard tools reading identical DNA return different names for half of it.
 
-Of the 72 positives, **34** come from Bakta's sORF module, a short-ORF stage
-Prokka has no equivalent of. The label is not "these tools read the sequence
-differently"; it is "Bakta runs one extra module".
+The obvious objection is that Bakta has naming conventions which cannot match
+Prokka by construction — `… domain-containing protein`, `Uncharacterized
+protein <ORF-name>`, and names carrying a DUF number. Those were declared
+before any model was fitted. They are **4,494 regions (9.0 %) and they
+disagree 99.9 % of the time**. Excluding them:
 
-The held-out set carried **13 positives**, so the model numbers
-(average precision 0.589 with all features, 0.470 sequence-only, against a
-no-skill floor of 0.00069) are not quotable as point estimates. A reliability
-warning is attached to any metrics file computed on fewer than 30 positives.
-The circularity audit fired as designed: the strongest single feature was
-`length_bp`, which is the length of the interval Bakta chose — the footprint
-of the sORF module, not a property of DNA.
-
-If the interval question is worth keeping, it needs a caller pair that does
-not share an implementation.
-
-## Part two — what genes are
-
-Both tools call the same ~87.9k regions. Do they agree on what those regions
-are? Product naming comes from database search and curation rules the two
-tools do not share, so unlike gene-boundary calling it is not one algorithm
-answering twice.
-
-No new genomes, no re-annotation. This half runs on the annotation output
-already on disk.
-
-### The cohort
-
-87,960 Bakta CDS, of which **87,859** pair with a same-strand Prokka CDS.
-101 have no Prokka CDS to compare against and are out of scope here.
-
-| | n | share |
+| set | n | name disagreement |
 |---|---:|---:|
-| both tools named the region — **primary analysis set** | **50,210** | 57.1% |
-| Bakta named only | 26,699 | 30.4% |
-| both left a placeholder | 8,653 | 9.8% |
-| Prokka named only | 2,297 | 2.6% |
+| all both-named regions | 50,210 | **51.7 %** |
+| excluding three Bakta fallback-naming conventions | 45,716 | **47.0 %** |
+| those three conventions alone | 4,494 | 99.9 % |
 
-**The primary analysis is conditional on both tools naming the region.** That
-restriction is imposed by what is measurable, not chosen: you cannot compare
-two names when one tool did not produce one.
+Both numbers are published together. The finding survives the objection.
 
-**On db-light.** Bakta ran against db-light rather than db-full because the
-machine had ~13 GB free. db-light has fewer reference proteins, so it can only
-make Bakta name *fewer* regions than db-full would. It therefore works
-*against* the asymmetry above rather than producing it — the large cell is
-"Bakta named, Prokka did not", and a db-full run would make it larger.
-`bakta_named_only` is a **lower bound** under db-light. What db-light does
-confound is the absolute size of `both_placeholder` and `prokka_named_only`,
-which should not be read as properties of Bakta in general.
+Under the two declared sensitivity checks the rate moves from 56.0 % (strict:
+case-folding and whitespace only) to 50.6 % (loose: generic tokens dropped,
+compared as unordered token sets). The disagreement is substantive, not
+typographic.
 
-### The rules, fixed before any model was fitted
+## The question, and the answer
 
-**Placeholders** are matched as exact literals after case-folding and
-whitespace normalisation, never as substrings — `hypothetical` occurs inside
-12 distinct Bakta products of which 11 are real names, and `conserved` inside
-37 of which nearly all are. The enumerated list and its counts are in
-`13_name_rules.json`.
+Given a region both tools called, can sequence predict whether they will name
+it differently?
 
-**Name normalisation** strips trailing bracketed qualifiers, one trailing
-gene-symbol token, and leading hedges, then case-folds and reduces punctuation
-to spaces. The gene-symbol strip is built once per pair from *both* tools'
-`gene=` attributes: keyed per record it fires on one side only and drives
-identical raw strings apart, which scored `'GTPase Era'` against
-`'GTPase Era'` as a disagreement 23 times before it was caught. The code
-asserts that identical raw strings can never be scored as a disagreement.
+**Largely no.** A random forest reaches MCC 0.303 on five held-out genomes
+against a majority-class floor of 0.000, but the audit shows what it is
+reading. With every database-derived and caller-derived feature removed, the
+sequence-only arm falls to grouped-CV MCC 0.070. Summed permutation
+importance across 61 features: **database-derived 0.165 across 9 features,
+caller-derived 0.019 across 35, sequence and genome features −0.001 across
+17.**
 
-Two sensitivity checks were named in advance and are reported alongside, never
-substituted for the primary rule:
+The model is reading database-search output, not DNA. That is reported as the
+result rather than presented as a sequence model.
 
-| rule | name_disagreement |
-|---|---:|
-| strict — case-fold and whitespace only | 28,121 (56.0%) |
-| **primary — modelled** | **25,977 (51.7%)** |
-| loose — generic tokens dropped, token-set equality | 25,418 (50.6%) |
+## What the label is, and is not
 
-Normalisation moves the rate by 5.4 points across its full declared range. The
-disagreement is substantive, not typographic.
+The label is **disagreement between two software products about a name**. It
+is not a claim that either name is correct, and it is not a claim about what
+any protein does. Columns are named `name_disagreement`, `product_bakta`,
+`product_prokka` for that reason. Establishing which name is right would
+require evidence this repository does not contain.
 
-**Gene symbols and EC numbers are separate reported columns**, never part of
-the product comparison and never used as features — either would be a second
-measurement of the label. Where both tools assign a gene symbol they differ on
-41.1% of cases; where both assign an EC number, 16.7%.
+## The db-light constraint, and which way it pushes
 
-### Result: predictable, but not from sequence
+Bakta ran against **db-light**, not db-full: this machine had ~13 GB free and
+db-full does not fit. That is recorded as a result-affecting constraint in
+`results/metrics/02_annotation_versions.json`.
 
-61 features, each carrying two flags: `caller_derived` (encodes a gene-caller
-decision) and `db_derived` (computed from either tool's database-search
-output). Split grouped by genome, five held out, overlap asserted to be zero.
-Hyperparameters by mean MCC across five genome-grouped folds with the
-one-standard-error tie-break to the simplest model.
+The primary analysis is **conditional on both tools having named the region**.
+That restriction is imposed by what is measurable — two names cannot be
+compared when one tool produced none — and not chosen for convenience.
 
-Scored on the same 12,283 held-out rows, 6,107 positive:
+Two consequences, both stated rather than assumed away:
 
-| | test MCC | accuracy | F1 |
-|---|---:|---:|---:|
-| majority class | 0.000 | 0.497 | 0.664 |
-| protein length, one threshold | 0.028 | 0.511 | 0.604 |
-| database coverage | 0.141 | 0.533 | 0.145 |
-| decision tree | 0.261 | 0.630 | 0.622 |
-| **random forest** | **0.303** | 0.651 | 0.649 |
-| gradient boosting | 0.288 | 0.643 | 0.657 |
+**The naming asymmetry is not a db-light artefact.** The large asymmetric cell
+is *Bakta named, Prokka did not* (26,699), not the reverse (2,297). Bakta on
+db-light leaves 12.5 % of paired CDS as a placeholder against Prokka's 40.2 %.
+db-light can only make Bakta name *fewer* regions than db-full would, so it
+works against this asymmetry rather than producing it. 26,699 is a lower
+bound.
 
-Gradient boosting does not improve on the forest. The majority-class baseline
-takes the highest F1 in the table while its MCC is exactly zero, because it
-predicts the positive class on every row; MCC is the headline metric for that
-reason. Its accuracy of 0.497 is below the 0.503 a constant predictor tuned on
-the test set would reach: the class it predicts is fixed by the training
-genomes, and the held-out genomes are fractionally negative-majority.
+**51.7 % is plausibly an underestimate.** Under db-full the primary set would
+grow, and the regions added would be exactly those Bakta currently cannot
+name — thin-evidence cases, which is where disagreement concentrates. The
+composition of the primary set is db-light-dependent even though its
+definition dodges the asymmetry.
 
-**The circularity audit is the result.**
+## The mechanism is two mechanisms, pulling opposite ways
+
+The natural reading of the importance ranking is a single causal chain: weak
+reference coverage → Bakta falls back on a structural name → Prokka names it
+differently → disagreement. Tested rather than asserted
+(`22_content_mechanism.json`), that chain holds in one place and **reverses in
+another**.
+
+On Prokka's side it holds: within the 45,716 remainder regions, disagreement
+is 54.0 % without an EC number against 42.1 % with one.
+
+On Bakta's side it inverts. Disagreement *rises* with Bakta's cross-reference
+count — 44.2 % at the minimum two, **79.8 % at three**, 62.8 % at four or
+more. A third cross-reference is typically an EC number, a BlastRules hit or a
+virulence-factor match, and it comes with a *more specific* Bakta name, which
+is then more likely to differ from Prokka's more generic one.
+
+`bakta_n_dbxref` is the forest's strongest single feature (permutation
+importance +0.087) because extra Bakta evidence predicts a more specific name
+that Prokka does not match — not because thin evidence predicts a fallback
+name.
+
+## Part one: the interval experiment, and why it failed
+
+The original question was whether *interval* disagreement — one tool calling a
+CDS where the other leaves the region empty — is predictable from sequence.
+It is not answerable with this tool pair.
+
+87,960 Bakta CDS calls. **72** have no overlapping Prokka feature: a positive
+rate of 0.0008. Among 87,888 matched calls, **87,788 share byte-identical
+start and stop coordinates**.
+
+The reason is architectural. Both tools delegate CDS calling to the same
+algorithm — Pyrodigal is a Cython reimplementation of Prodigal — so the
+comparison largely asked whether Prodigal agrees with itself. It does. Of the
+72 positives, 34 come from Bakta's sORF module, which Prokka has no equivalent
+of.
+
+That negative result stands and is published in full as steps 01–11. It is
+also what motivated part two: the tools agree on *where* genes are and
+disagree on *what they are*.
+
+## Decisions fixed before any result was seen
+
+Written into the code and this file before the first model was fitted, and not
+revised afterwards.
+
+- **Placeholder strings** are matched as an enumerated list of exact literals
+  after case-folding, never by substring. `hypothetical` occurs inside 12
+  distinct Bakta products of which 11 are real names. The full list and its
+  counts are in `13_name_rules.json`.
+- **Name normalisation**: NFKC → strip trailing bracketed qualifiers → strip
+  one trailing gene-symbol token → strip leading hedges → case-fold →
+  punctuation to whitespace. The gene-symbol strip is **pair-symmetric**; a
+  per-record version scored `GTPase Era` against `GTPase Era` as a
+  disagreement 23 times. `lib_names.assert_symmetric` fails the run if
+  identical raw strings are ever scored as different.
+- **Sensitivity checks** (strict, loose) were named in advance, as checks and
+  not as alternatives to switch to.
+- **EC numbers and gene symbols** are separate reported columns, never
+  features — either would be a second measurement of the label. Gene symbols
+  differ on 5,656 of 13,760 comparable regions (41.1 %); EC numbers on 125 of
+  750 (16.7 %).
+- **The split** is grouped by genome, five held out, asserted disjoint at run
+  time.
+- **Hyperparameters**: mean MCC across five genome-grouped folds, then the
+  one-standard-error rule to the simplest model. Grids declared before the
+  first fit.
+
+## Results at a glance
+
+Test set: 12,283 regions from five held-out genomes, 6,107 positive.
+
+| | test MCC | accuracy |
+|---|---:|---:|
+| majority class | 0.000 | 0.497 |
+| protein length, one threshold | 0.028 | 0.511 |
+| database coverage (substitute baseline) | 0.141 | 0.533 |
+| decision tree | 0.261 | 0.630 |
+| **random forest** | **0.303** | **0.651** |
+| gradient boosting | 0.288 | 0.643 |
+
+Circularity audit, same held-out genomes:
 
 | arm | features | grouped CV MCC | test MCC |
 |---|---:|---:|---:|
 | full | 61 | 0.293 | 0.303 |
 | caller-derived removed | 26 | 0.232 | 0.259 |
-| **sequence only** | 17 | **0.070** | **0.142** |
+| caller- and db-derived removed | 17 | **0.070** | 0.142 |
 
-Removing the caller features costs little. Removing the database features
-collapses the model to the database-coverage baseline it was supposed to beat.
-Permutation importance says the same thing directly: summed over the held-out
-genomes, the 9 `db_derived` features are worth **0.165** in MCC, the 35
-`caller_derived` features **0.019**, and the 17 sequence and genome features
-**−0.001**.
+Forest OOB MCC is 0.340 against a grouped-CV mean of 0.293. That gap of
+**+0.047** is a measurement of genome-level leakage, not a discrepancy to
+explain away: OOB bootstraps rows, so a held-out row is scored by trees that
+saw its neighbours from the same genome and the same annotation run.
 
-So naming disagreement between Bakta and Prokka *is* predictable — from how
-well each tool's reference database covers the region, not from the DNA. The
-top features are `bakta_n_dbxref`, `prokka_has_ec` and
-`prokka_has_protein_motif`, with `prokka_has_similarity_hit` fourth. That is a fact about reference databases, not
-about sequence, and the sequence-only arm's grouped-CV MCC of 0.070 is the
-honest answer to the question actually asked.
+The majority-class baseline scores 0.497 accuracy rather than 0.503 because
+the majority class of the training genomes is *positive* (52.4 %) while the
+held-out genomes are 49.7 % positive — always predicting the training majority
+lands just below a coin flip. That is the floor, and it is why MCC rather than
+accuracy is the headline metric throughout.
 
-**OOB against grouped CV.** The forest's OOB MCC is 0.340 against a grouped-CV
-mean of 0.293, a gap of **+0.047**. OOB bootstraps rows, not genomes, so rows
-from the same genome land both in-bag and out-of-bag. The gap measures
-genome-level leakage; it is not a discrepancy to be explained away.
-
----
+One specified baseline, *is either product hypothetical*, is **degenerate by
+construction** — the primary set is defined as both tools having named the
+region, so it is constant. It is reported as uncomputable rather than quietly
+replaced; the database-coverage row above is labelled as its substitute.
 
 ## Provenance
 
 Annotation depends on database release as much as on tool version. Both are
-recorded in `provenance/`. The same genome annotated against a newer Bakta
-database will produce different calls. The database used here was db-light
-v6.0 (2025-02-24, DOI 10.5281/zenodo.14916843); it has been deleted from this
-machine to free disk and `provenance/fetch_bakta_db.sh` re-downloads it.
+recorded in `provenance/`. Bakta db-light v6.0 (2025-02-24, DOI
+`10.5281/zenodo.14916843`). The same genome annotated against a newer database
+will produce different calls.
+
+The database itself is not in this repository — it is 4.0 GB and
+`provenance/fetch_bakta_db.sh` re-downloads the pinned release.
 
 ## Structure
 
     data/          genomes and annotation output (gitignored)
-    scripts/       numbered pipeline, run in order
+    scripts/       numbered pipeline
     results/       metrics as numbered JSON, one file per step
     figures/       PNG and PDF
     provenance/    tool versions, database versions, checksums
-    notes/         working notes, not published
+    notes/         working notes
 
-Steps 01–11 are part one, 12–21 part two. `results/metrics/20_content_summary.json`
-carries every headline number for part two in one file.
+Steps 01–11 are the interval experiment; 12–22 are the content experiment.
 
 ## Reproducing
 
     conda env create -f environment.yml
     conda activate bpdp
-    bash scripts/00_run_all.sh          # everything, including annotation
+    bash scripts/00_run_all.sh          # everything, from an empty checkout
+
     bash scripts/run_content_only.sh    # part two only, on annotation already on disk
 
-Seed 42. Every number quoted above maps to a file in `results/metrics/`.
+Part two runs in dependency order rather than numeric order: step 22 computes
+numbers step 20 quotes.
+
+Every number in this file maps to a file in `results/metrics/`. Nothing here
+was transcribed from a terminal.

@@ -1,0 +1,122 @@
+{
+  "step": "22_content_mechanism",
+  "question": "Is the naming disagreement explained by thin reference-database evidence? Tested rather than asserted.",
+  "not_a_model": "conditional rates over the primary analysis set",
+  "fallback_naming_families": {
+    "note": "Three Bakta naming conventions declared before fitting in 12_content_cohort.json. Matched independently they total 4,650 rows, but the patterns overlap -- every DUF name in this panel also ends in 'domain-containing protein' -- so the honest total is the distinct union, 4,494.",
+    "per_pattern_counts_overlapping": {
+      "domain_containing": 4210,
+      "duf": 156,
+      "uncharacterized_orf_name": 284
+    },
+    "sum_of_patterns_double_counts": 4650,
+    "distinct_union": 4494,
+    "duf_entirely_inside_domain_containing": true,
+    "families": {
+      "n": 4494,
+      "n_disagree": 4491,
+      "rate": 0.9993
+    },
+    "remainder": {
+      "n": 45716,
+      "n_disagree": 21486,
+      "rate": 0.47
+    },
+    "whole_primary_set": {
+      "n": 50210,
+      "n_disagree": 25977,
+      "rate": 0.5174
+    },
+    "headline_pair": "51.7% of both-named regions are named differently by the two tools; 47.0% once three Bakta fallback-naming conventions that disagree by construction are excluded. Both numbers should be published together."
+  },
+  "bakta_evidence_depth_remainder_only": {
+    "excludes": "the fallback-naming families, which are ~100% disagreement by construction and would drive every bucket",
+    "buckets": {
+      "2_the_minimum": {
+        "n": 41308,
+        "n_disagree": 18255,
+        "rate": 0.4419
+      },
+      "3": {
+        "n": 2724,
+        "n_disagree": 2174,
+        "rate": 0.7981
+      },
+      "4_or_more": {
+        "n": 1684,
+        "n_disagree": 1057,
+        "rate": 0.6277
+      }
+    },
+    "finding": "Disagreement RISES with Bakta cross-reference count, from 44.2% at the minimum two to 79.8% at three. This is the opposite of the thin-evidence chain. A third cross-reference is typically an EC number, a BlastRules hit, a virulence-factor or insertion-sequence match, and it comes with a MORE specific Bakta name -- which is then more likely to differ from Prokka's more generic one."
+  },
+  "prokka_evidence_depth_remainder_only": {
+    "by_ec": {
+      "with_ec": {
+        "n": 26861,
+        "n_disagree": 11306,
+        "rate": 0.4209
+      },
+      "without_ec": {
+        "n": 18855,
+        "n_disagree": 10180,
+        "rate": 0.5399
+      }
+    },
+    "by_similarity_hit": {
+      "with_similarity_hit": {
+        "n": 42307,
+        "n_disagree": 19001,
+        "rate": 0.4491
+      },
+      "without_similarity_hit": {
+        "n": 3409,
+        "n_disagree": 2485,
+        "rate": 0.729
+      }
+    },
+    "finding": "On Prokka's side the thin-evidence direction does hold: 54.0% disagreement without an EC number against 42.1% with one."
+  },
+  "evidence_profile_families_vs_remainder": {
+    "bakta_n_dbxref_distribution": {
+      "families": {
+        "2": 4487,
+        "4": 7
+      },
+      "remainder": {
+        "1": 123,
+        "2": 41185,
+        "3": 2724,
+        "4": 1392,
+        "5": 202,
+        "6": 64,
+        "7": 11,
+        "8": 3,
+        "9": 1,
+        "10": 5,
+        "11": 1,
+        "29": 2,
+        "30": 1,
+        "31": 1,
+        "34": 1
+      },
+      "note": "Family rows carry exactly the minimum two cross-references almost without exception; the remainder carries three or more about one time in ten."
+    },
+    "prokka_flag_shares": {
+      "families": {
+        "prokka_has_ec": 0.354,
+        "prokka_has_similarity_hit": 0.8291,
+        "prokka_has_protein_motif": 0.1709,
+        "n": 4494
+      },
+      "remainder": {
+        "prokka_has_ec": 0.5876,
+        "prokka_has_similarity_hit": 0.9254,
+        "prokka_has_protein_motif": 0.0746,
+        "n": 45716
+      }
+    }
+  },
+  "conclusion": "The chain holds for the fallback-naming families and on Prokka's side, and reverses on Bakta's. There are two mechanisms pulling in opposite directions, not one. bakta_n_dbxref is the forest's strongest feature because extra Bakta evidence predicts a more specific Bakta name that Prokka does not match -- not because thin evidence predicts a fallback name. The db-derived features and the naming families are related, but they are not two views of a single mechanism.",
+  "what_this_does_not_show": "Nothing here identifies which tool is right. The label remains disagreement between two software products about a name."
+}

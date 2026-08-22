@@ -36,6 +36,7 @@ def main():
     feats = load("14_content_features.json")
     base = load("15_content_baselines.json")
     circ = load("19_content_circularity.json")
+    mech = load("22_content_mechanism.json", required=False)
 
     finals, cvs, imps = {}, {}, {}
     for m in MODELS:
@@ -128,6 +129,21 @@ def main():
             "interpretation": rules["interpretation"],
         },
         "separate_columns": cohort["separate_columns_not_part_of_the_label"],
+        "headline_pair_with_and_without_fallback_families": (
+            {
+                "whole_primary_set": mech["fallback_naming_families"]["whole_primary_set"],
+                "excluding_fallback_families":
+                    mech["fallback_naming_families"]["remainder"],
+                "fallback_families":
+                    mech["fallback_naming_families"]["families"],
+                "statement": mech["fallback_naming_families"]["headline_pair"],
+            } if mech else
+            {"missing": "run scripts/22_content_mechanism.py before this step"}),
+        "mechanism": ({
+            "bakta_evidence_depth": mech["bakta_evidence_depth_remainder_only"],
+            "prokka_evidence_depth": mech["prokka_evidence_depth_remainder_only"],
+            "conclusion": mech["conclusion"],
+        } if mech else None),
         "declared_generic_families": cohort[
             "declared_generic_families_within_primary_set"]["families"],
 
@@ -183,6 +199,7 @@ def main():
             "final": [f"17_content_final_{m}.json" for m in MODELS if finals.get(m)],
             "importance": [f"18_content_importance_{m}.json" for m in MODELS if imps.get(m)],
             "circularity": "19_content_circularity.json",
+            "mechanism": "22_content_mechanism.json" if mech else None,
         },
     }
     OUT.write_text(json.dumps(payload, indent=2) + "\n")
