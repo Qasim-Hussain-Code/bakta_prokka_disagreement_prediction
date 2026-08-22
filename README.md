@@ -37,4 +37,4 @@ Bakta database will produce different calls.
 
 Every number quoted in any post maps to a file in `results/metrics/`.
 
-# Coming Soon; Stay Tuned
+# Stay Tuned
