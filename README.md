@@ -3,7 +3,7 @@
 Machine Learning for Biology | Chapter 3.
 
 Two experiments on one panel of 25 complete bacterial genomes (95.2 Mbp,
-8 phyla, GC 28.45–72.12 %), annotated once with Bakta and once with Prokka.
+8 phyla, GC 28.45–72.12%), annotated once with Bakta and once with Prokka.
 
 ---
 
@@ -13,8 +13,9 @@ Two experiments on one panel of 25 complete bacterial genomes (95.2 Mbp,
 half the time.**
 
 Of 87,859 CDS regions both tools called, 50,210 were given a non-placeholder
-product name by both. The two tools disagree about that name on **25,977 of
-them — 51.7 %**.
+product name by both. (A further 101 Bakta CDS have no same-strand Prokka CDS
+to compare against at all — those are part one's label, not part two's.) The two tools disagree about that name on **25,977 of
+them — 51.7%**.
 
 That number needs no model to matter. Product names are what pangenome
 analyses, functional enrichment tests and AMR reports are built on, and two
@@ -23,21 +24,26 @@ standard tools reading identical DNA return different names for half of it.
 The obvious objection is that Bakta has naming conventions which cannot match
 Prokka by construction — `… domain-containing protein`, `Uncharacterized
 protein <ORF-name>`, and names carrying a DUF number. Those were declared
-before any model was fitted. They are **4,494 regions (9.0 %) and they
-disagree 99.9 % of the time**. Excluding them:
+before any model was fitted. They are **4,494 regions (9.0%) and they disagree
+99.9% of the time**. Excluding them:
 
 | set | n | name disagreement |
 |---|---:|---:|
-| all both-named regions | 50,210 | **51.7 %** |
-| excluding three Bakta fallback-naming conventions | 45,716 | **47.0 %** |
-| those three conventions alone | 4,494 | 99.9 % |
+| all both-named regions | 50,210 | **51.7%** |
+| excluding three Bakta fallback-naming conventions | 45,716 | **47.0%** |
+| those three conventions alone | 4,494 | 99.9% |
 
 Both numbers are published together. The finding survives the objection.
 
-Under the two declared sensitivity checks the rate moves from 56.0 % (strict:
-case-folding and whitespace only) to 50.6 % (loose: generic tokens dropped,
-compared as unordered token sets). The disagreement is substantive, not
-typographic.
+Counting those conventions needed care: matched independently they total 4,650
+rows, but every one of the 156 DUF names also ends in `domain-containing
+protein`, so the sum double-counts. 4,494 is the distinct union.
+
+Under the two declared sensitivity checks the rate moves from 56.0%
+(28,121 regions; strict — case-folding and whitespace only) to 50.6%
+(25,418 regions; loose — generic tokens dropped, compared as unordered token
+sets). That is a spread of 5.4 points across the full declared range. The
+disagreement is substantive, not typographic.
 
 ## The question, and the answer
 
@@ -47,13 +53,14 @@ it differently?
 **Largely no.** A random forest reaches MCC 0.303 on five held-out genomes
 against a majority-class floor of 0.000, but the audit shows what it is
 reading. With every database-derived and caller-derived feature removed, the
-sequence-only arm falls to grouped-CV MCC 0.070. Summed permutation
+sequence-only arm falls to a grouped-CV MCC of 0.070. Summed permutation
 importance across 61 features: **database-derived 0.165 across 9 features,
 caller-derived 0.019 across 35, sequence and genome features −0.001 across
-17.**
+17** (a magnitude of 0.001, and negative).
 
-The model is reading database-search output, not DNA. That is reported as the
-result rather than presented as a sequence model.
+The three strongest features are `bakta_n_dbxref`, `prokka_has_ec` and
+`prokka_has_protein_motif`. The model is reading database-search output, not
+DNA. That is reported as the result rather than presented as a sequence model.
 
 ## What the label is, and is not
 
@@ -73,16 +80,22 @@ The primary analysis is **conditional on both tools having named the region**.
 That restriction is imposed by what is measurable — two names cannot be
 compared when one tool produced none — and not chosen for convenience.
 
+| cell | n | share of paired regions |
+|---|---:|---:|
+| both named (the primary analysis set) | 50,210 | 57.1% |
+| Bakta named only | 26,699 | 30.4% |
+| both placeholder | 8,653 | 9.8% |
+| Prokka named only | 2,297 | 2.6% |
+
 Two consequences, both stated rather than assumed away:
 
 **The naming asymmetry is not a db-light artefact.** The large asymmetric cell
-is *Bakta named, Prokka did not* (26,699), not the reverse (2,297). Bakta on
-db-light leaves 12.5 % of paired CDS as a placeholder against Prokka's 40.2 %.
-db-light can only make Bakta name *fewer* regions than db-full would, so it
-works against this asymmetry rather than producing it. 26,699 is a lower
-bound.
+is *Bakta named, Prokka did not*, not the reverse. Bakta on db-light leaves
+12.5% of paired CDS as a placeholder against Prokka's 40.2%. db-light can only
+make Bakta name *fewer* regions than db-full would, so it works against this
+asymmetry rather than producing it. 26,699 is a lower bound.
 
-**51.7 % is plausibly an underestimate.** Under db-full the primary set would
+**51.7% is plausibly an underestimate.** Under db-full the primary set would
 grow, and the regions added would be exactly those Bakta currently cannot
 name — thin-evidence cases, which is where disagreement concentrates. The
 composition of the primary set is db-light-dependent even though its
@@ -97,18 +110,17 @@ differently → disagreement. Tested rather than asserted
 another**.
 
 On Prokka's side it holds: within the 45,716 remainder regions, disagreement
-is 54.0 % without an EC number against 42.1 % with one.
+is 54.0% without an EC number against 42.1% with one.
 
 On Bakta's side it inverts. Disagreement *rises* with Bakta's cross-reference
-count — 44.2 % at the minimum two, **79.8 % at three**, 62.8 % at four or
-more. A third cross-reference is typically an EC number, a BlastRules hit or a
+count — 44.2% at the minimum two, **79.8% at three**, 62.8% at four or more. A
+third cross-reference is typically an EC number, a BlastRules hit or a
 virulence-factor match, and it comes with a *more specific* Bakta name, which
 is then more likely to differ from Prokka's more generic one.
 
-`bakta_n_dbxref` is the forest's strongest single feature (permutation
-importance +0.087) because extra Bakta evidence predicts a more specific name
-that Prokka does not match — not because thin evidence predicts a fallback
-name.
+`bakta_n_dbxref` is the forest's strongest single feature because extra Bakta
+evidence predicts a more specific name that Prokka does not match — not
+because thin evidence predicts a fallback name.
 
 ## Part one: the interval experiment, and why it failed
 
@@ -126,6 +138,12 @@ comparison largely asked whether Prodigal agrees with itself. It does. Of the
 72 positives, 34 come from Bakta's sORF module, which Prokka has no equivalent
 of.
 
+The held-out set contained **13** positives. The forest reached average
+precision 0.589 against a no-skill floor of 0.00069, and 0.470 with the caller
+features removed — but on 13 positives those are not point estimates, and
+`lib_model.evaluate` attaches a reliability warning to any metrics file
+computed on fewer than 30.
+
 That negative result stands and is published in full as steps 01–11. It is
 also what motivated part two: the tools agree on *where* genes are and
 disagree on *what they are*.
@@ -137,8 +155,8 @@ revised afterwards.
 
 - **Placeholder strings** are matched as an enumerated list of exact literals
   after case-folding, never by substring. `hypothetical` occurs inside 12
-  distinct Bakta products of which 11 are real names. The full list and its
-  counts are in `13_name_rules.json`.
+  distinct Bakta products of which 11 are real names; `conserved` inside 37.
+  The full list and its counts are in `13_name_rules.json`.
 - **Name normalisation**: NFKC → strip trailing bracketed qualifiers → strip
   one trailing gene-symbol token → strip leading hedges → case-fold →
   punctuation to whitespace. The gene-symbol strip is **pair-symmetric**; a
@@ -149,26 +167,34 @@ revised afterwards.
   not as alternatives to switch to.
 - **EC numbers and gene symbols** are separate reported columns, never
   features — either would be a second measurement of the label. Gene symbols
-  differ on 5,656 of 13,760 comparable regions (41.1 %); EC numbers on 125 of
-  750 (16.7 %).
+  differ on 41.1% of comparable regions, EC numbers on 16.7%.
 - **The split** is grouped by genome, five held out, asserted disjoint at run
   time.
 - **Hyperparameters**: mean MCC across five genome-grouped folds, then the
   one-standard-error rule to the simplest model. Grids declared before the
   first fit.
+- **Feature provenance**: all 61 features carry two flags, 35 caller-derived,
+  9 db-derived, 17 neither. Step 19 reads them from the manifest; no feature
+  list is hard-coded downstream.
 
 ## Results at a glance
 
 Test set: 12,283 regions from five held-out genomes, 6,107 positive.
 
-| | test MCC | accuracy |
-|---|---:|---:|
-| majority class | 0.000 | 0.497 |
-| protein length, one threshold | 0.028 | 0.511 |
-| database coverage (substitute baseline) | 0.141 | 0.533 |
-| decision tree | 0.261 | 0.630 |
-| **random forest** | **0.303** | **0.651** |
-| gradient boosting | 0.288 | 0.643 |
+| | test MCC | accuracy | F1 |
+|---|---:|---:|---:|
+| majority class | 0.000 | 0.497 | 0.664 |
+| protein length, one threshold | 0.028 | 0.511 | 0.604 |
+| database coverage | 0.141 | 0.533 | 0.145 |
+| decision tree | 0.261 | 0.630 | 0.622 |
+| **random forest** | **0.303** | 0.651 | 0.649 |
+| gradient boosting | 0.288 | 0.643 | 0.657 |
+
+The majority-class baseline scores 0.497 accuracy, not 0.503, because the
+majority class of the training genomes is *positive* (52.4%) while the
+held-out genomes are 49.7% positive — predicting the training majority lands
+just below a coin flip. That is the floor, and it is why MCC rather than
+accuracy is the headline metric.
 
 Circularity audit, same held-out genomes:
 
@@ -176,18 +202,12 @@ Circularity audit, same held-out genomes:
 |---|---:|---:|---:|
 | full | 61 | 0.293 | 0.303 |
 | caller-derived removed | 26 | 0.232 | 0.259 |
-| caller- and db-derived removed | 17 | **0.070** | 0.142 |
+| **sequence only** | 17 | **0.070** | **0.142** |
 
 Forest OOB MCC is 0.340 against a grouped-CV mean of 0.293. That gap of
-**+0.047** is a measurement of genome-level leakage, not a discrepancy to
+**0.047** is a measurement of genome-level leakage, not a discrepancy to
 explain away: OOB bootstraps rows, so a held-out row is scored by trees that
 saw its neighbours from the same genome and the same annotation run.
-
-The majority-class baseline scores 0.497 accuracy rather than 0.503 because
-the majority class of the training genomes is *positive* (52.4 %) while the
-held-out genomes are 49.7 % positive — always predicting the training majority
-lands just below a coin flip. That is the floor, and it is why MCC rather than
-accuracy is the headline metric throughout.
 
 One specified baseline, *is either product hypothetical*, is **degenerate by
 construction** — the primary set is defined as both tools having named the
@@ -226,5 +246,6 @@ Steps 01–11 are the interval experiment; 12–22 are the content experiment.
 Part two runs in dependency order rather than numeric order: step 22 computes
 numbers step 20 quotes.
 
-Every number in this file maps to a file in `results/metrics/`. Nothing here
-was transcribed from a terminal.
+Seed 42. Every number in this file maps to a file in `results/metrics/`, and
+`scripts/verify_readme_numbers.py` checks each one and exits non-zero on the
+first disagreement. Nothing here was transcribed from a terminal.
