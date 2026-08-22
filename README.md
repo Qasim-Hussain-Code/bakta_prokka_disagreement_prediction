@@ -389,7 +389,3 @@ It does not cover the input genomes, which are not distributed here: they are
 fetched from NCBI RefSeq by `scripts/01_fetch_genomes.py` against the
 accessions pinned in `data/accessions.tsv`. Bakta and Prokka, and the
 reference databases they search, carry their own licences.
-
----
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
