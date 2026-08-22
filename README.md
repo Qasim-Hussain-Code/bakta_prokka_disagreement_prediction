@@ -273,16 +273,6 @@ will produce different calls.
 The database itself is not in this repository — it is 4.0 GB and
 `provenance/fetch_bakta_db.sh` re-downloads the pinned release.
 
-## Licence
-
-MIT — see `LICENSE`. That covers the code, the metrics files and the figures
-in this repository.
-
-It does not cover the input genomes, which are not distributed here: they are
-fetched from NCBI RefSeq by `scripts/01_fetch_genomes.py` against the
-accessions pinned in `data/accessions.tsv`. Bakta and Prokka, and the
-reference databases they search, carry their own licences.
-
 ## Structure
 
     data/          genomes and annotation output (gitignored)
@@ -308,3 +298,98 @@ numbers step 20 quotes.
 Seed 42. Every number in this file maps to a file in `results/metrics/`, and
 `scripts/verify_readme_numbers.py` checks each one and exits non-zero on the
 first disagreement. Nothing here was transcribed from a terminal.
+
+## References
+
+Tools, databases and methods this project depends on. Versions are the ones
+actually run, recorded in `provenance/tool_versions.txt`.
+
+**The two annotators compared**
+
+1. Schwengers O, Jelonek L, Dieckmann MA, Beyvers S, Blom J, Goesmann A.
+   Bakta: rapid and standardized annotation of bacterial genomes via
+   alignment-free sequence identification. *Microbial Genomics*.
+   2021;7(11):000685. [doi:10.1099/mgen.0.000685](https://doi.org/10.1099/mgen.0.000685)
+   — v1.12.0, database db-light v6.0.
+2. Seemann T. Prokka: rapid prokaryotic genome annotation. *Bioinformatics*.
+   2014;30(14):2068–2069.
+   [doi:10.1093/bioinformatics/btu153](https://doi.org/10.1093/bioinformatics/btu153)
+   — v1.15.6.
+
+**The gene caller they share — the reason part one had nothing to model**
+
+3. Hyatt D, Chen G-L, LoCascio PF, Land ML, Larimer FW, Hauser LJ. Prodigal:
+   prokaryotic gene recognition and translation initiation site
+   identification. *BMC Bioinformatics*. 2010;11:119.
+   [doi:10.1186/1471-2105-11-119](https://doi.org/10.1186/1471-2105-11-119)
+   — called by Prokka as v2.6.
+4. Larralde M. Pyrodigal: Python bindings and interface to Prodigal, an
+   efficient method for gene prediction in prokaryotes. *Journal of Open
+   Source Software*. 2022;7(72):4296.
+   [doi:10.21105/joss.04296](https://doi.org/10.21105/joss.04296)
+   — called by Bakta; a Cython reimplementation of ref. 3, which is why the
+   two tools agree on 87,788 of 87,888 matched intervals.
+
+**The reference sets that drive the naming disagreement**
+
+5. Suzek BE, Wang Y, Huang H, McGarvey PB, Wu CH, UniProt Consortium. UniRef
+   clusters: a comprehensive and scalable alternative for improving sequence
+   similarity searches. *Bioinformatics*. 2015;31(6):926–932.
+   [doi:10.1093/bioinformatics/btu739](https://doi.org/10.1093/bioinformatics/btu739)
+   — the source of most Bakta product names here, and of `bakta_n_dbxref`,
+   the strongest single feature in the model.
+6. Mistry J, Chuguransky S, Williams L, Qureshi M, Salazar GA, Sonnhammer ELL,
+   Tosatto SCE, Paladin L, Raj S, Richardson LJ, Finn RD, Bateman A. Pfam: the
+   protein families database in 2021. *Nucleic Acids Research*.
+   2021;49(D1):D412–D419.
+   [doi:10.1093/nar/gkaa913](https://doi.org/10.1093/nar/gkaa913)
+   — the origin of the `… domain-containing protein` fallback names, and of
+   `bakta_has_pfam`, which is constant across the primary analysis set.
+
+**Methods**
+
+7. Breiman L. Random forests. *Machine Learning*. 2001;45(1):5–32.
+   [doi:10.1023/A:1010933404324](https://doi.org/10.1023/A:1010933404324)
+   — including the out-of-bag estimate, reported here against grouped
+   cross-validation to size genome-level leakage rather than to replace it.
+8. Pedregosa F, Varoquaux G, Gramfort A, Michel V, Thirion B, Grisel O,
+   Blondel M, Prettenhofer P, Weiss R, Dubourg V, Vanderplas J, Passos A,
+   Cournapeau D, Brucher M, Perrot M, Duchesnay É. Scikit-learn: machine
+   learning in Python. *Journal of Machine Learning Research*.
+   2011;12:2825–2830. <https://www.jmlr.org/papers/v12/pedregosa11a.html>
+   — v1.7.2.
+9. Chicco D, Jurman G. The advantages of the Matthews correlation coefficient
+   (MCC) over F1 score and accuracy in binary classification evaluation.
+   *BMC Genomics*. 2020;21:6.
+   [doi:10.1186/s12864-019-6413-7](https://doi.org/10.1186/s12864-019-6413-7)
+   — why MCC leads every table here. The majority-class baseline in this
+   repository scores 0.664 F1 at 0.000 MCC, which is the paper's point made
+   on real output.
+
+**Why annotation disagreement is worth measuring**
+
+10. Schnoes AM, Brown SD, Dodevski I, Babbitt PC. Annotation error in public
+    databases: misannotation of molecular function in enzyme superfamilies.
+    *PLoS Computational Biology*. 2009;5(12):e1000605.
+    [doi:10.1371/journal.pcbi.1000605](https://doi.org/10.1371/journal.pcbi.1000605)
+11. Salzberg SL. Next-generation genome annotation: we still struggle to get
+    it right. *Genome Biology*. 2019;20:92.
+    [doi:10.1186/s13059-019-1715-2](https://doi.org/10.1186/s13059-019-1715-2)
+
+Every reference above was resolved against Crossref before being listed.
+Neither ref. 10 nor ref. 11 is evidence about which of the two tools is right
+in any particular case — this repository does not measure that.
+
+## Licence
+
+MIT — see `LICENSE`. That covers the code, the metrics files and the figures
+in this repository.
+
+It does not cover the input genomes, which are not distributed here: they are
+fetched from NCBI RefSeq by `scripts/01_fetch_genomes.py` against the
+accessions pinned in `data/accessions.tsv`. Bakta and Prokka, and the
+reference databases they search, carry their own licences.
+
+---
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
