@@ -163,6 +163,28 @@ def main():
         (f"{rf['oob_vs_grouped_cv']['gap']:.3f}", "17.oob_vs_grouped_cv.gap"),
     ]
 
+    # Figure captions quote numbers too, and a caption is prose like any
+    # other. The per-genome spread and the part-one ceiling are quoted under
+    # figures 06 and 01 respectively.
+    rates = [r["name_disagreement_rate"] for r in coh["per_genome"]
+             if r["name_disagreement_rate"] is not None]
+    claims.append((pct(min(rates)), "12.per_genome min name_disagreement_rate"))
+    claims.append((pct(max(rates)), "12.per_genome max name_disagreement_rate"))
+    p1 = [r["unique_to_bakta_rate"] for r in dis["per_genome"]]
+    # The caption says part one "tops out below 0.4%". Assert the claim rather
+    # than only looking for the string, since the string alone would survive
+    # the underlying number changing.
+    if max(p1) >= 0.004:
+        raise SystemExit(
+            f"FATAL: README figure 01 caption says the part-one rate tops out "
+            f"below 0.4%, but the maximum is {pct(max(p1), 2)}.")
+
+    # Every model's F1 is quoted in the results table; the figure 07 caption
+    # additionally singles out the majority-class F1 to make the point that F1
+    # flatters a predictor with MCC 0.
+    claims.append((f"{bt['majority_class']['test_f1']:.3f}",
+                   "15.majority_class F1 (quoted in the figure 07 caption)"))
+
     # The summed sequence-group importance is negative; the README renders it
     # with a Unicode minus, so check that form explicitly rather than str().
     neither = flag["neither"]["summed_permutation_importance"]

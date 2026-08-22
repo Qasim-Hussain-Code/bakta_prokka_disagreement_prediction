@@ -39,6 +39,14 @@ Counting those conventions needed care: matched independently they total 4,650
 rows, but every one of the 156 DUF names also ends in `domain-containing
 protein`, so the sum double-counts. 4,494 is the distinct union.
 
+![Cross-tabulation of which tool named each region, and name-disagreement rate per genome](figures/06_name_disagreement_cohort.png)
+
+*Left: which tool named what, across all 87,859 paired CDS regions. The blue
+block is the primary analysis set. Right: name-disagreement rate for each of
+the 25 genomes, with the panel-wide 51.7% marked. No single genome carries the
+result — the spread runs from 28.1% to 66.9%, and every genome is well above
+zero.*
+
 Under the two declared sensitivity checks the rate moves from 56.0%
 (28,121 regions; strict — case-folding and whitespace only) to 50.6%
 (25,418 regions; loose — generic tokens dropped, compared as unordered token
@@ -57,6 +65,14 @@ sequence-only arm falls to a grouped-CV MCC of 0.070. Summed permutation
 importance across 61 features: **database-derived 0.165 across 9 features,
 caller-derived 0.019 across 35, sequence and genome features −0.001 across
 17** (a magnitude of 0.001, and negative).
+
+![Permutation importance for the random forest, coloured by feature provenance](figures/09_content_importance.png)
+
+*Permutation importance measured on the held-out genomes, in MCC. The two bars
+that matter are red — database-derived. The twenty amino-acid fractions and
+the sequence features sit near zero. Impurity importance ranks these
+differently and is reported alongside in the metrics file; the permutation
+column is the one to read.*
 
 The three strongest features are `bakta_n_dbxref`, `prokka_has_ec` and
 `prokka_has_protein_motif`. The model is reading database-search output, not
@@ -132,6 +148,12 @@ It is not answerable with this tool pair.
 rate of 0.0008. Among 87,888 matched calls, **87,788 share byte-identical
 start and stop coordinates**.
 
+![Interval-disagreement rate per genome and against genome GC](figures/01_disagreement_by_genome.png)
+
+*Part one's label. The y-axis tops out below 0.4% — for most genomes the two
+tools produce no interval disagreement at all. There is no signal here to
+model.*
+
 The reason is architectural. Both tools delegate CDS calling to the same
 algorithm — Pyrodigal is a Cython reimplementation of Prodigal — so the
 comparison largely asked whether Prodigal agrees with itself. It does. Of the
@@ -143,6 +165,12 @@ precision 0.589 against a no-skill floor of 0.00069, and 0.470 with the caller
 features removed — but on 13 positives those are not point estimates, and
 `lib_model.evaluate` attaches a reliability warning to any metrics file
 computed on fewer than 30.
+
+![Length distribution of Bakta calls, split by whether Prokka agreed](figures/05_length_by_label.png)
+
+*The 72 positives are almost all short. Prodigal's default minimum gene length
+is 90 bp and Bakta's sORF module looks below it, so the label is largely a
+readout of which tool runs an extra module — not of anything in the DNA.*
 
 That negative result stands and is published in full as steps 01–11. It is
 also what motivated part two: the tools agree on *where* genes are and
@@ -196,6 +224,13 @@ held-out genomes are 49.7% positive — predicting the training majority lands
 just below a coin flip. That is the floor, and it is why MCC rather than
 accuracy is the headline metric.
 
+![Test-set MCC and F1 for three baselines and three models](figures/07_content_model_comparison.png)
+
+*Baselines in grey, models in navy, all scored on the same 12,283 held-out
+regions. Note the F1 panel: the majority-class baseline scores 0.664 F1 while
+its MCC is 0.000. On a near-balanced problem F1 flatters a predictor that has
+learned nothing, which is why MCC leads every table here.*
+
 Circularity audit, same held-out genomes:
 
 | arm | features | grouped CV MCC | test MCC |
@@ -204,10 +239,24 @@ Circularity audit, same held-out genomes:
 | caller-derived removed | 26 | 0.232 | 0.259 |
 | **sequence only** | 17 | **0.070** | **0.142** |
 
+![Grouped-CV and held-out MCC for the three circularity arms](figures/08_content_circularity.png)
+
+*What survives as the flagged features are removed. The sequence-only arm
+falls to a grouped-CV MCC of 0.070 — below the database-coverage baseline
+drawn in red. The gap between the two bars in each pair is the difference
+between holding out genomes during selection and holding them out entirely.*
+
 Forest OOB MCC is 0.340 against a grouped-CV mean of 0.293. That gap of
 **0.047** is a measurement of genome-level leakage, not a discrepancy to
 explain away: OOB bootstraps rows, so a held-out row is scored by trees that
 saw its neighbours from the same genome and the same annotation run.
+
+![Per-genome test MCC, and OOB against grouped CV](figures/10_content_oob_vs_grouped_cv.png)
+
+*Left: the forest scores consistently across all five held-out genomes, so the
+pooled number is not driven by one of them. Right: the same forest measured
+three ways. OOB is optimistic because it resamples rows rather than genomes,
+and the 0.047 gap is the size of that optimism.*
 
 One specified baseline, *is either product hypothetical*, is **degenerate by
 construction** — the primary set is defined as both tools having named the
