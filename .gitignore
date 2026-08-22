@@ -23,5 +23,7 @@ env/
 # os
 .DS_Store
 
-# ignore lab_notebook.md present in notes
-notes/lab_notebook.md   
+# notes/ is published: the lab notebook is part of the record, not scratch.
+# (An entry for notes/lab_notebook.md used to sit here. It never had any
+# effect -- the file was already tracked -- and it made the file look
+# unintentionally published. Removed rather than left to mislead.)

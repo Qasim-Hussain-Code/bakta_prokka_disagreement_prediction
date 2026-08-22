@@ -224,6 +224,16 @@ will produce different calls.
 The database itself is not in this repository — it is 4.0 GB and
 `provenance/fetch_bakta_db.sh` re-downloads the pinned release.
 
+## Licence
+
+MIT — see `LICENSE`. That covers the code, the metrics files and the figures
+in this repository.
+
+It does not cover the input genomes, which are not distributed here: they are
+fetched from NCBI RefSeq by `scripts/01_fetch_genomes.py` against the
+accessions pinned in `data/accessions.tsv`. Bakta and Prokka, and the
+reference databases they search, carry their own licences.
+
 ## Structure
 
     data/          genomes and annotation output (gitignored)
@@ -231,7 +241,7 @@ The database itself is not in this repository — it is 4.0 GB and
     results/       metrics as numbered JSON, one file per step
     figures/       PNG and PDF
     provenance/    tool versions, database versions, checksums
-    notes/         working notes
+    notes/         lab notebook and run logs (published)
 
 Steps 01–11 are the interval experiment; 12–22 are the content experiment.
 
