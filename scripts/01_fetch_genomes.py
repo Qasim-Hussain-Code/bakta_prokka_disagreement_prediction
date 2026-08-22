@@ -196,7 +196,7 @@ def read_accessions():
 
 
 def download(accession, dest):
-    """Fetch one assembly's genomic FASTA to dest."""
+    """Fetch one assembly's genomic FASTA."""
     with tempfile.TemporaryDirectory(dir=str(GENOME_DIR)) as tmp:
         zip_path = Path(tmp) / "d.zip"
         run([
